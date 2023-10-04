@@ -1,5 +1,6 @@
 Ravneet Singh
-#H1Data Definition Language, shortly termed DDL, is a subset of SQL commands that define the structure or schema of the database.
+#H1Data Definition Language,
+Data Definition Language shortly termed DDL, is a subset of SQL commands that define the structure or schema of the database. 
 DDL Commands
 DDL commands are SQL commands used to modify or alter the structure of the database. The following is the list of DDL commands in SQL:
 
