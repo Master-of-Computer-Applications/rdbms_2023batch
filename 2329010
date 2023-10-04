@@ -1,0 +1,95 @@
+NAME - HARSHDEEP SINGH
+CRN - 2329010
+ASSIGNMENT - 1
+
+QUESTION :- Difference between ddl, dml and dcl ?
+
+ANSWER:- DDL, DML, and DCL are three categories of SQL (Structured Query Language) statements used in relational databases. Each category serves a distinct purpose in managing and manipulating data within a database. Here's a detailed point-wise explanation of the differences between DDL (Data Definition Language), DML (Data Manipulation Language), and DCL (Data Control Language):
+
+Purpose:
+
+DDL (Data Definition Language):
+
+DDL is used for defining and managing the structure of the database.
+It includes creating, altering, and dropping database objects such as tables, indexes, views, and schemas.
+DML (Data Manipulation Language):
+
+DML is used for manipulating data stored in the database.
+It includes operations like inserting, updating, deleting, and retrieving data from tables.
+DCL (Data Control Language):
+
+DCL is used for controlling access to data within the database.
+It includes granting or revoking privileges and permissions to users and roles.
+Examples:
+
+DDL:
+
+CREATE TABLE: Defines a new table.
+ALTER TABLE: Modifies the structure of an existing table.
+DROP TABLE: Deletes a table from the database.
+DML:
+
+INSERT INTO: Adds new records to a table.
+UPDATE: Modifies existing records in a table.
+DELETE: Removes records from a table.
+SELECT: Retrieves data from one or more tables.
+DCL:
+
+GRANT: Gives specific permissions to users or roles.
+REVOKE: Removes specific permissions from users or roles.
+Transaction Control:
+
+DDL:
+
+DDL statements are auto-committed in most database systems. You cannot roll back DDL changes within a transaction.
+DML:
+
+DML statements can be rolled back within a transaction if a transaction is started explicitly.
+DCL:
+
+DCL statements can also be rolled back within a transaction if a transaction is started explicitly.
+Impact on Data:
+
+DDL:
+
+DDL statements do not directly affect the data in the tables. They affect the structure and metadata of the database.
+
+DML:
+
+DML statements directly manipulate the data within tables, affecting the actual records stored.
+
+DCL:
+
+DCL statements control who can access and manipulate data but do not change the data itself.
+Permission Requirements:
+
+DDL:
+
+Generally, DDL operations require administrative privileges since they involve modifying the database structure.
+
+DML:
+
+Users need appropriate permissions on tables to perform DML operations.
+
+DCL:
+
+DCL statements are used to grant or revoke permissions, so they require administrative privileges.
+Examples of DDL, DML, and DCL Statements:
+
+DDL:
+
+CREATE TABLE Employees (ID INT, Name VARCHAR(50));
+ALTER TABLE Employees ADD COLUMN Salary DECIMAL;
+DROP TABLE Employees;
+
+DML:
+
+INSERT INTO Employees (ID, Name, Salary) VALUES (1, 'John', 50000);
+UPDATE Employees SET Salary = 55000 WHERE ID = 1;
+DELETE FROM Employees WHERE ID = 1;
+
+DCL:
+
+GRANT SELECT ON Employees TO User1;
+REVOKE INSERT ON Employees FROM User2;
+In summary, DDL is used for defining the database structure, DML for manipulating data within the database, and DCL for controlling access and permissions related to data. Understanding these distinctions is crucial when working with relational databases to manage data effectively and securely.
