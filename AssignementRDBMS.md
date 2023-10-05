@@ -1,4 +1,4 @@
-#<p align = "Center">Difference between Dcl Dml Ddl? </p>
+####Difference between Dcl Dml Ddl? 
 
 DCL
 Data Control Language (or DCL) consists of statements that control security and concurrent access to table data.
