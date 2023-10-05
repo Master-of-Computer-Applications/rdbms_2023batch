@@ -1,6 +1,6 @@
 ## Difference between Dcl Dml Ddl? 
 
-DCL
+## DCL
 Data Control Language (or DCL) consists of statements that control security and concurrent access to table data.
 
 COMMIT
