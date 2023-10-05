@@ -1,36 +1,36 @@
-### Difference between Dcl Dml Ddl? 
+# Difference between Dcl Dml Ddl? 
 
 ## *DCL*
 Data Control Language (or DCL) consists of statements that control security and concurrent access to table data.
 
-# COMMIT
+###COMMIT
 Instructs the XDB Server to make permanent all data changes resulting from DML statements executed by a transaction.
 
-# CONNECT
+### CONNECT
 Connects the application process (or user) to a designated XDB Server or DB2 location. This location becomes the current location for the application process or user.
 
-# GRANT (Database Privileges)
+### GRANT (Database Privileges)
 Assigns access privileges to XDB Server users or applications.
 
-# LOCK TABLE
+### LOCK TABLE
 Extends XDB Server's automatic record and table level locking functions (in a multi-user system) by acquiring explicit locks on a particular table.
 
-# REVOKE (Database Privileges)
+### REVOKE (Database Privileges)
 Cancels access privileges for XDB Server users or applications.
 
-# REVOKE (Sequence Privileges)
+### REVOKE (Sequence Privileges)
 Revokes the privileges on a user-defined sequence.
 
 ## *Dml*
 DML stands for Data Manipulation Language. Tables and formulas are helpful when communicating with data stored up to a point in a database through SQL (Structured Query Language), but a time comes when we actually want to execute some fairly complicated data interactions. We will also need the Data Manipulation Language in that situation. DML is a way to inform a database precisely what we want it to do by conversing in a manner that it has been built to comprehend from scratch. When it comes to interacting with existing data, whether adding, moving, or deleting data, it provides a convenient way to do so.
 
-# Characteristics of DML
+### Characteristics of DML
 It performs interpret-only data queries. It is used in a database schema to recall and manipulate the information. DML It is a dialect which is used to select, insert, delete and update data in a database. Data Manipulation Language (DML) commands are as follows:
 
-# SELECT Command
+### SELECT Command
 This command is used to get data out of the database. It helps users of the database to access from an operating system, the significant data they need. It sends a track result set from one tables or more.
 
-# Syntax :
+### Syntax :
 
 SELECT * 
 FROM <table_name>; 
