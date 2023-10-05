@@ -5,7 +5,7 @@
 
 | Particular | Data Definition Language| Data Manipulation Language| Data Control Language| 
 | :---:       | :---        |:----   |:--- | 
-| Fullform | DDL stands for Data Definition Language | DDL stands for Data Manipulation Language | DDL stands for Data Control Language || DDL stands for Data Definition Language | 
+| Fullform | DDL stands for Data Definition Language | DDL stands for Data Manipulation Language | DDL stands for Data Control Language |
 | Purpose |It defines the database structure or schema. | It is used to modify or manipulate the data in the database. | It is used to control the access to the data in the database. |
 | Usage |DDL commands are typically executed by database administrators or schema designers. | DML commands are used by application developers, analysts, and end-users to interact with and manipulate data. | DCL commands are used by administrators to manage access and permissions. |
 | Affects Data vs. Schema |DDL affects the schema of the database, modifying its structure and organization. | DML affects the data within the database, adding, modifying, or removing individual records. | DCL affects who can access what parts of the data and perform specific operations. |
