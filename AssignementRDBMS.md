@@ -1,6 +1,6 @@
 ## Difference between Dcl Dml Ddl? 
 
-## DCL
+## *DCL*
 Data Control Language (or DCL) consists of statements that control security and concurrent access to table data.
 
 COMMIT
@@ -21,7 +21,7 @@ Cancels access privileges for XDB Server users or applications.
 REVOKE (Sequence Privileges)
 Revokes the privileges on a user-defined sequence.
 
-Dml
+## *Dml*
 DML stands for Data Manipulation Language. Tables and formulas are helpful when communicating with data stored up to a point in a database through SQL (Structured Query Language), but a time comes when we actually want to execute some fairly complicated data interactions. We will also need the Data Manipulation Language in that situation. DML is a way to inform a database precisely what we want it to do by conversing in a manner that it has been built to comprehend from scratch. When it comes to interacting with existing data, whether adding, moving, or deleting data, it provides a convenient way to do so.
 
 Characteristics of DML
@@ -82,7 +82,7 @@ Example:
 DELETE FROM students
 WHERE stu_id = '001'; 
 
-Ddl
+## *Ddl*
 Data Definition Language(DDL) is a subset of SQL and a part of DBMS(Database Management System). DDL consist of Commands to commands like CREATE, ALTER, TRUNCATE and DROP. These commands are used to create or modify the tables in SQL.
 
 DDL Commands :
