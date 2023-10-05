@@ -1,6 +1,6 @@
 # <p align="center">RDBMS ASSIGNMENT</p>
 ## Defination of Commands  
-### SQL stands for Structured Query Language. SQL commands are the instructions used to communicate with a database to perform tasks, functions, and queries with data. <br> 
+### SQL stands for Structured Query Language. SQL commands are the instructions used to communicate with a database to perform tasks, functions, and queries with data. 
 ### SQL commands can be used to search the database and to do other functions like creating tables, adding data to tables, modifying data, and dropping tables. <br>
 |Data Definition Language (DDL)|Data Manipulation Language|Data Control Language|
 | :---  | :--- |:---|
