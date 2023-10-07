@@ -22,8 +22,10 @@ Sr no|  Experiment Name |  Remarks|
 |  11|Creating Arrays and Nested Tables.  |  |
 
 ## *1. Comparative study of various Database Management Systems.*
-Database Management System:
+***Database Management System:***
 A Database Management System (DBMS) is a specialized software designed to store, retrieve, and manipulate data. It acts as a mediator between the database, applications, and user interfaces to manage and organize data effectively. The system provides a comprehensive suite of tools to govern databases, ensuring data security, consistency, and integrity.
 
 A DBMS supports various applications, from simple storage and retrieval tasks to complex data-driven systems, by implementing efficient data access and management practices. Additionally, the system can handle concurrent users, maintain transactional consistency, and provide robust backup and recovery options, making it an essential component in any data-centric environment.
 
+**Types of databases:**
+(1)
