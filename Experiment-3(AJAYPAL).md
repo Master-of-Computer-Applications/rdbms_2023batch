@@ -41,3 +41,4 @@ CHECK Value Constraint
 When applied to a column, CHECK Value constraint works like a validation and it is used to check the validity of the data entered into the particular column of the table. table and uniquely identifies a row/record in that table. Following is an example to create a CHECK validation on AGE column which will not accept if its value is below to 18.
 
 ![image](https://github.com/AjaypalSinghMahal/rdbms_2023batch/assets/79219246/f9c4b85c-4805-4f38-9d1c-10548c4aa886)
+[Experiment-3(AJAYPAL).md](https://github.com/AjaypalSinghMahal/rdbms_2023batch/files/12840108/Experiment-3.AJAYPAL.md)
