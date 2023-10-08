@@ -1,3 +1,4 @@
+[Experiment-2(AJAYPAL).md](https://github.com/AjaypalSinghMahal/rdbms_2023batch/files/12840088/Experiment-2.AJAYPAL.md)
 Data Definition Language(DDL),Data Manipulation Language(DML) and Data Control Language(DCL):
 
 Structured Query Language(SQL) as we all know is the database language by the use of which we can perform certain operations on the existing database and also we can use this language to create a database. SQL uses certain commands like CREATE, DROP, INSERT, etc. to carry out the required tasks. 
