@@ -123,3 +123,25 @@ SQLite is a self-sufficient, serverless, and no-configuration-required database 
 
 
 ## *2. Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL).*
+***Differences Between DDL, DML,and DCL:***
+**DDL Commands**:
+
+DDL commands are SQL commands used to modify or alter the structure of the database. The following is the list of DDL commands in SQL:
+
+1-The CREATE command creates database objects, tables, and triggers.
+2-ALTER command alters the database structure by adding, deleting, and modifying columns of the already existing tables, like renaming and changing the data type and size of the columns.
+3-The DROP command deletes the defined table with all the table data, associated indexes, constraints, triggers, and permission specifications.
+4-The TRUNCATE command deletes all the data and records from an existing table, including the allocated spaces for the records. Unlike the DROP command, it does not delete the table from the database. It works similarly to the DELETE statement without a WHERE clause.
+5-The RENAME command changes the table name when the user or administrator wants to give a more relevant name to it.
+
+
+DDL | DML | DCL
+|---|---|---|
+DDL stands for Data Definition Language.|DML stands for Data Manipulation Language.|DCL stands for Data Control Language.
+It helps us to define the structure of the database.|It helps us to manage the data.|t helps us to control the access and permission of the database.
+It affects the entire table data.|It only affects the specified row(s) of the table.|It applies to the complete table.
+Changes are permanent.|We can roll back our changes in the DML language.|We can roll back the changes in the DCL language.
+It helps in defining the fields or columns of the tables.|It helps us to define rows or records of the tables.|It helps us to control access to the information in the database.
+They are auto-committed (changes made are permanent).|They are not auto-committed (changes are not permanent).|They are not auto-committed (changes are not permanent). 
+They don't have further classification.|They are of two types procedural and non-procedural.|They don't have any further classification.
+Commands used: CREATE, ALTER, TRUNCATE, RENAME, DROP.|Commands used: SELECT, UPDATE, DELETE, INSERT.|Commands used: REVOKE, GRANT.
