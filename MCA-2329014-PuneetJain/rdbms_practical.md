@@ -28,4 +28,9 @@ A Database Management System (DBMS) is a specialized software designed to store,
 A DBMS supports various applications, from simple storage and retrieval tasks to complex data-driven systems, by implementing efficient data access and management practices. Additionally, the system can handle concurrent users, maintain transactional consistency, and provide robust backup and recovery options, making it an essential component in any data-centric environment.
 
 **Types of databases:**
-(1)
+</br>(1)MySQL </br>(2)MariaDB </br>(3)Oracle </br>(4)PostgreSQL </br>(5)SQLite 
+
+**MySQL**:
+
+
+
