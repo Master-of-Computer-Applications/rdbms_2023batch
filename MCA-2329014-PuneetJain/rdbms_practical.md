@@ -21,6 +21,7 @@ Sr no|  Experiment Name |  Remarks|
 |  10|Creating Packages and applying Triggers.   |  |
 |  11|Creating Arrays and Nested Tables.  |  |
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## *1. Comparative study of various Database Management Systems.*
 ***Database Management System:***
 A Database Management System (DBMS) is a specialized software designed to store, retrieve, and manipulate data. It acts as a mediator between the database, applications, and user interfaces to manage and organize data effectively. The system provides a comprehensive suite of tools to govern databases, ensuring data security, consistency, and integrity.
@@ -121,18 +122,19 @@ SQLite is a self-sufficient, serverless, and no-configuration-required database 
 
 **(iii)Restricted scalability**-Owing to its serverless structure, SQLite is not tailored for extensive applications or distributed settings. Its performance may diminish when handling substantial datasets or elevated levels of concurrent access.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## *2. Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL).*
 ***Differences Between DDL, DML,and DCL:***
+
 **DDL Commands**:
 
 DDL commands are SQL commands used to modify or alter the structure of the database. The following is the list of DDL commands in SQL:
 
-1-The CREATE command creates database objects, tables, and triggers.
-2-ALTER command alters the database structure by adding, deleting, and modifying columns of the already existing tables, like renaming and changing the data type and size of the columns.
-3-The DROP command deletes the defined table with all the table data, associated indexes, constraints, triggers, and permission specifications.
-4-The TRUNCATE command deletes all the data and records from an existing table, including the allocated spaces for the records. Unlike the DROP command, it does not delete the table from the database. It works similarly to the DELETE statement without a WHERE clause.
-5-The RENAME command changes the table name when the user or administrator wants to give a more relevant name to it.
+1-The CREATE command creates database objects, tables, and triggers.</br>
+2-ALTER command alters the database structure by adding, deleting, and modifying columns of the already existing tables, like renaming and changing the data type and size of the columns.</br>
+3-The DROP command deletes the defined table with all the table data, associated indexes, constraints, triggers, and permission specifications.</br>
+4-The TRUNCATE command deletes all the data and records from an existing table, including the allocated spaces for the records. Unlike the DROP command, it does not delete the table from the database. It works similarly to the DELETE statement without a WHERE clause.</br>
+5-The RENAME command changes the table name when the user or administrator wants to give a more relevant name to it.</br>
 
 
 DDL | DML | DCL
@@ -146,7 +148,7 @@ They are auto-committed (changes made are permanent).|They are not auto-committe
 They don't have further classification.|They are of two types procedural and non-procedural.|They don't have any further classification.
 Commands used: CREATE, ALTER, TRUNCATE, RENAME, DROP.|Commands used: SELECT, UPDATE, DELETE, INSERT.|Commands used: REVOKE, GRANT.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## *3. How to apply Constraints at various levels.*
 SQL constraints are used to specify rules for the data in a table.
 
@@ -154,14 +156,31 @@ Constraints are used to limit the type of data that can go into a table. This en
 
 Constraints can be column level or table level. Column level constraints apply to a column, and table level constraints apply to the whole table.
 
-The following constraints are commonly used in SQL:
+-The following constraints are commonly used in SQL:
 
-  (1) NOT NULL - Ensures that a column cannot have a NULL value(/br)
-  (2) UNIQUE - Ensures that all values in a column are different
-  (3) PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
-  (4) FOREIGN KEY - Prevents actions that would destroy links between tables
-  (5) CHECK - Ensures that the values in a column satisfies a specific condition
-  (6) DEFAULT - Sets a default value for a column if no value is specified
-  (7) CREATE INDEX - Used to create and retrieve data from the database very quickly
+  (1) NOT NULL - Ensures that a column cannot have a NULL value</br>
+  (2) UNIQUE - Ensures that all values in a column are different</br>
+  (3) PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table</br>
+  (4) FOREIGN KEY - Prevents actions that would destroy links between tables</br>
+  (5) CHECK - Ensures that the values in a column satisfies a specific condition</br>
+  (6) DEFAULT - Sets a default value for a column if no value is specified</br>
+  (7) CREATE INDEX - Used to create and retrieve data from the database very quickly</br>
 
+## **(1) NOT NULL Constraint**- 
+By default, a column can hold NULL values.
+
+The NOT NULL constraint enforces a column to NOT accept NULL values.
+
+This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field.
+
+_QUERY:_
+```python
+CREATE TABLE class (
+    ID int NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    LastName varchar(255) NOT NULL,
+    Age int
+);
+```
+_Output:_ 
 
