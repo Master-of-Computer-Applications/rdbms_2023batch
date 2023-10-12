@@ -219,12 +219,21 @@ _Output:_
 **(3)Check Constraint**<br>
 The CHECK constraint is used to limit the value range that can be placed in a column.<br>
 If you define a CHECK constraint on a column it will allow only certain values for this column.<br>
-If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns
+If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row;
 
 _Query:_<br>
 ```python
 Create table class values (Id int NOT NULL, FirstName varchar(255), LastName Varchar(255), Age int, CHECK (Age<=23));
 ```
 _Output:_
+![Screenshot from 2023-10-12 16-04-39](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/b3ecf80a-717c-486d-8edb-78e33f8929fd)
 
-in the row.
+**(4)Default Constraint**<br>
+The DEFAULT constraint is used to set a default value for a column.<br>
+The default value will be added to all new records, if no other value is specified.
+
+_Query:_<br>
+```python
+Create table class values (Id int NOT NULL, FirstName varchar(255), LastName Varchar(255), Age int, CHECK (Age<=23));
+```
+_Output:_
