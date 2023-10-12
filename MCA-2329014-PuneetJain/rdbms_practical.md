@@ -145,3 +145,23 @@ It helps in defining the fields or columns of the tables.|It helps us to define 
 They are auto-committed (changes made are permanent).|They are not auto-committed (changes are not permanent).|They are not auto-committed (changes are not permanent). 
 They don't have further classification.|They are of two types procedural and non-procedural.|They don't have any further classification.
 Commands used: CREATE, ALTER, TRUNCATE, RENAME, DROP.|Commands used: SELECT, UPDATE, DELETE, INSERT.|Commands used: REVOKE, GRANT.
+
+
+## *3. How to apply Constraints at various levels.*
+SQL constraints are used to specify rules for the data in a table.
+
+Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted.
+
+Constraints can be column level or table level. Column level constraints apply to a column, and table level constraints apply to the whole table.
+
+The following constraints are commonly used in SQL:
+
+  (1) NOT NULL - Ensures that a column cannot have a NULL value(/br)
+  (2) UNIQUE - Ensures that all values in a column are different
+  (3) PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+  (4) FOREIGN KEY - Prevents actions that would destroy links between tables
+  (5) CHECK - Ensures that the values in a column satisfies a specific condition
+  (6) DEFAULT - Sets a default value for a column if no value is specified
+  (7) CREATE INDEX - Used to create and retrieve data from the database very quickly
+
+
