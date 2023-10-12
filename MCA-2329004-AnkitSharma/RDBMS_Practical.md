@@ -21,32 +21,7 @@ frontSr no|  Experiment Name |  Remarks|
 |  9|How to run Stored Procedures and Functions.   |  |
 |  10|Creating Packages and applying Triggers.  |  |
 |   11|Creating Arrays and Nested Tables.   |  |
-## *1. Comparative study of various Database Management Systems.*
-**Database Mangement System(DBMS)**<br>
-A Database Management system is a specialized software designed to store, retrieve, and manipulate data. It acts as a mediator between the database, applications, and user interfaces to manage and organize data effectively. The system provides a comprehensive suite of tools to govern databases, ensuring data security, consistency, and integrity.
-Puneet Jain, [12/10/23 11:23 AM]
-# <p align="center">Guru Nanak Dev Engineering College, Ludhiana</p>
-![front](https://user-images.githubusercontent.com/82715927/121130621-4a076380-c84c-11eb-85e0-81619d36d244.png)
-
-### <p align="center">Practical File</p>
-### <p align="center">Of</p>
-### <p align="center">Relational Database Management Systems Lab</p>
-### <p align="center">Course Code: "PGCA- 2208"</p>
-### <p><h3 align="left">Submitted to :</br>Mr.Satinderpal Singh</h3><h3 align="right">Submitted by: </br>Puneet Jain</br>(MCA 1st sem.)</br>CRN:-2029014</h3></p>
-
-Sr no|  Experiment Name |  Remarks|   
-|---|---|---|
-|  1| Comparative study of various Database Management Systems.  |   |   
-|  2|Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL).   |   |   
-|  3|How to apply Constraints at various levels. |   |   
-|  4|View data in the required form using Operators, Functions and Joins.  |  |
-|  5|Creating different types of Views for tailored presentation of data.  |  |
-|  6|How to apply Conditional Controls in PL/SQL.   |  |
-|  7|Error Handling using Internal Exceptions and External Exceptions.   |  |
-|  8|Using various types of Cursors   |  |
-|  9|How to run Stored Procedures and Functions.   |  |
-|  10|Creating Packages and applying Triggers.   |  |
-|  11|Creating Arrays and Nested Tables.  |  |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## *1. Comparative study of various Database Management Systems.*
 ***Database Management System:***
@@ -94,7 +69,7 @@ MariaDB, an open-source fork from MySQL, is a great SQL database example with co
 
 (ii)Gaps between MySQL and MariaDB update versions-Though the MariaDB team is constantly merging its code with MySQL’s, it’s already not that simple to keep them in line. Given the currently existing differences between MariaDB 10.6 and MySQL 8.0.32, further deviations are yet to come. Additionally, MySQL engineers introduced some native features to the code that are only available to commercial MySQL users. This can create compatibility issues or data migration problems from MariaDB back to MySQL.
 
-Puneet Jain, [12/10/23 11:23 AM]
+
 ## ***(3)Oracle***-
 Oracle is a relational database management system created and run by the Oracle Corporation. Among all the types of SQL databases, Oracle stands out. Currently, it supports multiple data models like document, graph, relational, and key-value within a single database. In its latest releases, it refocused on cloud computing. Oracle database engine licensing is fully proprietary, with both free and paid options available.
 
@@ -123,7 +98,7 @@ The PostgreSQL database management system shares its popularity with MySQL. This
 
 (iii)Easily-integrated third-party tools-The PostgreSQL database management system has the strong support of additional tools, both free and commercial. The scope of these includes extensions to improve many aspects. For example, ClusterControl provides impressive assistance in managing, monitoring, and scaling SQL and NoSQL open-source databases. To make data comparison and synchronization more effective, consider using DB Data Directive. In case you’re going to scale up your data to heavy workloads, the pgBackRest backup and restore system will be a nice option to choose from.
 
-Puneet Jain, [12/10/23 11:23 AM]
+
 (iv)Open-source and community-driven support-Postgres is completely open-source and supported by its community, strengthening it as a complete ecosystem. Additionally, developers can always expect free and prompt community assistance.
 
 ## Cons of PostgreSQL:
@@ -150,7 +125,7 @@ SQLite is a self-sufficient, serverless, and no-configuration-required database 
 (ii)Absence of advanced features-SQLite lacks some of the sophisticated features found in other database management systems, such as stored procedures, triggers, or user-defined functions.
 
 (iii)Restricted scalability-Owing to its serverless structure, SQLite is not tailored for extensive applications or distributed settings. Its performance may diminish when handling substantial datasets or elevated levels of concurrent access.
-
+---------------------------------------------------------------------------------------------------------------------------------
 
 ## *2. Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL).*
 ***Differences Between DDL, DML,and DCL:***
@@ -165,3 +140,91 @@ DDL commands are SQL commands used to modify or alter the structure of the datab
 5-The RENAME command changes the table name when the user or administrator wants to give a more relevant name to it.
 
 A DBMS supports various applications, from simple storage and retrieval tasks to complex data-driven systems, by implementing efficient data access and management practices. Additionally, the system can handle concurrent users, maintain transactional consistency, and provide robust backup and recovery options, making it an essential component in any data-centric environment.
+
+------------------------------------------------------------------------------------------------------------------------
+## *3. How to apply Constraints at various levels.*
+SQL constraints are used to specify rules for the data in a table.
+
+Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted.
+
+Constraints can be column level or table level. Column level constraints apply to a column, and table level constraints apply to the whole table.
+
+The following constraints are commonly used in SQL:
+
+1)  NOT NULL - Ensures that a column cannot have a NULL value<br>
+2)    UNIQUE - Ensures that all values in a column are different
+3)    PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+4)    FOREIGN KEY - Prevents actions that would destroy links between tables
+5)    CHECK - Ensures that the values in a column satisfies a specific condition
+6)    DEFAULT - Sets a default value for a column if no value is specified
+7)    CREATE INDEX - Used to create and retrieve data from the database very quickly
+
+  **(1) Not Null Constraint**<br>
+  By default, a column can hold NULL values.<br>
+The NOT NULL constraint enforces a column to NOT accept NULL values.<br>
+This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field.
+
+_Query:_<br>
+```python
+Create table class values (Id int NOT NULL, FirstName varchar(255), LastName Varchar(255), Age int);
+```
+_Output:_
+
+![Screenshot from 2023-10-12 14-33-34](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/08f7c5fb-8da5-4a94-bef9-adcc150cd3b2)
+
+**(2) Unique Constraint**<br>
+The UNIQUE constraint ensures that all values in a column are different.<br>
+Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.
+A PRIMARY KEY constraint automatically has a UNIQUE constraint.<br>
+However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.
+
+_Query:_<br>
+```python
+Create table class values (Id int UNIQUE, FirstName varchar(255), LastName Varchar(255), Age int);
+```
+_Output:_
+
+![Screenshot from 2023-10-12 14-47-39](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/aa231afa-af04-4252-b3c5-fc780cefea2f)
+
+**(3)Primary key Constraint**<bt>
+The PRIMARY KEY constraint uniquely identifies each record in a table.<br>
+Primary keys must contain UNIQUE values, and cannot contain NULL values.<br>
+A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).
+
+_Query:_<br>
+```python
+Create table class values (Id int PRIMARY KEY, FirstName varchar(255), LastName Varchar(255), Age int);
+```
+_Output:_
+![Screenshot from 2023-10-12 15-11-56](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/bbea3ec7-ae67-4471-80f3-633373eb4e1b)
+
+**(3)Foreign key Constraint**<br>
+The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.<br>
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.<br>
+The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
+
+_Query:_<br>
+```python
+Create table Department (
+DeptId int,
+Field varchar(255)
+Id int,
+PRIMARY KEY(DeptId),
+FOREIGN KEY(ID) REFERENCES class(ID)
+);
+```
+_Output:_
+![Screenshot from 2023-10-12 15-36-38](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/f41a212f-4efb-4e78-a53a-8e99ab47121e)
+
+**(3)Check Constraint**<br>
+The CHECK constraint is used to limit the value range that can be placed in a column.<br>
+If you define a CHECK constraint on a column it will allow only certain values for this column.<br>
+If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns
+
+_Query:_<br>
+```python
+Create table class values (Id int NOT NULL, FirstName varchar(255), LastName Varchar(255), Age int, CHECK (Age<=23));
+```
+_Output:_
+
+in the row.
