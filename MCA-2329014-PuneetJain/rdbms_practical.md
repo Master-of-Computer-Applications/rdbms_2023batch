@@ -182,5 +182,111 @@ CREATE TABLE class (
     Age int
 );
 ```
-_Output:_ 
 
+_Output:_ 
+![Screenshot from 2023-10-12 14-33-26](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/635a0b17-ff22-411e-805e-b541cb56acb1)
+
+
+## **(2) UNIQUE Constraints**- 
+The UNIQUE constraint ensures that all values in a column are different.
+
+Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.
+
+A PRIMARY KEY constraint automatically has a UNIQUE constraint.
+
+However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.
+
+_QUERY:_
+```python
+CREATE TABLE class (
+    ID int NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    LastName varchar(255) NOT NULL,
+    Age int,
+    UNIQUE(ID)
+);
+```
+
+_Output:_ 
+![Screenshot from 2023-10-12 14-47-24](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/f7e82b0f-9f41-4845-957b-b850f8c42ccd)
+
+
+## **(3) PRIMARY KEY Constraint**- 
+The PRIMARY KEY constraint uniquely identifies each record in a table.
+
+Primary keys must contain UNIQUE values, and cannot contain NULL values.
+
+A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).
+
+_QUERY:_
+```python
+CREATE TABLE class (
+    ID int NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    LastName varchar(255) NOT NULL,
+    Age int,
+    PRIMARY KEY(ID)
+);
+```
+
+_Output:_ 
+![Screenshot from 2023-10-12 15-01-58](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/e78fb133-cec2-47ce-8f2c-04a1166f1c96)
+
+
+## **(4) FOREIGN KEY Constraint**- 
+The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+
+The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
+
+_QUERY:_
+```python
+CREATE TABLE Department (
+     DepID int,
+     Field varchar(255),
+     ID int,
+     PRIMARY KEY(DepID),
+     FOREIGN KEY(ID) REFERENCES class(ID)
+);
+```
+
+_Output:_ 
+![Screenshot from 2023-10-12 15-36-47](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/79c9fbec-f961-4cd4-a733-7c27dc3e10e5)
+
+
+## **(5) CHECK Constraint**- 
+The CHECK constraint is used to limit the value range that can be placed in a column.
+
+If you define a CHECK constraint on a column it will allow only certain values for this column.
+
+If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.
+
+_QUERY:_
+```python
+CREATE TABLE class (
+    ID int NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    LastName varchar(255) NOT NULL,
+    Age int CHECK (Age<=23)
+);
+```
+
+_Output:_ 
+![Screenshot from 2023-10-12 15-56-38](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/344b8328-ca8e-49c7-8963-c9c0982fc8e3)
+
+
+## **(6) DEFAULT Constraint**- 
+The DEFAULT constraint is used to set a default value for a column.
+
+The default value will be added to all new records, if no other value is specified.
+
+_QUERY:_
+```python
+CREATE TABLE class (
+    ID int NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    LastName varchar(255) NOT NULL,
+    Age int CHECK (Age<=23)
+);
+```
