@@ -30,7 +30,7 @@ A DBMS supports various applications, from simple storage and retrieval tasks to
 **Types of databases:**
 </br>(1)MySQL </br>(2)MariaDB </br>(3)Oracle </br>(4)PostgreSQL </br>(5)SQLite 
 
-## **(1)MySQL**-
+## ***(1)MySQL***-
 MySQL is one of the most popular relational database systems. Originally an open-source solution, MySQL is now owned by Oracle Corporation. Today, MySQL is a pillar of LAMP application software. That means it’s a part of Linux, Apache, MySQL, and Perl/PHP/Python stack. Having C and C++ under the hood, MySQL works well with such system platforms as Windows, Linux, MacOS, IRIX, and others.
 
 ### **Pros of MySQL:**
@@ -49,7 +49,7 @@ MySQL is one of the most popular relational database systems. Originally an open
 
 **(iii)Limited compliance with SQL standards**-Structured Query Language has specific standards. MySQL doesn’t completely follow them, i.e., MySQL provides no support for some standard SQL features. On the other hand, MySQL has some extensions and distinct features that don’t match the Structured Query Language standards. It’s not a big deal for small web applications. The issues may appear when you have to shift to other databases, which will likely happen when your business starts growing.
 
-## **(2)MariaDB**-
+## ***(2)MariaDB***-
 MariaDB, an open-source fork from MySQL, is a great SQL database example with commercial support. It works under a GNU General Public License and has similar commands, APIs, and libraries to MySQL.
 
 ### **Pros of MariaDB:**
@@ -66,7 +66,7 @@ MariaDB, an open-source fork from MySQL, is a great SQL database example with co
 
 **(ii)Gaps between MySQL and MariaDB update versions**-Though the MariaDB team is constantly merging its code with MySQL’s, it’s already not that simple to keep them in line. Given the currently existing differences between MariaDB 10.6 and MySQL 8.0.32, further deviations are yet to come. Additionally, MySQL engineers introduced some native features to the code that are only available to commercial MySQL users. This can create compatibility issues or data migration problems from MariaDB back to MySQL.
 
-## **(3)Oracle**-
+## ***(3)Oracle***-
 Oracle is a relational database management system created and run by the Oracle Corporation. Among all the types of SQL databases, Oracle stands out. Currently, it supports multiple data models like document, graph, relational, and key-value within a single database. In its latest releases, it refocused on cloud computing. Oracle database engine licensing is fully proprietary, with both free and paid options available.
 
 ## **Pros of Oracle:**
@@ -83,7 +83,7 @@ Oracle is a relational database management system created and run by the Oracle 
 
 **(iii)Hard learning curve**-Oracle database is not a system to start using right away. It’s better to have certified Oracle DB engineers to run it. Oracle’s documentation, while covering many issues, can sometimes be overwhelming and even confusing. So, to install and run an Oracle database, you’ll have to consider hiring dedicated experts.
 
-## **(4)PostgreSQL**- 
+## ***(4)PostgreSQL***- 
 The PostgreSQL database management system shares its popularity with MySQL. This is an object-relational DBMS where user-defined objects and table approaches are combined to build more complex data structures. Besides that, PostgreSQL has a lot of similarities with MySQL. It’s aimed at strengthening the standards of compliance and extensibility. Consequently, it can process any workload, for both single-machine products and complex applications. Owned and developed by PostgreSQL Global Development Group, it still remains completely open-source. This DBMS is available for use with platforms like Microsoft, iOS, Android, and many more.
 
 ## **Pros of PostgreSQL:**
@@ -102,7 +102,7 @@ The PostgreSQL database management system shares its popularity with MySQL. This
 
 **(ii)Lack of reporting and auditing instruments**-A significant shortcoming of PostgreSQL is the absence of revising tools that would show the current condition of a database. You have to continuously check if something goes wrong. There’s always a risk that DB engineers will notice a failure too late.
 
-## **(5)SQLite**- 
+## ***(5)SQLite***- 
 SQLite is a self-sufficient, serverless, and no-configuration-required database management system. Frequently utilized as an embedded database, it is popular for small-scale mobile and desktop applications.
 
 ## **Pros of SQLite:**
