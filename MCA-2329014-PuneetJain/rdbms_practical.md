@@ -21,7 +21,8 @@ Sr no|  Experiment Name |  Remarks|
 |  10|Creating Packages and applying Triggers.   |  |
 |  11|Creating Arrays and Nested Tables.  |  |
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## *1. Comparative study of various Database Management Systems.*
 ***Database Management System:***
 A Database Management System (DBMS) is a specialized software designed to store, retrieve, and manipulate data. It acts as a mediator between the database, applications, and user interfaces to manage and organize data effectively. The system provides a comprehensive suite of tools to govern databases, ensuring data security, consistency, and integrity.
@@ -122,11 +123,11 @@ SQLite is a self-sufficient, serverless, and no-configuration-required database 
 
 **(iii)Restricted scalability**-Owing to its serverless structure, SQLite is not tailored for extensive applications or distributed settings. Its performance may diminish when handling substantial datasets or elevated levels of concurrent access.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## *2. Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL).*
-***Differences Between DDL, DML,and DCL:***
 
-**DDL Commands**:
+## **DDL Commands**:
 
 DDL commands are SQL commands used to modify or alter the structure of the database. The following is the list of DDL commands in SQL:
 
@@ -136,7 +137,27 @@ DDL commands are SQL commands used to modify or alter the structure of the datab
 4-The TRUNCATE command deletes all the data and records from an existing table, including the allocated spaces for the records. Unlike the DROP command, it does not delete the table from the database. It works similarly to the DELETE statement without a WHERE clause.</br>
 5-The RENAME command changes the table name when the user or administrator wants to give a more relevant name to it.</br>
 
+## **DML Commands**:
 
+DML commands are SQL commands that perform operations like storing data in database tables, modifying and deleting existing rows, retrieving data, or updating data.
+
+  1-The SELECT command fetches data or records from one or more tables in the SQL database. The retrieved data gets displayed in a result table known as the result set.</br>
+  2-The INSERT command inserts one or more new records into the table in the SQL database.</br>
+  3-The UPDATE command updates or changes the existing data or records in a table in the SQL database.</br>
+  4-The DELETE command deletes all the existing records and the allocated spaces from a table in the SQL database. We can use the WHERE clause with the AND or OR operators to delete selected rows from the database.</br>
+  5-The MERGE command deals with insertion, updation, and deletion in the same SQL statement.</br>
+  6-The CALL command calls or invokes a stored procedure.</br>
+  7-The EXPLAIN PLAN command describes the access path to the data. It returns the execution plans for the statements like INSERT, UPDATE, and DELETE in the readable format for users to check the SQL Queries.</br>
+  8-The LOCK TABLE command ensures the consistency, atomicity, and durability of database transactions like reading and writing operations.</br>
+
+## **DCL Commands**:
+
+DCL commands are SQL commands that perform operations like giving and withdrawing database access from the user.
+
+  1-The GRANT command gives access privileges or permissions like ALL, SELECT, and EXECUTE to the database objects like views, tables, etc, in SQL.</br>
+  2-The REVOKE command withdraws access privileges or permissions given with the GRANT command.
+
+## ***Differences Between DDL, DML,and DCL:***
 DDL | DML | DCL
 |---|---|---|
 DDL stands for Data Definition Language.|DML stands for Data Manipulation Language.|DCL stands for Data Control Language.
@@ -148,7 +169,8 @@ They are auto-committed (changes made are permanent).|They are not auto-committe
 They don't have further classification.|They are of two types procedural and non-procedural.|They don't have any further classification.
 Commands used: CREATE, ALTER, TRUNCATE, RENAME, DROP.|Commands used: SELECT, UPDATE, DELETE, INSERT.|Commands used: REVOKE, GRANT.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## *3. How to apply Constraints at various levels.*
 SQL constraints are used to specify rules for the data in a table.
 
@@ -283,10 +305,35 @@ The default value will be added to all new records, if no other value is specifi
 
 _QUERY:_
 ```python
+CREATE TABLE office(
+       EmpName varchar(100) not null default'unnamed',
+       Age int not null default'22',
+       City varchar(100) default'Ludhiana'
+);
+```
+
+_Output:_
+![Screenshot from 2023-10-12 20-44-31](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/8990c3e0-3fe2-4018-8223-9de2a8c2d0b7)
+
+
+## **(7) CREATE INDEX Statement**- 
+The CREATE INDEX statement is used to create indexes in tables.
+
+Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+
+_QUERY:_
+```python
 CREATE TABLE class (
     ID int NOT NULL,
     FirstName varchar(255) NOT NULL,
     LastName varchar(255) NOT NULL,
-    Age int CHECK (Age<=23)
+    Age int
 );
+ CREATE INDEX idx_LastName on class(LastName);
 ```
+
+_Output:_
+![Screenshot from 2023-10-12 20-55-10](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/1953aa5e-97e8-4c44-94f5-216fb728d2ca)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
