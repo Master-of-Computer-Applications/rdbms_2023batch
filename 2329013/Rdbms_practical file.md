@@ -1,6 +1,5 @@
-Experiement-1:
-
-Comparative study of various Database Management System:
+            Experiement-1:
+ Comparative study of various Database                Management System:
 
 
 A collection of information which is managed such that it can be updated and easily accessed is called a database. A 
@@ -81,5 +80,4 @@ management system, which comprises tables.
 Data Definition Language (DDL) – It is a syntax which helps in modifying data present in the form of tables or 
 indexes
 Primary Key – Each file has a unique key. Using the Primary Key, a specific file can be identified
-Foreign Key – The relation between a field in one table and component identified by a primary key can be detected 
-using a Foreign Key
+Foreign Key – The relation between a field in one table and component identified by a primary key can be detected using a Foreign Key
