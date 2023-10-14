@@ -141,7 +141,7 @@ DDL commands are SQL commands used to modify or alter the structure of the datab
 
 A DBMS supports various applications, from simple storage and retrieval tasks to complex data-driven systems, by implementing efficient data access and management practices. Additionally, the system can handle concurrent users, maintain transactional consistency, and provide robust backup and recovery options, making it an essential component in any data-centric environment.
 
-------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## *3. How to apply Constraints at various levels.*
 SQL constraints are used to specify rules for the data in a table.
 
