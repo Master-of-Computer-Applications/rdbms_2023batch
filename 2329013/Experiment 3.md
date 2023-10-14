@@ -1,5 +1,5 @@
                             Experiment-3:
-                How to apply constraints at various levels:
+  How to apply constraints at various levels:
 SQL Constraints:-
 SQL Constraints are the rules applied to a data columns or the complete table to limit the type of data that can go
 into a table. When you try to perform any INSERT, UPDATE, or DELETE operation on the table, RDBMS will
