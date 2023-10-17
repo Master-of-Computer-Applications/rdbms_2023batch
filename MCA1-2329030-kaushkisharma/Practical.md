@@ -105,7 +105,23 @@ Vendor Lock-In:
 Resource Intensive:
    DBMS systems require significant computational and memory resources, which can be demanding on hardware infrastructure.
  
-
 Data Security Concerns:
- While DBMS systems offer security features, they are not immune to security breaches. Protecting the database from unauthorized access remains a significant challenge.
-.....
+ While DBMS systems offer security features, they are not immune to security breaches. Protecting the database from 
+ unauthorized access remains a significant challenge.
+
+ 
+## 1 write cosnstraints of sql
+_CODE:_
+```sql
+Create table Student
+    -> (
+    -> sid int,
+    -> Name varchar(30),
+    -> rollno int,
+    -> city varchar(50),
+    -> fees decimal(18.2)
+    -> );
+
+
+```
+![Screenshot from 2023-10-12 15-43-52](https://github.com/kaushkis/rdbms_2023batch/assets/147362653/0a6fd2e1-895b-461a-b0dd-72f41938a6d7)
