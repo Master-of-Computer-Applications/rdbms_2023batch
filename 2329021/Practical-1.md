@@ -1,6 +1,6 @@
 NAME - Sukhpreet Singh
 <br>CRN - 2329021
-<br>Practical - 1
+<br>PRACTICAL - 1
 <br>QUESTION :- Comparative study of various database management system ?
 
  # <p align="center">What is a database management system</p>
