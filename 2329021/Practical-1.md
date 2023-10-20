@@ -19,4 +19,14 @@ NAME - Sukhpreet Singh
 <br><b>DBMS can be classified into two types:</b> Relational Database Management System (RDBMS) and Non-Relational Database Management System (NoSQL or Non-SQL)
 <br><b>RDBMS:</b> Data is organized in the form of tables and each table has a set of rows and columns. The data is related to each other through primary and foreign keys.
 <br><b>NoSQL:</b> Data is organized in the form of key-value pairs, document, graph, or column-based. These are designed to handle large-scale, high-performance scenarios.
-</p>
+</p> <br>
+
+# <p align="center">Comparative study of various database management system</p>
+<div align="center">
+<img width="800" alt="dbms" src="https://github.com/sukhlotey/rdbms_2023batch/assets/82471879/6e5429ed-7651-4e2d-9467-17dc518e4ff3">
+
+ 
+
+
+</div>
+
