@@ -15,7 +15,7 @@ Commands used: CREATE, ALTER, TRUNCATE, RENAME, DROP.|Commands used: SELECT, UPD
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  # <p align="center">Assignment 2 </p>
 
-      # <p align="left">1Codd Rules.</p>                                                           
+ # <p align="center">1-Codd Rules.</p>                                                           
  Rule 0: The Foundation Rule:-
 The database must be in relational form. So that the system can handle the database through its relational capabilities.
 
