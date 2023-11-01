@@ -84,30 +84,21 @@ Normalization is the process of minimizing redundancy from a relation or set of 
 Normalization of DBMS:-
 In database management systems (DBMS), normal forms are a series of guidelines that help to ensure that the design of a database is efficient, organized, and free from data anomalies. There are several levels of normalization, each with its own set of guidelines, known as normal forms.
 
- # <p align="left">Differences Between 3NF AND BNCF.</p>
+ # <p align="center">Differences Between 3NF AND BCNF.</p>
 
-  |3NF|BCNF|
-|---|---|
-                                                     
-  |3NF stands for Third Normal Form.|	BCNF stands for Boyce Codd Normal Form.|
-  |-----|-----|
-  
-  |It is less stronger than BCNF.|It is more stronger than 3NF.|
-  |-----|-----|
-  
-  |In 3NF the functional dependencies are already in 1NF and 2NF.|	In BCNF the functional dependencies are already in 1NF, 2NF and 3NF.|
-  |-----|-----|
-  
-  |The redundancy is high in 3NF.	|The redundancy is comparatively low in BCNF.|
-   |-----|-----|
-   
-  |In 3NF there is preservation of all functional dependencies.|	In BCNF there may or may not be preservation of all functional dependencies.|
-   |-----|-----|
-   
-  | It is comparatively easier to achieve.|It is difficult to achieve.|
-  |-----|-----|
-    
-  |Lossless decomposition can be achieved by 3NF.|	Lossless decomposition is hard to achieve in BCNF.|
-  |-----|-----|
-  
+   3NF  |  BCNF  
+   |  -----  |  -----|
+   It stands for Third Normal Form.|	It stands for Boyce Code Normal Form, .                                               
+   It is weaker than BCNF.	|It is stronger than 3NF.
+   All the relations which are in 3NF may or may not be in BCNF.|	All the relations that are in BNCF must be in 3NF.
+   3NF can be achieved without losing the dependency that is already there.|	The functional dependency may get lost while achieving BCNF form.
 
+   
+# <p align="center">Differences Between 4NF AND 5NF.</p>
+ 4NF |  5NF  
+   |   -----   |   -----|
+   A relation in 4NF must also be in BCNF.|	A relation in 5NF must also be in 4NF.
+   A relation in 4NF must not have any multi-valued dependency.|	A relation in 5NF must not have any join dependency.
+   A relation in 4NF may or may not be in 5NF.|	A relation in 5NF is always in 4NF.
+   4NF is less stronger in comparison to 5NF.|	5NF is more stronger than 4NF.
+   If a relation is in Fourth Normal Form then it will have more redundancy.|	If a relation is in Fifth Normal Form then it will less redundancy.
