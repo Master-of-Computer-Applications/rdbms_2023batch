@@ -13,7 +13,7 @@ They don't have further classification.|They are of two types procedural and non
 Commands used: CREATE, ALTER, TRUNCATE, RENAME, DROP.|Commands used: SELECT, UPDATE, DELETE, INSERT.|Commands used: REVOKE, GRANT
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                                                                  ASSIGNMENT-2
+ # <p align="center">Assignment 2 </p>
 
                                                                  CODD'S RULES
  Rule 0: The Foundation Rule:-
@@ -84,28 +84,30 @@ Normalization is the process of minimizing redundancy from a relation or set of 
 Normalization of DBMS:-
 In database management systems (DBMS), normal forms are a series of guidelines that help to ensure that the design of a database is efficient, organized, and free from data anomalies. There are several levels of normalization, each with its own set of guidelines, known as normal forms.
 
+ # <p align="left">Differences Between 3NF AND BNCF.</p>
 
-# <p align="left">DIFFERENCE BETWEEN 3 NF AND BNCF.</p>
-3NF|BNCF
+  |3NF|BCNF|
 |---|---|
-
-1.	3NF stands for Third Normal Form.|	BCNF stands for Boyce Codd Normal Form.
-2.	In 3NF there should be no transitive dependency that is no non prime attribute should be transitively dependent on the candidate key.|	In BCNF for any relation A->B, A should be a super key of relation.
-3.	It is less stronger than BCNF.|	It is comparatively more stronger than 3NF.
-4.	In 3NF the functional dependencies are already in 1NF and 2NF.|	In BCNF the functional dependencies are already in 1NF, 2NF and 3NF.
-5.	The redundancy is high in 3NF.	|The redundancy is comparatively low in BCNF.
-6.	In 3NF there is preservation of all functional dependencies.|	In BCNF there may or may not be preservation of all functional dependencies.
-7.	It is comparatively easier to achieve.|	It is difficult to achieve.
-8.	Lossless decomposition can be achieved by 3NF.|	Lossless decomposition is hard to achieve in BCNF.
-9.	
-The table is in 3NF if it is in 2NF and for each functional dependency X->Y at least following condition hold: 
-
-(i) X is a super key, 
-
-(ii) Y is prime attribute of table.|
-
-The table is in BCNF if it is in 3rd normal form and for each relation X->Y X should be super key.
-10.	3NF can be obtained without sacrificing all dependencies.|	Dependencies may not be preserved in BCNF.
-11.	3NF can be achieved without losing any information from the old table.|	For obtaining BCNF we may lose some information from old table.
-
+                                                     
+  |3NF stands for Third Normal Form.|	BCNF stands for Boyce Codd Normal Form.|
+  |-----|-----|
+  
+  |It is less stronger than BCNF.|It is more stronger than 3NF.|
+  |-----|-----|
+  
+  |In 3NF the functional dependencies are already in 1NF and 2NF.|	In BCNF the functional dependencies are already in 1NF, 2NF and 3NF.|
+  |-----|-----|
+  
+  |The redundancy is high in 3NF.	|The redundancy is comparatively low in BCNF.|
+   |-----|-----|
+   
+  |In 3NF there is preservation of all functional dependencies.|	In BCNF there may or may not be preservation of all functional dependencies.|
+   |-----|-----|
+   
+  | It is comparatively easier to achieve.|It is difficult to achieve.|
+  |-----|-----|
+    
+  |Lossless decomposition can be achieved by 3NF.|	Lossless decomposition is hard to achieve in BCNF.|
+  |-----|-----|
+  
 
