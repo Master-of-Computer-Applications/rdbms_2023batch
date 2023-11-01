@@ -57,7 +57,7 @@ The non-submersion rule defines RDBMS as a SQL language to store and manipulate 
 database system, it should not subvert or bypass integrity to transform data.
 
 
-                                                       ANOMALIES IN DATABASE
+ # <p align="center">Anomalies in database.</p>                                                   
 Anomaly means inconsistency in the pattern from the normal form. In Database Management System (DBMS), anomaly means the inconsistency occurred in the relational table during the operations performed on the relational table.
 
 There can be various reasons for anomalies to occur in the database. For example, if there is a lot of redundant data present in our database then DBMS anomalies can occur. If a table is constructed in a very poor manner then there is a chance of database anomaly. Due to database anomalies, the integrity of the database suffers.
