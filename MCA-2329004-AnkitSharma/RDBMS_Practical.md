@@ -569,5 +569,29 @@ select Orders.Order_Id, Customers.Customer_Name,Orders.Order_Date from Orders IN
 
 ```
 _Output:_
-
 ![Screenshot from 2023-11-02 14-56-36](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/422b8f63-9c12-441e-9703-902d10ba5064)
+
+
+## *5. Creating  Views for tailored presentation of data.*
+A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.<br>
+A view is created with the CREATE VIEW statement. 
+
+1) Creating a view:-<br>
+```python
+select * from class;
+create view students AS select FirstName, LastName from class where Id<4;
+select * from students;
+```
+_Output:_
+![Screenshot from 2023-11-02 23-23-52](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/79bbab86-ff0c-4881-a6bf-79da22e647d2)
+
+2) Deleting View:-<br>
+```python
+DROP VIEW STUDENT;
+```
+_Output:_
+
+![Screenshot from 2023-11-02 23-30-38](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/e29c8d4a-c573-4204-b91b-06a9751b1655)
+
+------------------------------------------------------------------------------------------------------------------------
+## *6. How to apply Conditional Controls in PL/SQL.*
