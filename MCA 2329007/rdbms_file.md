@@ -192,4 +192,4 @@ VALUES
 
 
 ![Screenshot from 2023-10-13 22-05-44](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/ad803f68-ce32-4286-aaf4-98f0122506fa)
-###Thank you
+### Thank you
