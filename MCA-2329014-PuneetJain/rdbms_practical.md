@@ -630,8 +630,13 @@ _QUERY:_
 ```python
 SELECT * FROM Orders;
 SELECT * FROM Customers;
-SELECT Orders.OrderID,Customers.CustomerName,Orders.OrderDate FROM Orders INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+SELECT Orders.OrderID,Customers.CustomerName,Orders.OrderDate
+       FROM Orders
+       INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 ```
 _Output:_
-![Screenshot from 2023-11-02 14-52-28](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/72b6e26b-db1b-41f3-84a6-71ad85e61ee0)
+![Screenshot from 2023-11-02 14-52-28](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/cf15cf0d-7db6-47ab-b284-3a52103b8b9b)
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## *5. Creating different types of Views for tailored presentation of data.*
