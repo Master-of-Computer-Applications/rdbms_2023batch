@@ -1,0 +1,141 @@
+Name-Ajaypal Singh Mahal
+Class roll number -2329001
+University roll number-2303281
+Assignment-1
+Submitted to -Prof. Satinderpal Singh
+Subject Code -PGCA -2203
+
+What are the difference between DDL,DML and DCL commands?
+DDL
+Data Definition Language
+ (DDL) statements are used to define the database structure orschema. 
+Some examples:
+o
+ 
+CREATE - to create objects in the database
+o
+ 
+ALTER - alters the structure of the database
+o
+ 
+DROP - delete objects from the database
+o
+ 
+TRUNCATE - remove all records from a table, including all spaces allocated for therecords are removed
+o
+ 
+COMMENT - add comments to the data dictionary
+o
+ 
+RENAME - rename an object
+
+DML
+Data Manipulation Language
+ (DML) statements are used for managing data within schema objects. 
+
+Some examples:
+o
+ SELECT - retrieve data from the a database
+o
+ 
+INSERT - insert data into a table
+o
+ 
+UPDATE - updates existing data within a table
+o
+ 
+DELETE - deletes all records from a table, the space for the records remain
+o
+ 
+MERGE - UPSERT operation (insert or update)
+o
+ 
+CALL - call a PL/SQL or Java subprogram
+o
+ 
+EXPLAIN PLAN - explain access path to data
+o
+ 
+LOCK TABLE - control concurrency
+
+DCL
+Data Control Language
+ (DCL) statements. Some examples:
+o
+ 
+GRANT - gives user's access privileges to database
+o
+ 
+REVOKE - withdraw access privileges given with the GRANT command
+TCL
+Transaction Control
+ (TCL) statements are used to manage the changes made by DMLstatements. It allows statements to be grouped together into logical transactions.
+o
+ 
+COMMIT - save work done
+ 
+o
+ 
+SAVEPOINT - identify a point in a transaction to which you can later roll back
+o
+ 
+ROLLBACK - restore database to original since the last COMMIT
+o
+ 
+SET TRANSACTION - Change transaction options like isolation level and whatrollback segment to useDML statements can be rollbacked where DDL are autocommit.
+
+DML commands can't be
+ DML commands can't be rollback when a DDL command is executed immediately after aDML. DDL after DML means "auto commit". The changes will return on disk not on the buffer. If the changes return on the buffer it is possible to rollback not from the disk.
+
+ the difference between DDL,DML,TCL and DCL:
+
+DDL COMMANDS:
+ CREATE,ALTER,DROP AND TRUNCATE ARE CALLED DDL COMMANDS. They arecalled Data Definition since they are used for defining the data. That is the structure of thedata is known through these DDL commands.
+
+DML COMMANDS:
+ DML commands are used for data manipulation. Some of the DML commandsinsert,select,update,delete etc. Even though select is not exactly a DML language commandoracle still recommends you to consider SELECT as an DML command.
+
+TCL:
+ For revoking the transactions and to make the data commit to the database we use TCL.Some of the TCL commands are:1. ROLLBACK2. COMMITROLLBACK is used for revoking the transactions until last commit.COMMIT is used for commiting the transactions to the database.Once we commit we cannot rollback. Once we rollback we cannot commit.Commit and Rollback are generally used to commit or revoke the transactions that are withregard to DML commands.
+
+DCL:
+ Data Control Language is used for the control of data. That is a user can access any data based on the priveleges given to him. This is done through DATA CONTROL LANGUAGE.Some of the DCL Commands are:1. GRANT2. REVOKE.SQL statements are often divided into three categories:DML (Data Manipulation Language). These SQL statements are used to retrieve andmanipulate data. This category encompasses the most fundamental commands including
+
+ 
+DELETE, INSERT, SELECT, and UPDATE. DML SQL statements have only minordifferences between SQL variations. DML SQL commands include the following:
+o
+ 
+DELETE to remove rows.
+o
+ 
+INSERT to add a row.
+o
+ 
+SELECT to retrieve row.
+o
+ 
+UPDATE to change data in specified columns.DDL (Data Definition Language). These SQL statements define the structure of a database,including rows, columns, tables, indexes, and database specifics such as file locations. DDLSQL statements are more part of the DBMS and have large differences between the SQLvariations. DML SQL commands include the following:
+o
+ 
+CREATE to make a new database, table, index, or stored query.
+o
+ 
+DROP to destroy an existing database, table, index, or view.
+o
+ 
+DBCC (Database Console Commands) statements check the physical and logicalconsistency of a database.DCL (Data Control Language). These SQL statements control the security and permissions ofthe objects or parts of the database(s). DCL SQL statements are also more part of the DBMSand have large differences between the SQL variations. DML SQL commands include thefollowing:
+o
+ 
+GRANT to allow specified users to perform specified tasks.
+o
+ 
+DENY to disallow specified users from performing specified tasks.
+o
+ 
+REVOKE to cancel previously granted or denied permissions.
+
+Which 's the fastest command 
+What is the fastest command type from the 3 command types: DDL, DML and DCL?
+During the execution of DDL command. DDL command would not copy the actual content to rollback tablespace, hence it is fast compared to DML command
+
+
