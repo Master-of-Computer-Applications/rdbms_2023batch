@@ -232,8 +232,342 @@ _Output:_
 The DEFAULT constraint is used to set a default value for a column.<br>
 The default value will be added to all new records, if no other value is specified.
 
-_Query:_<br>
+_Query:_<br> 
 ```python
-Create table class values (Id int NOT NULL, FirstName varchar(255), LastName Varchar(255), Age int, CHECK (Age<=23));
+CREATE TABLE office(
+       EmpName varchar(100) not null default'unnamed',
+       Age int not null default'22',
+       City varchar(100) default'Ludhiana'
+);
+```
+
+_Output:_
+![Screenshot from 2023-11-02 12-06-30](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/82d32779-a466-4582-80f8-422bb08513f3)
+
+
+## (7) CREATE INDEX Statement- 
+The CREATE INDEX statement is used to create indexes in tables.
+
+Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+
+_QUERY:_
+```python
+CREATE TABLE class (
+    ID int NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    LastName varchar(255) NOT NULL,
+    Age int
+);
+ CREATE INDEX idx_LastName on class(LastName);
+```
+
+_Output:_
+
+![Screenshot from 2023-11-02 12-26-09](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/1ba79478-e695-4723-8de8-5e156d3c7b27)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## *4. View data in the required form using Operators, Functions and Joins.*
+
+ **(1) Using operators**<br>
+ A) Arithmetic operators<br>
+
+ Operators| Description
+ |--|--|
+ |+ 	| Add 	|
+ |- 	 |Subtract| 	
+ |* 	 |Multiply |	
+ |/ 	 |Divide 	|
+ |% 	 |Modulo|
+
+ _QUERY:_
+```python
+select 50+50,50-50,50*50,50/50,50%50;
 ```
 _Output:_
+
+![Screenshot from 2023-11-02 12-44-23](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/71d10d7d-82e1-4638-af03-4791c9a9ef51)
+
+ B) Bitwise operators<br>
+
+ Operators| Description
+ |--|--|
+ |&   | Bitwise AND 	|
+ |^   | Bitwise exclusive OR |	
+
+  _QUERY:_
+```python
+select 25&20, 25|20, 25^20;
+```
+_Output:_
+
+![Screenshot from 2023-11-02 12-59-20](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/79ee8e91-0f9e-4762-aa2d-fcac26322e20)
+
+C) Comparison Operator<br>
+
+ Operators| Description
+ |--|--|
+ |=	| Equals to 	|
+ |> |Greater than| 	
+ |< 	 |Less Than |	
+ |>=	 |Greater than or equal to 	|
+ |<=	 |Less than or equal to|
+ <>	 |Not Equal to|
+ 
+  _QUERY:_
+```python
+select 30=30,40>60,30<59,40>=40,50<=50,30<>20;
+```
+_Output:_
+
+![Screenshot from 2023-11-02 13-05-13](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/d373d823-c655-41bc-ba8b-4a3554d26df8)
+
+C) Logical Operator
+
+ Operators| Description
+ 
+|ALL| 	TRUE if all of the subquery values meet the condition |	
+|AND| 	TRUE if all the conditions separated by AND is TRUE 	|
+|ANY |	TRUE if any of the subquery values meet the condition 	|
+|BETWEEN| 	TRUE if the operand is within the range of comparisons 	|
+|EXISTS 	|TRUE if the subquery returns one or more records 	|
+|IN |	TRUE if the operand is equal to one of a list of expressions 	|
+|LIKE| 	TRUE if the operand matches a pattern 	|
+|NOT |	Displays a record if the condition(s) is NOT TRUE 	|
+|OR |	TRUE if any of the conditions separated by OR is TRUE 	|
+|SOME| 	TRUE if any of the subquery values meet the condition|
+ 
+  _QUERY:_
+```python
+select * from class;
+select * from class where Age=ALL(select Age from class where Age=21);
+select * from class where LastName="Sharma" AND Age="21";
+select * from class where Age BETWEEN 20 AND 21;
+```
+_Output:_
+
+![Screenshot from 2023-11-02 13-29-50](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/80a52514-6911-42a0-bdbd-44756efd602a)
+
+
+**(2) Using  Functions**<br>
+
+MySQL has many built-in functions.<br>
+This reference contains string, numeric, date, and some advanced functions in MySQL.
+
+A) String Functions
+
+Function |	Description|
+|--|--|
+|ASCII 	|Returns the ASCII value for the specific character|
+|CHAR_LENGTH |	Returns the length of a string (in characters)|
+|CHARACTER_LENGTH |	Returns the length of a string (in characters)|
+|CONCAT |	Adds two or more expressions together|
+|CONCAT_WS| 	Adds two or more expressions together with a separator|
+|FIELD |	Returns the index position of a value in a list of values|
+|FIND_IN_SET | 	Returns the position of a string within a list of strings|
+|FORMAT | 	Formats a number to a format like "#,###,###.##", rounded to a specified number of decimal places|
+|INSERT |	Inserts a string within a string at the specified position and for a certain number of characters|
+|INSTR |	Returns the position of the first occurrence of a string in another string|
+|LCASE 	|Converts a string to lower-case|
+|LEFT |	Extracts a number of characters from a string (starting from left)|
+|LENGTH |	Returns the length of a string (in bytes)|
+|LOCATE |	Returns the position of the first occurrence of a substring in a string|
+|LOWER |	Converts a string to lower-case|
+|LPAD |	Left-pads a string with another string, to a certain length|
+|LTRIM |	Removes leading spaces from a string|
+|MID |	Extracts a substring from a string (starting at any position)|
+|POSITION |	Returns the position of the first occurrence of a substring in a string|
+|REPEAT |	Repeats a string as many times as specified|
+|REPLACE |	Replaces all occurrences of a substring within a string, with a new substring|
+|REVERSE |	Reverses a string and returns the result|
+|RIGHT |	Extracts a number of characters from a string (starting from right)|
+|RPAD |	Right-pads a string with another string, to a certain length|
+|RTRIM |	Removes trailing spaces from a string|
+|SPACE |	Returns a string of the specified number of space characters|
+|STRCMP |	Compares two strings|
+|SUBSTR |	Extracts a substring from a string (starting at any position)|
+|SUBSTRING |	Extracts a substring from a string (starting at any position)|
+|SUBSTRING_INDEX |	Returns a substring of a string before a specified number of delimiter occurs|
+|TRIM |	Removes leading and trailing spaces from a string|
+|UCASE |	Converts a string to upper-case|
+|UPPER |	Converts a string to upper-case|
+
+  _QUERY:_
+```python
+ select ASCII('t');
+select char_length('MyNameIsAnkitSharma');
+```
+_Output:_
+
+![Screenshot from 2023-11-02 13-58-37](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/645d27b7-4ce5-4f6b-b955-0205d6b1de23)
+
+
+
+(2) Numeric Functions:
+Function| Description
+|---|---|
+|ABS   |Returns the absolute value of a number|
+|ACOS   |Returns the arc cosine of a number|
+|ASIN   |Returns the arc sine of a number|
+|ATAN   |Returns the arc tangent of one or two numbers|
+|ATAN2   |Returns the arc tangent of two numbers|
+|AVG   |Returns the average value of an expression|
+|CEIL   |Returns the smallest integer value that is >= to a number|
+|CEILING   |Returns the smallest integer value that is >= to a number|
+|COS   |Returns the cosine of a number|
+|COT   |Returns the cotangent of a number|
+|COUNT   |Returns the number of records returned by a select query|
+|DEGREES   |Converts a value in radians to degrees|
+|DIV   |Used for integer division|
+|EXP   |Returns e raised to the power of a specified number|
+|FLOOR   |Returns the largest integer value that is <= to a number|
+|GREATEST   |Returns the greatest value of the list of arguments|
+|LEAST   |Returns the smallest value of the list of arguments|
+|LN   |Returns the natural logarithm of a number|
+|LOG   |Returns the natural logarithm of a number, or the logarithm of a number to a specified base|
+|LOG10   |Returns the natural logarithm of a number to base 10|
+|LOG2   |Returns the natural logarithm of a number to base 2|
+|MAX   |Returns the maximum value in a set of values|
+|MIN   |Returns the minimum value in a set of values|
+|MOD   |Returns the remainder of a number divided by another number|
+|PI   |Returns the value of PI|
+|POW   |Returns the value of a number raised to the power of another number|
+|POWER   |Returns the value of a number raised to the power of another number|
+|RADIANS   |Converts a degree value into radians|
+|RAND   |Returns a random number|
+|ROUND   |Rounds a number to a specified number of decimal places|
+|SIGN   |Returns the sign of a number|
+|SIN   |Returns the sine of a number|
+|SQRT   |Returns the square root of a number|
+|SUM   |Calculates the sum of a set of values|
+|TAN   |Returns the tangent of a number|
+|TRUNCATE   |Truncates a number to the specified number of decimal places|
+
+
+_QUERY:_
+```python
+ select ABS(-243.5);
+select ACOS(0.25);
+select ASIN(0.25);
+```
+_Output:_
+![Screenshot from 2023-11-02 14-02-50](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/72dd230e-10ac-4f76-9416-e6a4d4e6155d)
+
+(3) Date Functions:
+Function| Description
+|---|---|
+|ADDDATE |	Adds a time/date interval to a date and then returns the date|
+|ADDTIME |	Adds a time interval to a time/datetime and then returns the time/datetime|
+|CURDATE 	|Returns the current date|
+|CURRENT_DATE| 	Returns the current date|
+|CURRENT_TIME |	Returns the current time|
+|CURRENT_TIMESTAMP |	Returns the current date and time|
+|CURTIME |	Returns the current time|
+|DATE |	Extracts the date part from a datetime expression|
+|DATEDIFF |	Returns the number of days between two date values|
+|DATE_ADD |	Adds a time/date interval to a date and then returns the date|
+|DATE_FORMAT| 	Formats a date|
+|DATE_SUB |	Subtracts a time/date interval from a date and then returns the date|
+|DAY |	Returns the day of the month for a given date|
+|DAYNAME |	Returns the weekday name for a given date|
+|DAYOFMONTH |	Returns the day of the month for a given date|
+|DAYOFWEEK |	Returns the weekday index for a given date|
+|DAYOFYEAR |	Returns the day of the year for a given date|
+|EXTRACT |	Extracts a part from a given date|
+|FROM_DAYS |	Returns a date from a numeric datevalue|
+|HOUR |	Returns the hour part for a given date|
+|LAST_DAY |	Extracts the last day of the month for a given date|
+|LOCALTIME |	Returns the current date and time|
+|LOCALTIMESTAMP |	Returns the current date and time|
+|MAKEDATE |	Creates and returns a date based on a year and a number of days value|
+|MAKETIME |	Creates and returns a time based on an hour, minute, and second value|
+|MICROSECOND |	Returns the microsecond part of a time/datetime|
+|MINUTE |	Returns the minute part of a time/datetime|
+|MONTH |	Returns the month part for a given date|
+|MONTHNAME |	Returns the name of the month for a given date|
+|NOW |	Returns the current date and time|
+|PERIOD_ADD |	Adds a specified number of months to a period|
+|PERIOD_DIFF |	Returns the difference between two periods|
+|QUARTER 	|Returns the quarter of the year for a given date value|
+|SECOND |	Returns the seconds part of a time/datetime|
+|SEC_TO_TIME |	Returns a time value based on the specified seconds|
+|STR_TO_DATE |	Returns a date based on a string and a format|
+|SUBDATE |	Subtracts a time/date interval from a date and then returns the date|
+|SUBTIME |	Subtracts a time interval from a datetime and then returns the time/datetime|
+|SYSDATE |	Returns the current date and time|
+|TIME |	Extracts the time part from a given time/datetime|
+|TIME_FORMAT | 	Formats a time by a specified format|
+|TIME_TO_SEC |	Converts a time value into seconds|
+|TIMEDIFF |	Returns the difference between two time/datetime expressions|
+|TIMESTAMP |	Returns a datetime value based on a date or datetime value|
+|TO_DAYS |	Returns the number of days between a date and date "0000-00-00"|
+|WEEK |	Returns the week number for a given date|
+|WEEKDAY | 	Returns the weekday number for a given date|
+|WEEKOFYEAR  |	Returns the week number for a given date|
+|YEAR |	Returns the year part for a given date|
+|YEARWEEK |	Returns the year and week number for a given date
+
+_QUERY:_
+```python
+ select NOW();
+ select CURDATE();
+ select CURTIME();
+```
+_Output:_
+![Screenshot from 2023-11-02 14-11-26](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/5d72f02e-4ba5-457d-b268-1c9301f4a047)
+
+
+(4) Advanced Functions:
+Function| Description
+|---|---|
+|BIN   |Returns a binary representation of a number|
+|BINARY   |Converts a value to a binary string|
+|CASE   |Goes through conditions and return a value when the first condition is met|
+|CAST   |Converts a value (of any type) into a specified datatype|
+|COALESCE   |Returns the first non-null value in a list|
+|CONNECTION_ID   |Returns the unique connection ID for the current connection|
+|CONV   |Converts a number from one numeric base system to another|
+|CONVERT |  Converts a value into the specified datatype or character set|
+|CURRENT_USER|   Returns the user name and host name for the MySQL account that the server used to authenticate the current client|
+|DATABASE   |Returns the name of the current database|
+|IF   |Returns a value if a condition is TRUE, or another value if a condition is FALSE|
+|IFNULL   |Return a specified value if the expression is NULL, otherwise return the expression|
+|ISNULL |  Returns 1 or 0 depending on whether an expression is NULL|
+|LAST_INSERT_ID |  Returns the AUTO_INCREMENT id of the last row that has been inserted or updated in a table|
+|NULLIF   |Compares two expressions and returns NULL if they are equal. Otherwise, the first expression is returned|
+|SESSION_USER   |Returns the current MySQL user name and host name|
+|SYSTEM_USER   |Returns the current MySQL user name and host name|
+|USER   |Returns the current MySQL user name and host name|
+
+_QUERY:_
+```python
+select BIN(18);
+select BINARY "AnkitSharma";
+select CONNECTION_ID();
+```
+_Output:_
+
+![Screenshot from 2023-11-02 14-16-46](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/83d1b160-950f-4a9e-a42f-7c93bf16920c)
+
+**(2) Using  Joins**<br>
+
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+**Different Types of SQL JOINs**<br>
+
+*Here are the different types of the JOINs in SQL:*<br>
+
+   1. (INNER) JOIN: Returns records that have matching values in both tables<br>
+   2. LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table<br>
+   3. RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table<br>
+   4. FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table<br>
+
+```python
+select * from Orders;
+select * from Customers;
+select Orders.Order_Id, Customers.Customer_Name,Orders.Order_Date from Orders INNER JOIN Customers ON Orders.Customer_Id=Customers.Customer_Id;
+
+```
+_Output:_
+
+![Screenshot from 2023-11-02 14-56-36](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/422b8f63-9c12-441e-9703-902d10ba5064)
