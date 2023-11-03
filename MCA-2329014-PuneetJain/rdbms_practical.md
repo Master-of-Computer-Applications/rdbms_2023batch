@@ -640,3 +640,21 @@ _Output:_
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## *5. Creating different types of Views for tailored presentation of data.*
+A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.<br>
+A view is created with the CREATE VIEW statement. 
+
+1) Creating a view:-<br>
+```python
+SELECT * from class;
+CREATE view students as select FirstName, LastName from class where ID>5;
+SELECT * from students;
+```
+_Output:_
+![Screenshot from 2023-11-03 21-11-38](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/74105709-3942-4787-94d4-8341edc9a7e8)
+
+2) Deleting View:-<br>
+```python
+DROP VIEW STUDENT;
+```
+_Output:_
+![Screenshot from 2023-11-03 21-13-33](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/d2d48874-0e5e-41c2-b99b-e97c0d5eb9ac)
