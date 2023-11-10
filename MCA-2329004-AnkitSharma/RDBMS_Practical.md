@@ -593,9 +593,17 @@ _Output:_
 
 ![Screenshot from 2023-11-02 23-30-38](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/e29c8d4a-c573-4204-b91b-06a9751b1655)
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 ## *6. How to apply Conditional Controls in PL/SQL.*
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Conditional control statements are those which allow you to control the execution flow of the program depending on a condition. In other words the statements in the program are not necessarily executed in a sequence rather one or other group of statements are executed depending on the evaluation of a condition.
+**Types of conditional controls**<br>
+1) IF-THEN Statement
+2) IF-THEN-ELSE Statement
+3) IF-THEN-ELSEIF Statement
+
+**1) IF-THEN Statement:-**<br>
+------------------------------------------------------------------------------------------------------------------------
 ## *8. Using various types of Cursors.*<br>
 Cursor is a Temporary Memory or Temporary Work Station. It is Allocated by Database Server at the Time of Performing DML(Data Manipulation Language) operations on the Table by the User. Cursors are used to store Database Tables.<br> 
 
