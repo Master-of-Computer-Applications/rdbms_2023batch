@@ -95,3 +95,18 @@
 ### 6. LIKE Operator: -
    #### • Used for pattern matching with wildcard characters (% for multiple characters and _ for a single character).
    ![LIKE_OP](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/015a0640-0cf3-4a5b-a266-4f860f9e69d9)
+## FUNCTIONS: -
+### 1. AGGREATE Function: - Aggregate functions operate on a set of values and return a single result. Common aggregate functions include:
+   #### • COUNT(): Counts the number of rows.
+   #### • SUM(): Calculates the sum of numeric values.
+   #### • AVG(): Computes the average of numeric values.
+   #### • MIN(): Returns the minimum value.
+   #### • MAX(): Returns the maximum value.
+   ![AGG_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/bc158f72-3667-41c3-ac8a-809b5353f0be)
+### 2. STRING Function: -String functions allow you to manipulate text data.
+   #### • CONCAT(): Combines two or more strings.
+   #### • SUBSTRING(): Extracts a substring from a string.
+   #### • UPPER(), LOWER(): Converts text to uppercase or lowercase.
+   #### • LENGTH(), CHAR_LENGTH(): Returns the length of a string.
+   
+![STRING_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/f696c3fc-5d24-47b3-beda-bc83ccd10f0e)
