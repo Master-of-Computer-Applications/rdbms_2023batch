@@ -62,3 +62,36 @@
 # 3. How to apply constraints at various levels
 ### NOT NULL Constraint: - The NOT NULL constraint enforces a column to NOT accept NULL values. This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field.
 ![NOT_CON](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/5a65a75c-3350-4536-9ec0-6822d4852494)
+### PRIMARY KEY Constraint: - The PRIMARY KEY constraint uniquely identifies each record in a table. Primary keys must contain UNIQUE values, and cannot contain NULL values. A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).
+![PRIMARY_CON](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/3f93b749-476a-4d47-ab1b-b6ab41974122)
+### CHECK Constraint: - The CHECK constraint is used to limit the value range that can be placed in a column. If you define a CHECK constraint on a column it will allow only certain values for this column. If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.
+![CHECK_CON](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/47011998-4622-4f0e-8753-19c7e8ebfe66)
+### DEFAULT Constraint: - The DEFAULT constraint is used to set a default value for a column. The default value will be added to all new records, if no other value is specified.
+![DEFAULT_CON](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/a3c1a9a9-b207-43ee-9bdf-5808f646cd51)
+# 4. View data in the required form using Operators, Function and Joins.
+### OPERATORS: -
+### 1. Comparison Operators: -
+   #### • =: Equal to
+   #### • != or <>: Not equal to
+   #### • <: Less than
+   #### • >: Greater than
+   #### • <=: Less than or equal to
+   #### • >=: Greater than or equal to
+   ![add_op](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/edc5fcd2-e5f5-4d13-bcb2-799d1574fc23)
+### 2. Logical Operators: -
+   #### • AND: Logical AND
+   #### • OR: Logical OR
+   #### • NOT: Logical NOT
+   ![logical_op](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/c7a1fe65-599c-41df-a55f-872e91bb0004)
+### 3. IS NULL operator: -
+ #### • Used to check for the absence of a value in a column.
+ ![IS_OP](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/b22000ed-5c7a-4c48-98d6-5ab8d91a0647)
+### 4. IN Operator: -
+   #### • Used to specify a list of values to match against in a WHERE clause.
+   ![IN_OP](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/e3cce972-82ba-425a-a9cf-ae085e88cad5)
+### 5. BETWEEN Operator: -
+  #### • Used to select a range of values.
+  ![BETWEEN_OP](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/57fd3c46-7870-4c35-b1ae-5408bec4463c)
+### 6. LIKE Operator: -
+   #### • Used for pattern matching with wildcard characters (% for multiple characters and _ for a single character).
+   ![LIKE_OP](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/015a0640-0cf3-4a5b-a266-4f860f9e69d9)
