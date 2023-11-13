@@ -110,3 +110,15 @@
    #### • LENGTH(), CHAR_LENGTH(): Returns the length of a string.
    
 ![STRING_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/f696c3fc-5d24-47b3-beda-bc83ccd10f0e)
+### 3. MATHEMATICAL Function: - Mathematical functions perform numeric calculations.
+   #### • ABS(): Returns the absolute value of a number.
+   #### • ROUND(): Rounds a numeric value to a specified number of decimal places.
+   #### • SQRT(): Calculates the square root of a number.
+   ![MATH_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/bbcf75a8-03b9-4762-a3d0-cd14e7d17958)
+## JOINS: -
+### 1. INNER JOIN: - An INNER JOIN returns only the rows that have matching values in both tables being joined. It excludes rows with non-matching values in either table.
+
+![INNER_JJ](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/31c28ac6-b616-4118-801d-5446bfc6a40a)
+
+### 2. LEFT OUTER JOIN: - A LEFT JOIN returns all the rows from the left table and the matched rows from the right table. If there is no match in the right table, NULL values are returned.
+![Selection_001](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/3720742f-491b-4b31-973a-5264992ddf5b)
