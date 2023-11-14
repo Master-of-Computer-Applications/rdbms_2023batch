@@ -122,3 +122,15 @@
 
 ### 2. LEFT OUTER JOIN: - A LEFT JOIN returns all the rows from the left table and the matched rows from the right table. If there is no match in the right table, NULL values are returned.
 ![Selection_001](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/3720742f-491b-4b31-973a-5264992ddf5b)
+# 5.  Creating different types of views for tailored presentation of data.
+### 1. SIMPLE view: - Simple views are the most basic type of view in MariaDB. They are created by selecting a subset of columns from one or more tables.
+![simple_view](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/c9b6c07e-7da3-4d7c-8fc7-cd9920a8f00a)
+### 2. JOIN view: - Join views allow you to combine data from multiple tables and present it as a single view. You can create views that perform joins on underlying tables to simplify complex queries.
+![join_view](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/1d3acf32-d935-4b48-8b5e-1cdf0e8fa4d9)
+# 6. How to apply Conditional Controls in Pl/SQL
+### 1. IF Statement: - You can use the IF statement to execute different SQL statements based on a condition.
+![IF_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/65c6ee59-b55a-40c9-b72a-34c58597e8af)
+### 2. CASE Statement: - The CASE statement allows you to perform conditional logic within SQL queries. You can use it to return different values based on specific conditions.
+![CAS_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/cb91fbf5-40c2-4e19-870e-071fdd2d6663)
+### 3. STORED PROCEDURE: - You can create stored procedures in MariaDB to encapsulate conditional logic and reuse it in multiple queries or applications. Here's an example of a simple stored procedure with conditional logic:
+![PRO_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/8e7fa317-2daa-4324-8704-9f8d937c1374)
