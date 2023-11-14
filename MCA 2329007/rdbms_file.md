@@ -192,4 +192,107 @@ VALUES
 
 
 ![Screenshot from 2023-10-13 22-05-44](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/ad803f68-ce32-4286-aaf4-98f0122506fa)
-### Thank you
+
+## <p align="left">Ques-4.View data in the required form using Operators, Functions and Joins.</p>
+
+Let's say you have two tables: employees and departments. The goal is to retrieve information about employees and their corresponding departments.
+
+### Objective:
+Retrieve a list of employee names, their department names, and display an indicator if their salary is above a certain threshold.
+
+![Screenshot from 2023-11-11 17-46-39](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/94fadfd1-f6ad-4dbd-93fe-b25fadf9bd16)
+
+### Explanation:
+
+*SELECT Clause:*
+
+CONCAT(first_name, ' ', last_name) AS full_name: Concatenates the first_name and last_name columns into a new column named full_name.
+department_name: Selects the department_name from the departments table.
+salary: Selects the salary from the employees table.
+CASE WHEN salary > 55000 THEN 'Above Threshold' ELSE 'Below Threshold' END AS salary_indicator: Uses a CASE statement to create a new column salary_indicator that indicates whether the salary is above a certain threshold
+
+*FROM Clause:*
+
+FROM employees: Specifies the primary table as employees.
+JOIN departments ON employees.department_id = departments.department_id: Performs an INNER JOIN with the departments table based on the department_id column to link the two tables.
+
+*Result:*
+
+The query will return a result set with columns: full_name, department_name,salary, salary_indicator.
+
+## <p align="left">Ques-5.Creating different types of Views for tailored presentation of data</p>
+
+Views are a special version of tables in SQL. They provide a virtual table environment for various complex operations. You can select data from multiple tables, or you can select specific data based on certain criteria in views. It does not hold the actual data; it holds only the definition of the view in the data dictionary.
+The view is a query stored in the data dictionary, on which the user can query just like they do on tables. It does not use the physical memory, only the query is stored in the data dictionary. It is computed dynamically, whenever the user performs any query on it. Changes made at any point in view are reflected in the actual base table.
+
+### Simple View: 
+A view based on only a single table, which doesn't contain GROUP BY clause and any functions.
+
+### Complex View: 
+A view based on multiple tables, which contain GROUP BY clause and functions.
+
+### Inline View: 
+A view based on a subquery in FROM Clause, that subquery creates a temporary table and simplifies the complex query.
+
+### Materialized View: 
+A view that stores the definition as well as data. It creates replicas of data by storing it physically.
+
+![Screenshot from 2023-11-13 19-19-45](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/c8ddfadc-f585-4f21-8c5c-01420f6450d9)
+
+![Screenshot from 2023-11-13 19-27-44](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/968cd387-837b-41cc-8fd0-9289b5a2bef3)
+
+
+## <p align="left">Ques-6.How to apply Conditional Controls in PL/SQL</p>
+
+In PL/SQL (Procedural Language/Structured Query Language), we can use conditional controls to execute different blocks of code based on certain conditions. There are several constructs for implementing conditional logic in PL/SQL, including the IF statement, CASE statement, and the IF-ELSIF-ELSE statement.
+
+### IF STATEMENT
+The IF statement is used to execute a block of code if a specified condition is true.
+
+#### *SYNTAX*
+
+IF condition THEN
+   
+    -- code to execute if condition is true
+END IF;
+
+
+### IF ELSE IF STATEMENT
+This statement is an extension of the IF statement and allows you to specify multiple conditions and corresponding blocks of code to execute.
+
+#### *SYNTAX*
+
+IF 
+condition1 
+THEN
+    
+    -- code to execute if condition1 is true
+ELSIF 
+condition2 
+THEN
+    
+    -- code to execute if condition2 is true
+ELSE
+     
+     -- code to execute if none of the conditions are true
+END IF;
+
+
+### CASE STATEMENT 
+The CASE statement is used to perform different actions based on the value of an expression.
+
+#### *SYNTAX*
+
+CASE
+WHEN condition1 THEN
+        
+        -- code to execute if condition1 is true
+WHEN condition2 THEN
+        
+        -- code to execute if condition2 is true
+ELSE
+        
+        -- code to execute if none of the conditions are true
+END CASE;
+
+![Screenshot from 2023-11-13 20-59-29](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/1b1fdabd-75d0-49ac-890b-bcb50cd569f7)
