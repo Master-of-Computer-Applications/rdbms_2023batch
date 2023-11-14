@@ -134,3 +134,9 @@
 ![CAS_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/cb91fbf5-40c2-4e19-870e-071fdd2d6663)
 ### 3. STORED PROCEDURE: - You can create stored procedures in MariaDB to encapsulate conditional logic and reuse it in multiple queries or applications. Here's an example of a simple stored procedure with conditional logic:
 ![PRO_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/8e7fa317-2daa-4324-8704-9f8d937c1374)
+# 7. Error Handling using Internal Exceptions and External Exceptions.
+### MariaDB supports error handling through both internal exceptions and external exceptions. Internal exceptions are typically used within stored procedures, while external exceptions are errors that can be caught in the client application that calls the database.
+## 1. Internal Exception (in Stored Procedures): -
+![IMPLICIT_PRO](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/9cd5306d-989a-4073-b020-d561996916da)
+## 2. External Exception (in Stored Procedure): -
+![EXP_PRO](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/6e54d3fe-1b56-4d8c-9684-8aed12f61a7c)
