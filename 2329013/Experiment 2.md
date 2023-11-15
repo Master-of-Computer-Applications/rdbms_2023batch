@@ -26,7 +26,8 @@ TRUNCATE: This is used to remove all records from a table, including all spaces 
 removed.
 COMMENT: This is used to add comments to the data dictionary.
 RENAME: This is used to rename an object existing in the database
-![rdbms pic 1](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/4016fb87-a6f9-4327-8a76-3f9de798802b)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/290412fb-e834-4506-93b7-7a9bf913dfdf)
+
 
 DML(Data Manipulation Language):-
 
@@ -41,7 +42,11 @@ INSERT: It is used to insert data into a table.
 UPDATE: It is used to update existing data within a table.
 
 DELETE: It is used to delete records from a database table.
-![rdbms picture 2](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/3af21bec-3ba5-4499-8bc6-e876d2ae2ce9)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/cf8a9055-7734-4358-af9a-c03cb18bb24a)
+
+
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/af5dfda4-6a77-4e8b-9c90-99d4c5698321)
+
 
 DCL (Data Control Language):-
 DCL includes commands such as GRANT and REVOKE which mainly deal with the rights, permissions, and other
@@ -53,10 +58,12 @@ GRANT: This command gives users access privileges to the database.
 Syntax:
 GRANT SELECT, UPDATE ON MY_TABLE TO SOME_USER, ANOTHER_USER;
 
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/6833f60b-43e5-45ed-9136-8482e65b2c2b)
+
 REVOKE: This command withdraws the user’s access privileges given by using the GRANT command.
 Syntax:
 REVOKE SELECT, UPDATE ON MY_TABLE FROM USER1, USER2.
-![rdbms picture 3](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/9b31a4fc-0996-4f10-b8d5-c0c4979b9dae)
+
 
 
 
