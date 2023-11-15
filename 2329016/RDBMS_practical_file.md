@@ -141,6 +141,7 @@
 ## 2. External Exception (in Stored Procedure): -
 ![EXP_PRO](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/6e54d3fe-1b56-4d8c-9684-8aed12f61a7c)
 # 8. Using various types of Cursors
-### 1. Implicit Cursor:
+### 1. Insensitive Cursor:
 ![CURSOR_1](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/0148c086-5dc0-4647-b6e6-ea3ec94212ea)
 ![CURSOR_2](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/a03d5ea7-edea-4c66-aba9-4024ff155192)
+### 2. Sensitive Cursor:
