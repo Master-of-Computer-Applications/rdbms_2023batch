@@ -17,6 +17,8 @@ table is created, we can use the ALTER TABLE statement to create or delete table
 NOT NULL Constraint:-
 When applied to a column, NOT NULL constraint ensure that a column cannot have a NULL value. Following is
 the example to create a NOT NULL constraint
+
+
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/2b014f0b-22a4-4cef-a50d-2ec40806e38d)
 
 
@@ -24,6 +26,8 @@ UNIQUE Key Constraint:-
 When applied to a column, UNIQUE Key constraint ensure that a column accepts only UNIQUE values. Following
 is the example to create a UNIQUE Key constraint on column ID. Once this constraint is created, column ID can't be
 null and it will accept only UNIQUE values.
+
+
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/d94aedbd-cb3b-4858-9509-860d9e62fb9f)
 
 
@@ -31,6 +35,7 @@ DEFAULT Value Constraint:-
 When applied to a column, DEFAULT Value constraint provides a default value for a column when none is
 specified. Following is the example to create a DEFAULT constraint on column NAME. Once this constraint is
 created, column NAME will set to "Not Available" value if NAME is not set to a value.
+
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/38f93d00-e153-4e60-ad2b-869ffd2952f9)
 
 
