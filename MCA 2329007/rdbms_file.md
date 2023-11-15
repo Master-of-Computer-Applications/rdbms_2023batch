@@ -195,6 +195,127 @@ VALUES
 
 ## <p align="left">Ques-4.View data in the required form using Operators, Functions and Joins.</p>
 
+### SQL Operators
+The SQL reserved words and characters are called operators, which are used with a WHERE clause in a SQL query. In SQL, an operator can either be a unary or binary operator. The unary operator uses only one operand for performing the unary operation, whereas the binary operator uses two operands for performing the binary operation.
+
+#### Types of Operator
+
+SQL operators are categorized in the following categories:
+
+- SQL Arithmetic Operators
+
+- SQL Comparison Operators
+
+- SQL Logical Operators
+
+- SQL Set Operators
+
+- SQL Bit-wise Operators
+
+- SQL Unary Operators
+
+#### *1.SQL Arithmetic Operators*
+The Arithmetic Operators perform the mathematical operation on the numerical data of the SQL tables. These operators perform addition, subtraction, multiplication, and division operations on the numerical operands.
+
+Following are the various arithmetic operators performed on the SQL data:
+   - SQL Addition Operator (+)
+   - SQL Subtraction Operator (-)
+   - SQL Multiplication Operator (+)
+   - SQL Division Operator (-)
+   - SQL Modulus Operator (+)
+    
+#### *2.SQL Comparison Operators*
+
+The Comparison Operators in SQL compare two different data of SQL table and check whether they are the same, greater, and lesser. The SQL comparison operators are used with the WHERE clause in the SQL queries
+
+Following are the various comparison operators which are performed on the data stored in the SQL database tables:
+    - SQL Equal Operator (=)
+    - SQL Not Equal Operator (!=)
+    - SQL Greater Than Operator (>)
+    - SQL Greater Than Equals to Operator (>=)
+    - SQL Less Than Operator (<)\
+    - SQL Less Than Equals to Operator (<=)
+
+#### *3.SQL Logical Operators*
+
+The Logical Operators in SQL perform the Boolean operations, which give two results True and False. These operators provide True value if both operands match the logical condition.
+
+Following are the various logical operators which are performed on the data stored in the SQL database tables:
+    -SQL ALL operator
+    - SQL AND operator
+    - SQL OR operator
+    - SQL BETWEEN operator
+    - SQL IN operator
+    - SQL NOT operator
+    - SQL ANY operator
+    - SQL LIKE operator
+    
+The Set Operators in SQL combine a similar type of data from two or more SQL database tables. It mixes the result, which is extracted from two or more SQL queries, into a single result.
+
+#### *4.SQL Set Operators*
+
+Set operators combine more than one select statement in a single query and return a specific result set.
+
+Following are the various set operators which are performed on the similar data stored in the two SQL database tables:
+    - SQL Union Operator
+    - SQL Union ALL Operator
+    - SQL Intersect Operator
+    - SQL Minus Operator
+    
+#### *5.SQL Bitwise Operators*
+
+The Bitwise Operators in SQL perform the bit operations on the Integer values. To understand the performance of Bitwise operators, you just knew the basics of Boolean algebra.
+
+Following are the two important logical operators which are performed on the data stored in the SQL database tables:
+    - Bitwise AND (&)
+    - Bitwise OR(|)
+
+#### *6.SQL Unary Operators*
+
+The Unary Operators in SQL perform the unary operations on the single data of the SQL table, i.e., these operators operate only on one operand.
+
+These types of operators can be easily operated on the numeric data value of the SQL table.
+
+Following are the various unary operators which are performed on the numeric data stored in the SQL table:
+    - SQL Unary Positive Operator
+    - SQL Unary Negative Operator
+    - SQL Unary Bitwise NOT Operator
+
+ ### SQL FUNCTIONS
+ For doing operations on data SQL has many built-in functions, they are categorized in two categories and further sub-categorized in different seven functions under each category. The categories are: 
+   **Aggregate functions**
+    These functions are used to do operations from the values of the column and a single value is returned. 
+        - AVG()
+        - COUNT()
+        - FIRST()
+        - LAST()
+        - MAX()
+        - MIN()
+        - SUM()
+    **Scalar functions:**
+    These functions are based on user input, these too returns single value. 
+        - UCASE()
+        - LCASE()
+        - MID()
+        - LEN()
+        - ROUND()
+        - NOW()
+        - FORMAT()
+  
+### SQL JOIN
+
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them
+
+**Different Types of SQL JOINS**
+
+Here are the different types of the JOINs in SQL:
+    - *(INNER) JOIN*: Returns records that have matching values in both tables
+    - *LEFT (OUTER) JOIN*: Returns all records from the left table, and the matched records from the right table
+    - *RIGHT (OUTER) JOIN*: Returns all records from the right table, and the matched records from the left table
+    - *FULL (OUTER) JOIN*: Returns all records when there is a match in either left or right table
+
+    
+
 Let's say you have two tables: employees and departments. The goal is to retrieve information about employees and their corresponding departments.
 
 ### Objective:
