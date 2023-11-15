@@ -146,6 +146,10 @@ ON table1.column1 = table2.column
 
 
  SQL JOIN
+ ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/c22528e2-d79e-4a34-b61f-7ca74ea09a6b)
+
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/1484d211-aeaf-4003-98b6-d7f88d541256)
+
 
 -![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/8b6fdca0-2804-4ba1-9e34-95b0e65ebf2f)
 
