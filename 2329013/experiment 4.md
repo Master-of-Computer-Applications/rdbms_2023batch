@@ -4,7 +4,7 @@ Structured Query Language is a computer language that we use to interact with a 
 In this article we will see all types of SQL operators. 
 In simple operator can be defined as an entity used to perform operations in a table.
 Operators are the foundation of any programming language. We can define operators as symbols that help us to perform specific mathematical and logical computations on operands. In other words, we can say that an operator operates the operands. SQL operators have three different categories.
- ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/82f3a488-3123-4c91-978a-38cf3d6e0eeb)
+ 
 Arithmetic Operators:-
 We can use various arithmetic operators on the data stored in the tables. Arithmetic Operators are:
 Operator	Description:-
@@ -14,7 +14,8 @@ Operator	Description:-
 *	This operator is used for multiplying data values.
 %	Modulus is used to get the remainder when data is divided by another.
 Example Query:
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/976e4cd9-b93a-46f3-9293-9d9fc73222ae)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/37966a33-5f1a-48d5-8206-be8f81e82119)
+
 Comparison Operators:-
 Another important operator in SQL is a comparison operator, which is used to compare one expression’s value to other expressions. SQL supports different types of comparison operator, which is described below:
 Operator	Description
@@ -28,7 +29,10 @@ Operator	Description
 
 Example Query:
 
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/e26aec50-755a-48ab-8942-c68e192c4afa)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/8fe180ad-1f28-46e8-9ddf-f360b70eb0db)
+
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/924f29e1-e34b-4e05-82b8-a47d299103af)
+
 
 Logical Operators:-
 The Logical operators are those that are true or false. They return true or false values to combine one or more true or false values.
@@ -40,8 +44,9 @@ Logical OR compares two Booleans as expressions and returns true when one of the
 NOT:-
 Not takes a single Boolean as an argument and change its value from false to true or from true to false.
 Example query:-
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/bac402a7-6061-439a-928f-043350dc6d65)
 
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/56a9aa5c-e3ec-4bb8-ae96-ce3b53020e9e)
+
 Special Operators
 Operators              	Description 
 ALL 
@@ -57,7 +62,9 @@ The EXISTS checks the existence of a result of a subquery. The EXISTS subquery t
 SOME
 SOME operator evaluates the condition between the outer and inner tables and evaluates to true if the final result returns any one row. If not, then it evaluates to false.
 Example Query:
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/b6515b01-1ec6-4ca4-be80-ed1859010158)
+
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/da9904f5-4cd6-4bc4-be10-151ec1d32f2c)
+
 SQL | Functions (Aggregate and Scalar Functions)
 For doing operations on data SQL has many built-in functions, they are categorized in two categories and further sub-categorized in different seven functions under each category. The categories are: 
 1.	Aggregate functions: 
@@ -78,7 +85,8 @@ These functions are based on user input, these too returns single value.
 5.	ROUND()
 6.	NOW()
 7.	FORMAT()
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/0999c534-ea28-4e91-8e6f-b1477f3ba90d)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/1460029b-239f-4e5c-8404-c04819bab821)
+
 •	AVG(): It returns the average value after calculating from values in a numeric column. 
 
 Syntax: 
@@ -88,33 +96,40 @@ Queries:
 •	Computing average marks of students. 
 
 SELECT AVG(MARKS) AS AvgMarks FROM s_Details
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/9775a1ee-6262-410c-9810-b8595cb42ab0)
+
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/cfd20006-ed36-4f5d-93d7-449ae2bb999b)
+
 COUNT(): It is used to count the number of rows returned in a SELECT statement. It can’t be used in MS ACCESS. 
 Syntax: 
 SELECT COUNT(column_name) FROM table_name;
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/45649581-877a-48fc-bb6f-88a143e5299a)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/629f1738-533d-4bee-8054-19634f271892)
+
 MAX(): The MAX() function returns the maximum value of the selected column. 
 
 Syntax: 
 SELECT MAX(column_name) FROM table_name;
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/cd8c9973-84e6-4390-b832-c7985fd7f9d1)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/51701097-093c-4ad2-a711-631e895545f1)
+
 MIN(): The MIN() function returns the minimum value of the selected column. 
 
 Syntax: 
 SELECT MIN(column_name) FROM table_name;
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/6c222700-e5f6-4606-9dab-afb9fd2f9628)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/30b2fa49-1b8e-4a03-b563-80ffa95eb151)
+
 
 SUM(): The SUM() function returns the sum of all the values of the selected column.
  Syntax: 
 SELECT SUM(column_name) FROM table_name;
 
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/4fb8f019-df39-400c-9377-38429a041f53)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/ae648f78-5a01-4522-827e-1f58031ef4ed)
+
 LEN(): The LEN() function returns the length of the value in a text field. 
 
 Syntax: 
 SELECT LENGTH(column_name) FROM table_name;
 
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/58b79d52-a92b-4806-97f9-53ea15d83597)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/a98a1c51-57bd-4004-8bdb-a50b7cd7bd1f)
+
 SQL Join:- SQL Join statement is used to combine data or rows from two or more tables based on a common field between them. Different types of Joins are as follows: 
 •	INNER JOIN
 •	LEFT JOIN
@@ -128,21 +143,12 @@ FROM table1
 JOIN table2
 ON table1.column1 = table2.column
 
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/84d1720b-a952-42ef-81be-aaea4ae0ef31)
 
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/4b7c5002-fee2-4ba9-bd2b-aaab056d637b)
-
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/2950d5a1-6208-4edd-a119-7a45d94b0227)
 
  SQL JOIN
 
--- join Customers and Orders tables based on
--- customer_id of Customers and customer column of Orders
+-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/8b6fdca0-2804-4ba1-9e34-95b0e65ebf2f)
 
-SELECT Customers.customer_id, Customers.first_name, Orders.amount
-FROM Customers
-JOIN Orders
-ON Customers.customer_id = Orders.customer;
 
 
 
