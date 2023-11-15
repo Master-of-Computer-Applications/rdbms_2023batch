@@ -42,6 +42,7 @@ INSERT: It is used to insert data into a table.
 UPDATE: It is used to update existing data within a table.
 
 DELETE: It is used to delete records from a database table.
+
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/cf8a9055-7734-4358-af9a-c03cb18bb24a)
 
 
