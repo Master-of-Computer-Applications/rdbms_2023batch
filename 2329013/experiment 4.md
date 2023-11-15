@@ -13,7 +13,9 @@ Operator	Description:-
 /	This operator works with the ‘ALL’ keyword and it calculates division operations.
 *	This operator is used for multiplying data values.
 %	Modulus is used to get the remainder when data is divided by another.
+
 Example Query:
+
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/37966a33-5f1a-48d5-8206-be8f81e82119)
 
 Comparison Operators:-
@@ -43,7 +45,10 @@ OR:-
 Logical OR compares two Booleans as expressions and returns true when one of the expressions is true.
 NOT:-
 Not takes a single Boolean as an argument and change its value from false to true or from true to false.
+
 Example query:-
+
+
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/bac402a7-6061-439a-928f-043350dc6d65)
 
 
@@ -85,6 +90,8 @@ These functions are based on user input, these too returns single value.
 5.	ROUND()
 6.	NOW()
 7.	FORMAT()
+
+   
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/1460029b-239f-4e5c-8404-c04819bab821)
 
 •	AVG(): It returns the average value after calculating from values in a numeric column. 
@@ -102,18 +109,21 @@ SELECT AVG(MARKS) AS AvgMarks FROM s_Details
 COUNT(): It is used to count the number of rows returned in a SELECT statement. It can’t be used in MS ACCESS. 
 Syntax: 
 SELECT COUNT(column_name) FROM table_name;
+
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/629f1738-533d-4bee-8054-19634f271892)
 
 MAX(): The MAX() function returns the maximum value of the selected column. 
 
 Syntax: 
 SELECT MAX(column_name) FROM table_name;
+
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/51701097-093c-4ad2-a711-631e895545f1)
 
 MIN(): The MIN() function returns the minimum value of the selected column. 
 
 Syntax: 
 SELECT MIN(column_name) FROM table_name;
+
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/30b2fa49-1b8e-4a03-b563-80ffa95eb151)
 
 
@@ -146,7 +156,9 @@ ON table1.column1 = table2.column
 
 
  SQL JOIN
+ 
  ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/c22528e2-d79e-4a34-b61f-7ca74ea09a6b)
+
 
 ![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/1484d211-aeaf-4003-98b6-d7f88d541256)
 
