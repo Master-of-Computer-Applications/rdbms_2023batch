@@ -22,12 +22,13 @@ Examples:
 
 Creating View from a single table:
 
-•	In this example we will create a View named s_detailsView from the table s_details
+••	In this example we will create a View named Student123 from the table Student1
 
 Query:
 
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/3363cef9-5185-42f5-a1aa-3bc979e02fc7)
-Creating View from multiple tables: In this example we will create a View named MarksView from two tables StudentDetails and StudentMarks. To create a View from multiple tables we can simply include multiple tables in the SELECT statement.
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/eaf78211-2bdf-4bb4-997d-a2992b74459a)
+
+Creating View from multiple tables:  To create a View from multiple tables we can simply include multiple tables in the SELECT statement.
 
 SQL Updating a View
 A view can be updated with the CREATE OR REPLACE VIEW statement.
@@ -38,11 +39,13 @@ SELECT column1,  column2, ...
 FROM  table_ name
 WHERE condition;
 
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/dfdc6bb1-f383-40a5-90d5-32f549722123)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/819c8aa9-4e3e-4760-9b7d-9b0c68b362fa)
+
 Dropping a view:-
 Syntax:- DROP VIEW  view _ name;
 
-![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/7c5c4c1f-a186-4a36-b362-08fdc33a4d51)
+![image](https://github.com/manvirsinghh/rdbms_2023batch/assets/147043473/0827bd68-9b6e-4fc3-999b-403a79fb95c4)
+
 
  Types of View:-
  Simple View: A view based on only a single table, which doesn't contain GROUP BY clause and any functions. 
@@ -59,17 +62,25 @@ SELECT column1,column2,……. FROM(INLINEVIEW);
 QUERY:-
 selecting  rows from employee_details by using inline view .
 
-The query is follows:-
-SELECT MAX(salary) AS max_salary
-FROM(SELECT salary
-FROM employee_details) AS max_salary;
-After executing above query ;
+SELECT column1,column2,……. FROM(INLINEVIEW);
 
-Max_salary
-45000.00
-OUTPUT IS:
-Max_salary
-45000.00
+MATERIALIZED VIEW:-
+A materialized view specifies a cluster that is tasked with keeping its results up-to-date, but can be referenced in any cluster. This allows you to effectively decouple the computational resources used for view maintenance from the resources used for query serving.
+Syntax:-
+Create materialized view View_Name
+
+Build [Immediate/Deffered]
+
+Refresh [Fast/Complete/Force]
+
+on [Commit/Demand]
+
+as Select ..........;
+
+COMPLEX VIEW:-
+When the view is created based on multiple tables then it is known as a complex view in SQL Server. The most important point that we need to remember is, on a complex view in SQL Server, we may or may not perform the DML operations and more ever the complex view may not update the data correctly on the underlying database tables.
+
+
 
 
 
