@@ -62,12 +62,16 @@
 # 3. How to apply constraints at various levels
 ### NOT NULL Constraint: - The NOT NULL constraint enforces a column to NOT accept NULL values. This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field.
 ![NOT_CON](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/5a65a75c-3350-4536-9ec0-6822d4852494)
+
 ### PRIMARY KEY Constraint: - The PRIMARY KEY constraint uniquely identifies each record in a table. Primary keys must contain UNIQUE values, and cannot contain NULL values. A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).
 ![PRIMARY_CON](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/3f93b749-476a-4d47-ab1b-b6ab41974122)
+
 ### CHECK Constraint: - The CHECK constraint is used to limit the value range that can be placed in a column. If you define a CHECK constraint on a column it will allow only certain values for this column. If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.
 ![CHECK_CON](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/47011998-4622-4f0e-8753-19c7e8ebfe66)
+
 ### DEFAULT Constraint: - The DEFAULT constraint is used to set a default value for a column. The default value will be added to all new records, if no other value is specified.
 ![DEFAULT_CON](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/a3c1a9a9-b207-43ee-9bdf-5808f646cd51)
+
 # 4. View data in the required form using Operators, Function and Joins.
 ### OPERATORS: -
 ### 1. Comparison Operators: -
@@ -78,23 +82,29 @@
    #### • <=: Less than or equal to
    #### • >=: Greater than or equal to
    ![add_op](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/edc5fcd2-e5f5-4d13-bcb2-799d1574fc23)
+
 ### 2. Logical Operators: -
    #### • AND: Logical AND
    #### • OR: Logical OR
    #### • NOT: Logical NOT
    ![logical_op](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/c7a1fe65-599c-41df-a55f-872e91bb0004)
+
 ### 3. IS NULL operator: -
  #### • Used to check for the absence of a value in a column.
  ![IS_OP](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/b22000ed-5c7a-4c48-98d6-5ab8d91a0647)
+
 ### 4. IN Operator: -
    #### • Used to specify a list of values to match against in a WHERE clause.
    ![IN_OP](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/e3cce972-82ba-425a-a9cf-ae085e88cad5)
+
 ### 5. BETWEEN Operator: -
   #### • Used to select a range of values.
   ![BETWEEN_OP](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/57fd3c46-7870-4c35-b1ae-5408bec4463c)
+
 ### 6. LIKE Operator: -
    #### • Used for pattern matching with wildcard characters (% for multiple characters and _ for a single character).
    ![LIKE_OP](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/015a0640-0cf3-4a5b-a266-4f860f9e69d9)
+
 ## FUNCTIONS: -
 ### 1. AGGREATE Function: - Aggregate functions operate on a set of values and return a single result. Common aggregate functions include:
    #### • COUNT(): Counts the number of rows.
@@ -103,52 +113,65 @@
    #### • MIN(): Returns the minimum value.
    #### • MAX(): Returns the maximum value.
    ![AGG_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/bc158f72-3667-41c3-ac8a-809b5353f0be)
+
 ### 2. STRING Function: -String functions allow you to manipulate text data.
    #### • CONCAT(): Combines two or more strings.
    #### • SUBSTRING(): Extracts a substring from a string.
    #### • UPPER(), LOWER(): Converts text to uppercase or lowercase.
    #### • LENGTH(), CHAR_LENGTH(): Returns the length of a string.
+![STRING_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/f696c3fc-5d24-47b3-beda-bc83ccd10f0e)
+
 ### 3. MATHEMATICAL Function: - Mathematical functions perform numeric calculations.
    #### • ABS(): Returns the absolute value of a number.
    #### • ROUND(): Rounds a numeric value to a specified number of decimal places.
    #### • SQRT(): Calculates the square root of a number.
    ![MATH_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/bbcf75a8-03b9-4762-a3d0-cd14e7d17958)
-![STRING_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/f696c3fc-5d24-47b3-beda-bc83ccd10f0e)
+
 ## JOINS: -
 ### 1. INNER JOIN: - An INNER JOIN returns only the rows that have matching values in both tables being joined. It excludes rows with non-matching values in either table.
-
 ![INNER_JJ](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/31c28ac6-b616-4118-801d-5446bfc6a40a)
 
 ### 2. LEFT OUTER JOIN: - A LEFT JOIN returns all the rows from the left table and the matched rows from the right table. If there is no match in the right table, NULL values are returned.
 ![Selection_001](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/3720742f-491b-4b31-973a-5264992ddf5b)
+
 # 5.  Creating different types of views for tailored presentation of data.
 ### 1. SIMPLE view: - Simple views are the most basic type of view in MariaDB. They are created by selecting a subset of columns from one or more tables.
 ![simple_view](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/c9b6c07e-7da3-4d7c-8fc7-cd9920a8f00a)
+
 ### 2. JOIN view: - Join views allow you to combine data from multiple tables and present it as a single view. You can create views that perform joins on underlying tables to simplify complex queries.
 ![join_view](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/1d3acf32-d935-4b48-8b5e-1cdf0e8fa4d9)
+
 # 6. How to apply Conditional Controls in Pl/SQL
 ### 1. IF Statement: - You can use the IF statement to execute different SQL statements based on a condition.
-![IF_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/65c6ee59-b55a-40c9-b72a-34c58597e8af)
+![PRO_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/8e7fa317-2daa-4324-8704-9f8d937c1374)
+
 ### 2. CASE Statement: - The CASE statement allows you to perform conditional logic within SQL queries. You can use it to return different values based on specific conditions.
 ![CAS_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/cb91fbf5-40c2-4e19-870e-071fdd2d6663)
+
 # 7. Error Handling using Internal Exceptions and External Exceptions.
 ### MariaDB supports error handling through both internal exceptions and external exceptions. Internal exceptions are typically used within stored procedures, while external exceptions are errors that can be caught in the client application that calls the database.
 ## 1. Internal Exception (in Stored Procedures): -
 ![IMPLICIT_PRO](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/9cd5306d-989a-4073-b020-d561996916da)
+
 ## 2. External Exception (in Stored Procedure): -
 ![EXP_PRO](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/6e54d3fe-1b56-4d8c-9684-8aed12f61a7c)
+
 # 8. Using various types of Cursors
 ### 1. Insensitive Cursor:
 ![CURSOR_1](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/0148c086-5dc0-4647-b6e6-ea3ec94212ea)
 ![CURSOR_2](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/a03d5ea7-edea-4c66-aba9-4024ff155192)
+
 ### 2. Sensitive Cursor:
 ![CUR_SEC](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/cae6fd2b-fc36-4560-b274-34224d5807e5)
 ![CUR_SEC_2](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/d93b0801-429d-4b64-b503-916dc4e187ad)
+
 # 9. How to run Stored Procedures and Functions
 ### 1. STORED PROCEDURE: - You can create stored procedures in MariaDB to encapsulate conditional logic and reuse it in multiple queries or applications. Here's an example of a simple stored procedure with conditional logic:
 ![PRO_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/8e7fa317-2daa-4324-8704-9f8d937c1374)
+
 ### 2. STORED FUNCTION: - In MariaDB, a function is a stored program that you can pass parameters into and then return a value.
 ![FUNC_STO](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/743292f1-cc49-434c-afbc-2a2128cc6434)
+
 # 10. Creating Packages and applying Triggers
 ### 2. TRIGGER:
 ![trigger](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/84486ca6-e888-4aa9-b5a5-514ce61a43c0)
