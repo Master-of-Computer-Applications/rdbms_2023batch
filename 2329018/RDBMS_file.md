@@ -151,6 +151,267 @@ CREATE TABLE courses (
 
 CREATE TABLE student (
     student_id INT PRIMARY KEY,
+## <p align="left">Ques-4.View data in the required form using Operators, Functions and Joins.</p>
+
+### SQL Operators
+The SQL reserved words and characters are called operators, which are used with a WHERE clause in a SQL query. In SQL, an operator can either be a unary or binary operator. The unary operator uses only one operand for performing the unary operation, whereas the binary operator uses two operands for performing the binary operation.
+
+#### Types of Operator
+
+SQL operators are categorized in the following categories:
+
+- SQL Arithmetic Operators
+
+- SQL Comparison Operators
+
+- SQL Logical Operators
+
+- SQL Set Operators
+
+- SQL Bit-wise Operators
+
+- SQL Unary Operators
+
+#### 1.SQL Arithmetic Operators
+The Arithmetic Operators perform the mathematical operation on the numerical data of the SQL tables. These operators perform addition, subtraction, multiplication, and division operations on the numerical operands.
+
+Following are the various arithmetic operators performed on the SQL data:
+   - SQL Addition Operator (+)
+   - SQL Subtraction Operator (-)
+   - SQL Multiplication Operator (+)
+   - SQL Division Operator (-)
+   - SQL Modulus Operator (+)
+    
+#### 2.SQL Comparison Operators
+
+The Comparison Operators in SQL compare two different data of SQL table and check whether they are the same, greater, and lesser. The SQL comparison operators are used with the WHERE clause in the SQL queries
+
+Following are the various comparison operators which are performed on the data stored in the SQL database tables:
+    - SQL Equal Operator (=)
+    - SQL Not Equal Operator (!=)
+    - SQL Greater Than Operator (>)
+    - SQL Greater Than Equals to Operator (>=)
+    - SQL Less Than Operator (<)\
+    - SQL Less Than Equals to Operator (<=)
+
+#### 3.SQL Logical Operators
+
+The Logical Operators in SQL perform the Boolean operations, which give two results True and False. These operators provide True value if both operands match the logical condition.
+
+Following are the various logical operators which are performed on the data stored in the SQL database tables:
+    -SQL ALL operator
+    - SQL AND operator
+    - SQL OR operator
+    - SQL BETWEEN operator
+    - SQL IN operator
+    - SQL NOT operator
+    - SQL ANY operator
+    - SQL LIKE operator
+    
+The Set Operators in SQL combine a similar type of data from two or more SQL database tables. It mixes the result, which is extracted from two or more SQL queries, into a single result.
+
+#### 4.SQL Set Operators
+
+Set operators combine more than one select statement in a single query and return a specific result set.
+
+Following are the various set operators which are performed on the similar data stored in the two SQL database tables:
+    - SQL Union Operator
+    - SQL Union ALL Operator
+    - SQL Intersect Operator
+    - SQL Minus Operator
+    
+#### 5.SQL Bitwise Operators
+
+The Bitwise Operators in SQL perform the bit operations on the Integer values. To understand the performance of Bitwise operators, you just knew the basics of Boolean algebra.
+
+Following are the two important logical operators which are performed on the data stored in the SQL database tables:
+    - Bitwise AND (&)
+    - Bitwise OR(|)
+
+#### 6.SQL Unary Operators
+
+The Unary Operators in SQL perform the unary operations on the single data of the SQL table, i.e., these operators operate only on one operand.
+
+These types of operators can be easily operated on the numeric data value of the SQL table.
+
+Following are the various unary operators which are performed on the numeric data stored in the SQL table:
+    - SQL Unary Positive Operator
+    - SQL Unary Negative Operator
+    - SQL Unary Bitwise NOT Operator
+
+ ### SQL FUNCTIONS
+ For doing operations on data SQL has many built-in functions, they are categorized in two categories and further sub-categorized in different seven functions under each category. The categories are: 
+   *Aggregate functions*
+    These functions are used to do operations from the values of the column and a single value is returned. 
+        - AVG()
+        - COUNT()
+        - FIRST()
+        - LAST()
+        - MAX()
+        - MIN()
+        - SUM()
+    *Scalar functions:*
+    These functions are based on user input, these too returns single value. 
+        - UCASE()
+        - LCASE()
+        - MID()
+        - LEN()
+        - ROUND()
+        - NOW()
+        - FORMAT()
+  
+### SQL JOIN
+
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them
+
+*Different Types of SQL JOINS*
+
+Here are the different types of the JOINs in SQL:
+    - (INNER) JOIN: Returns records that have matching values in both tables
+    - LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+    - RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+    - FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+
+    
+
+Let's say you have two tables: employees and departments. The goal is to retrieve information about employees and their corresponding departments.
+
+### Objective:
+Retrieve a list of employee names, their department names, and display an indicator if their salary is above a certain threshold.
+
+
+### Explanation:
+
+SELECT Clause:
+
+CONCAT(first_name, ' ', last_name) AS full_name: Concatenates the first_name and last_name columns into a new column named full_name.
+department_name: Selects the department_name from the departments table.
+salary: Selects the salary from the employees table.
+CASE WHEN salary > 55000 THEN 'Above Threshold' ELSE 'Below Threshold' END AS salary_indicator: Uses a CASE statement to create a new column salary_indicator that indicates whether the salary is above a certain threshold
+
+FROM Clause:
+
+FROM employees: Specifies the primary table as employees.
+JOIN departments ON employees.department_id = departments.department_id: Performs an INNER JOIN with the departments table based on the department_id column to link the two tables.
+
+Result:
+
+The query will return a result set with columns: full_name, department_name,salary, salary_indicator.
+
+## <p align="left">Ques-5.Creating different types of Views for tailored presentation of data</p>
+
+Views are a special version of tables in SQL. They provide a virtual table environment for various complex operations. You can select data from multiple tables, or you can select specific data based on certain criteria in views. It does not hold the actual data; it holds only the definition of the view in the data dictionary.
+The view is a query stored in the data dictionary, on which the user can query just like they do on tables. It does not use the physical memory, only the query is stored in the data dictionary. It is computed dynamically, whenever the user performs any query on it. Changes made at any point in view are reflected in the actual base table.
+
+### Simple View: 
+A view based on only a single table, which doesn't contain GROUP BY clause and any functions.
+
+### Complex View: 
+A view based on multiple tables, which contain GROUP BY clause and functions.
+
+### Inline View: 
+A view based on a subquery in FROM Clause, that subquery creates a temporary table and simplifies the complex query.
+
+### Materialized View: 
+A view that stores the definition as well as data. It creates replicas of data by storing it physically.
+
+![Screenshot from 2023-11-13 19-19-45](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/c8ddfadc-f585-4f21-8c5c-01420f6450d9)
+
+![Screenshot from 2023-11-13 19-27-44](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/968cd387-837b-41cc-8fd0-9289b5a2bef3)
+
+
+## <p align="left">Ques-6.How to apply Conditional Controls in PL/SQL</p>
+
+In PL/SQL (Procedural Language/Structured Query Language), we can use conditional controls to execute different blocks of code based on certain conditions. There are several constructs for implementing conditional logic in PL/SQL, including the IF statement, CASE statement, and the IF-ELSIF-ELSE statement.
+
+### IF STATEMENT
+The IF statement is used to execute a block of code if a specified condition is true.
+
+#### SYNTAX
+
+IF condition THEN
+   
+    -- code to execute if condition is true
+END IF;
+
+
+### IF ELSE IF STATEMENT
+This statement is an extension of the IF statement and allows you to specify multiple conditions and corresponding blocks of code to execute.
+
+#### SYNTAX
+
+IF 
+condition1 
+THEN
+    
+    -- code to execute if condition1 is true
+ELSIF 
+condition2 
+THEN
+    
+    -- code to execute if condition2 is true
+ELSE
+     
+     -- code to execute if none of the conditions are true
+END IF;
+
+
+### CASE STATEMENT 
+The CASE statement is used to perform different actions based on the value of an expression.
+
+#### SYNTAX
+
+CASE
+WHEN condition1 THEN
+        
+        -- code to execute if condition1 is true
+WHEN condition2 THEN
+        
+        -- code to execute if condition2 is true
+ELSE
+        
+        -- code to execute if none of the conditions are true
+END CASE;
+
+![Screenshot from 2023-11-13 20-59-29](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/1b1fdabd-75d0-49ac-890b-bcb50cd569f7)
+11:03 pm
+Thank you soo much🥹
+11:15 pm
+Bakie de jldi karke send kar die
+11:15 pm
+Plz
+11:15 pm
+TODAY
+Bki sam mil ni rhe
+8:10 am
+Kive kra
+8:10 am
+😵‍💫
+9:48 am
+Ravneet ne kite nhi?
+9:48 am
+Kina hoya?
+7:39 pm
+?
+7:48 pm
+File da ta hogya
+7:53 pm
+7:56 pm
+7:57 pm
+7:58 pm
+github.com
+https://github.com/Master-of-Computer-Applications/rdbms_2023batch/pull/40
+github.com
+https://github.com/Master-of-Computer-Applications/rdbms_2023batch/pull/40
+8:02 pm
+github.com
+https://github.com/samridhi0/rdbms_2023batch/edit/patch-3/2329018/RDBMS_file.md?pr=%2FMaster-of-Computer-Applications%2Frdbms_2023batch%2Fpull%2F40
+github.com
+https://github.com/samridhi0/rdbms_2023batch/edit/patch-3/2329018/RDBMS_file.md?pr=%2FMaster-of-Computer-Applications%2Frdbms_2023batch%2Fpull%2F40
+8:08 pm
+
+
+
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     date_of_birth DATE,
@@ -185,4 +446,233 @@ VALUES
     (3, 'Alice', 'Johnson', '1998-03-10', 'alicejohnson@example.com', '2023-09-01', 'Biology', 3.2, 3);
 ```
 ![Screenshot from 2023-10-16 11-33-31](https://github.com/samridhi0/rdbms_2023batch/assets/114128927/54b7a777-acc9-487e-8b50-6ae7fcdaf0e2)
+
+## <p align="left">Ques-4.View data in the required form using Operators, Functions and Joins.</p>
+
+### SQL Operators
+The SQL reserved words and characters are called operators, which are used with a WHERE clause in a SQL query. In SQL, an operator can either be a unary or binary operator. The unary operator uses only one operand for performing the unary operation, whereas the binary operator uses two operands for performing the binary operation.
+
+#### Types of Operator
+
+SQL operators are categorized in the following categories:
+
+- SQL Arithmetic Operators
+
+- SQL Comparison Operators
+
+- SQL Logical Operators
+
+- SQL Set Operators
+
+- SQL Bit-wise Operators
+
+- SQL Unary Operators
+
+#### 1.SQL Arithmetic Operators
+The Arithmetic Operators perform the mathematical operation on the numerical data of the SQL tables. These operators perform addition, subtraction, multiplication, and division operations on the numerical operands.
+
+Following are the various arithmetic operators performed on the SQL data:
+   - SQL Addition Operator (+)
+   - SQL Subtraction Operator (-)
+   - SQL Multiplication Operator (+)
+   - SQL Division Operator (-)
+   - SQL Modulus Operator (+)
+    
+#### 2.SQL Comparison Operators
+
+The Comparison Operators in SQL compare two different data of SQL table and check whether they are the same, greater, and lesser. The SQL comparison operators are used with the WHERE clause in the SQL queries
+
+Following are the various comparison operators which are performed on the data stored in the SQL database tables:
+    - SQL Equal Operator (=)
+    - SQL Not Equal Operator (!=)
+    - SQL Greater Than Operator (>)
+    - SQL Greater Than Equals to Operator (>=)
+    - SQL Less Than Operator (<)\
+    - SQL Less Than Equals to Operator (<=)
+
+#### 3.SQL Logical Operators
+
+The Logical Operators in SQL perform the Boolean operations, which give two results True and False. These operators provide True value if both operands match the logical condition.
+
+Following are the various logical operators which are performed on the data stored in the SQL database tables:
+    -SQL ALL operator
+    - SQL AND operator
+    - SQL OR operator
+    - SQL BETWEEN operator
+    - SQL IN operator
+    - SQL NOT operator
+    - SQL ANY operator
+    - SQL LIKE operator
+    
+The Set Operators in SQL combine a similar type of data from two or more SQL database tables. It mixes the result, which is extracted from two or more SQL queries, into a single result.
+
+#### 4.SQL Set Operators
+
+Set operators combine more than one select statement in a single query and return a specific result set.
+
+Following are the various set operators which are performed on the similar data stored in the two SQL database tables:
+    - SQL Union Operator
+    - SQL Union ALL Operator
+    - SQL Intersect Operator
+    - SQL Minus Operator
+    
+#### 5.SQL Bitwise Operators
+
+The Bitwise Operators in SQL perform the bit operations on the Integer values. To understand the performance of Bitwise operators, you just knew the basics of Boolean algebra.
+
+Following are the two important logical operators which are performed on the data stored in the SQL database tables:
+    - Bitwise AND (&)
+    - Bitwise OR(|)
+
+#### 6.SQL Unary Operators
+
+The Unary Operators in SQL perform the unary operations on the single data of the SQL table, i.e., these operators operate only on one operand.
+
+These types of operators can be easily operated on the numeric data value of the SQL table.
+
+Following are the various unary operators which are performed on the numeric data stored in the SQL table:
+    - SQL Unary Positive Operator
+    - SQL Unary Negative Operator
+    - SQL Unary Bitwise NOT Operator
+
+ ### SQL FUNCTIONS
+ For doing operations on data SQL has many built-in functions, they are categorized in two categories and further sub-categorized in different seven functions under each category. The categories are: 
+   *Aggregate functions*
+    These functions are used to do operations from the values of the column and a single value is returned. 
+        - AVG()
+        - COUNT()
+        - FIRST()
+        - LAST()
+        - MAX()
+        - MIN()
+        - SUM()
+    *Scalar functions:*
+    These functions are based on user input, these too returns single value. 
+        - UCASE()
+        - LCASE()
+        - MID()
+        - LEN()
+        - ROUND()
+        - NOW()
+        - FORMAT()
+  
+### SQL JOIN
+
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them
+
+*Different Types of SQL JOINS*
+
+Here are the different types of the JOINs in SQL:
+    - (INNER) JOIN: Returns records that have matching values in both tables
+    - LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+    - RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+    - FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+
+    
+
+Let's say you have two tables: employees and departments. The goal is to retrieve information about employees and their corresponding departments.
+
+### Objective:
+Retrieve a list of employee names, their department names, and display an indicator if their salary is above a certain threshold.
+![sammridhi](https://github.com/samridhi0/rdbms_2023batch/assets/114128927/508a1008-f322-4610-92d8-44eaf8270014)
+
+
+### Explanation:
+
+SELECT Clause:
+
+CONCAT(first_name, ' ', last_name) AS full_name: Concatenates the first_name and last_name columns into a new column named full_name.
+department_name: Selects the department_name from the departments table.
+salary: Selects the salary from the employees table.
+CASE WHEN salary > 55000 THEN 'Above Threshold' ELSE 'Below Threshold' END AS salary_indicator: Uses a CASE statement to create a new column salary_indicator that indicates whether the salary is above a certain threshold
+
+FROM Clause:
+
+FROM employees: Specifies the primary table as employees.
+JOIN departments ON employees.department_id = departments.department_id: Performs an INNER JOIN with the departments table based on the department_id column to link the two tables.
+
+Result:
+
+The query will return a result set with columns: full_name, department_name,salary, salary_indicator.
+
+## <p align="left">Ques-5.Creating different types of Views for tailored presentation of data</p>
+
+Views are a special version of tables in SQL. They provide a virtual table environment for various complex operations. You can select data from multiple tables, or you can select specific data based on certain criteria in views. It does not hold the actual data; it holds only the definition of the view in the data dictionary.
+The view is a query stored in the data dictionary, on which the user can query just like they do on tables. It does not use the physical memory, only the query is stored in the data dictionary. It is computed dynamically, whenever the user performs any query on it. Changes made at any point in view are reflected in the actual base table.
+
+### Simple View: 
+A view based on only a single table, which doesn't contain GROUP BY clause and any functions.
+
+### Complex View: 
+A view based on multiple tables, which contain GROUP BY clause and functions.
+
+### Inline View: 
+A view based on a subquery in FROM Clause, that subquery creates a temporary table and simplifies the complex query.![dell1](https://github.com/samridhi0/rdbms_2023batch/assets/114128927/93240f6f-06db-4eaa-8704-328f22e9e8cd)
+
+
+### Materialized View: 
+A view that stores the definition as well as data. It creates replicas of data by storing it physically.
+
+![samridhii](https://github.com/samridhi0/rdbms_2023batch/assets/114128927/79e392ee-993f-43b8-8d7b-2d7ec77b65ad)
+
+
+![samridhi](https://github.com/samridhi0/rdbms_2023batch/assets/114128927/848e9d72-0d3e-4c75-9da1-cae701491ef2)
+
+
+
+## <p align="left">Ques-6.How to apply Conditional Controls in PL/SQL</p>
+
+In PL/SQL (Procedural Language/Structured Query Language), we can use conditional controls to execute different blocks of code based on certain conditions. There are several constructs for implementing conditional logic in PL/SQL, including the IF statement, CASE statement, and the IF-ELSIF-ELSE statement.
+
+### IF STATEMENT
+The IF statement is used to execute a block of code if a specified condition is true.
+
+#### SYNTAX
+
+IF condition THEN
+   
+    -- code to execute if condition is true
+END IF;
+
+
+### IF ELSE IF STATEMENT
+This statement is an extension of the IF statement and allows you to specify multiple conditions and corresponding blocks of code to execute.
+
+#### SYNTAX
+
+IF 
+condition1 
+THEN
+    
+    -- code to execute if condition1 is true
+ELSIF 
+condition2 
+THEN
+    
+    -- code to execute if condition2 is true
+ELSE
+     
+     -- code to execute if none of the conditions are true
+END IF;
+
+
+### CASE STATEMENT 
+The CASE statement is used to perform different actions based on the value of an expression.
+
+#### SYNTAX
+
+CASE
+WHEN condition1 THEN
+        
+        -- code to execute if condition1 is true
+WHEN condition2 THEN
+        
+        -- code to execute if condition2 is true
+ELSE
+        
+        -- code to execute if none of the conditions are true
+END CASE;
+
+
+![samridhi@samridhi](https://github.com/samridhi0/rdbms_2023batch/assets/114128927/d78208ac-ab8e-4ab0-97b6-6c149fc1cb92)
 
