@@ -497,7 +497,125 @@ END;
 ![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/8830f6e9-72a0-409a-be91-c20bae3fd543)
 
 ## <p align="left"> Ques-8. Using various types of Cursors. </p>
+<p> In SQL, a cursor is a database object that allows you to interact with individual rows returned by a query. Cursors are often used when you need to process one row at a time, rather than fetching the entire result set at once. There are several types of cursors in SQL, and their usage depends on the specific requirements of your application. </p>
 
+### Types of Cursors:
+
+### 1. Static Cursor: 
+- A static cursor is not sensitive to changes made by other users to the data while the cursor is open.
+- It fetches a snapshot of the data at the time the cursor is opened.
+
+**Syntax:**
+```python
+    DECLARE cursor_name CURSOR STATIC FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+```
+
+### 2. Dynamic Cursor:
+- A dynamic cursor reflects changes made by other users to the data while the cursor is open.
+- It does not fetch a snapshot but rather retrieves the current data each time a fetch is made.
+    
+**Syntax:**
+```python
+    DECLARE cursor_name CURSOR DYNAMIC FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+```
+
+### 3. Forward-Only Cursor:
+- A forward-only cursor only allows fetching rows in a forward direction (from the first to the last row).
+- It is the most lightweight and performs better in terms of resource usage.
+
+**Syntax:**
+```python
+    DECLARE cursor_name CURSOR FORWARD_ONLY FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+```
+
+### 4. Scroll Cursor:
+- A scroll cursor allows fetching rows in both forward and backward directions.
+- It provides more flexibility but may be less efficient than forward-only cursors.
+
+**Syntax:**
+```python
+      DECLARE cursor_name CURSOR SCROLL FOR
+      SELECT column1, column2, ...
+      FROM your_table;
+```
+  
+### 5. Keyset Cursor:
+- A keyset cursor is similar to a dynamic cursor but is more optimized as it only retrieves the key values of the rows.
+- It is sensitive to changes in the data but doesn't retrieve the actual data until a fetch is made.
+
+**Syntax:**
+```python
+    DECLARE cursor_name CURSOR KEYSET FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+```
+
+**Example:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/e83cfd5a-6c5c-418f-ae4b-60aa722b987e)
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/b5627313-8f39-4f15-abcc-f2e0662be687)
+
+## <p align="left"> Ques-9. How to run Stored Procedures and Functions. </p>
+<p>Stored Procedures and Functions are database objects in SQL that contain a set of precompiled SQL statements. They are designed to perform specific tasks and can be reused, making database development more efficient. Both stored procedures and functions enhance code modularity, improve security, and allow for better performance optimization.</p>
+
+### Stored Procedures:
+
+**1. Purpose:**
+- Procedural Logic: Stored procedures contain a series of SQL statements and procedural logic, allowing for complex operations to be encapsulated in a single unit.
+
+**2. Execution:**
+-  Call Statement: Stored procedures are typically executed using a CALL or EXEC statement.
+
+**3. Parameters:**
+- Input/Output Parameters: Stored procedures can take input parameters, perform operations, and return results. They may also have output parameters.
+
+**4. Transaction Control:**
+- Transaction Management: Stored procedures can include transaction management commands (COMMIT and ROLLBACK) to control the scope of transactions.
+
+**Running Stored Procedures:-** Before you can run a stored procedure, you need to create it. Use the CREATE PROCEDURE statement to define a stored procedure
+```python  
+CREATE PROCEDURE procedure_name
+AS
+BEGIN
+-- SQL statements for the procedure
+END;
+```
+**Example:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/ca30c02f-2fb3-4678-927d-3879129b5549)
+
+### Functions:
+
+**1. Purpose:**
+- Return Value: Functions are designed to return a single value or a table result, making them suitable for use in expressions or queries.
+
+**2. Execution:**
+- Select Statement: Functions are typically used within SELECT statements or as part of an expression.
+
+**3. Parameters:**
+- Input Parameters: Functions may accept input parameters, but they cannot have output parameters.
+
+**4. Transaction Control:**
+- No Transaction Management: Functions cannot contain transaction management commands like COMMIT or ROLLBACK.
+
+**Running Functions:-** Use the CREATE FUNCTION statement to define a function. Functions return a value and can be used in SQL queries.
+```python  
+CREATE FUNCTION function_name
+RETURNS data_type
+AS
+BEGIN
+-- SQL statements for the function
+RETURN value;
+END;
+```
+**Example:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/36a95e45-ba87-468b-b9e2-73eb7af13154)
+
+## <p align="left"> Ques-10. Creating Packages and applying Triggers. </p>
 
 
 
