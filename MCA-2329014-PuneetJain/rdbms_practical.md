@@ -658,3 +658,376 @@ DROP VIEW STUDENT;
 ```
 _Output:_
 ![Screenshot from 2023-11-03 21-13-33](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/d2d48874-0e5e-41c2-b99b-e97c0d5eb9ac)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## *6. How to apply Conditional Controls in PL/SQL.*
+
+Conditional control statements are those which allow you to control the execution flow of the program depending on a condition. In other words the statements in the program are not necessarily executed in a sequence rather one or other group of statements are executed depending on the evaluation of a condition.
+Types of conditional controls<br>
+1) IF-THEN Statement
+2) IF-THEN-ELSE Statement
+3) IF-THEN-ELSEIF Statement
+
+(1) IF-THEN Statement:-<br>  
+In MariaDB, conditional control statements within SQL queries are different from PL/SQL's procedural IF-THEN control. MariaDB does not have a direct equivalent for PL/SQL's IF-THEN control statements within regular SQL queries. However, within stored procedures or functions, you can achieve conditional logic using CASE statements or IF statements. Here's an example using a stored procedure.
+```python
+DELIMITER //
+
+CREATE PROCEDURE CheckNumber(num INT)
+BEGIN
+    CASE
+        WHEN num > 0 THEN
+            SELECT 'Number is positive';
+        ELSE
+            SELECT 'Number is non-positive';
+    END CASE;
+END //
+
+DELIMITER ;
+```
+_Output:_
+![Screenshot from 2023-11-16 18-19-10](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/567b99a8-d55f-4d35-a908-99ed4907c42b)
+
+(2) IF-THEN-ELSE Statement:-<br>  
+A sequence of IF-THEN statements can be followed by an optional sequence of ELSE statements, which execute when the condition is FALSE.
+```python
+DELIMITER //
+
+CREATE PROCEDURE CheckNumber(num INT)
+BEGIN
+    IF num > 0 THEN
+        SELECT 'Number is positive';
+    ELSE
+        SELECT 'Number is non-positive';
+    END IF;
+END //
+
+DELIMITER ;
+```
+_Output:_
+![Screenshot from 2023-11-16 18-19-10](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/567b99a8-d55f-4d35-a908-99ed4907c42b)
+
+(3) IF-THEN-ELSEIF Statement:-<br> 
+The IF-THEN-ELSIF statement allows you to choose between several alternatives. An IF-THEN statement can be followed by an optional ELSIF...ELSE statement. The ELSIF clause lets you add additional conditions.<br>
+
+When using IF-THEN-ELSIF statements there are a few points to keep in mind:-<br>
+1)  It's ELSIF, not ELSEIF.<br>
+2)  An IF-THEN statement can have zero or one ELSE's and it must come after any ELSIF's.<br>
+3) An IF-THEN statement can have zero to many ELSIF's and they must come before the ELSE.<br>
+4) Once an ELSIF succeeds, none of the remaining ELSIF's or ELSE's will be tested.
+
+```python
+DELIMITER //
+
+CREATE PROCEDURE CheckNumber1(num INT)
+BEGIN
+    IF num > 0 THEN
+        SELECT 'Number is positive';
+    ELSE
+        IF num = 0 THEN
+            SELECT 'Number is zero';
+        ELSE
+            SELECT 'Number is negative';
+        END IF;
+    END IF;
+END //
+
+DELIMITER ;
+```
+_Output:_
+![Screenshot from 2023-11-16 18-32-37](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/39cc034b-16b7-4814-8a26-4043f6b3bc35)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## *7. Error Handling using Internal Exceptions and External Exceptions*
+
+An exception is an error which disrupts the normal flow of program instructions. PL/SQL provides us the exception block which raises the exception thus helping the programmer to find out the fault and resolve it.
+
+There are two types of exceptions defined in PL/SQL
+
+  (1)User defined exception.<br>
+  (2)System defined exceptions.
+
+```python
+DELIMITER //
+
+CREATE PROCEDURE example_error_handling()
+BEGIN
+    DECLARE custom_error CONDITION FOR SQLSTATE '45000';
+
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- Custom error handling logic goes here
+        ROLLBACK;
+        SELECT 'An error occurred';
+    END;
+
+    START TRANSACTION;
+
+    -- Your SQL statements here
+
+    -- Simulating an error
+    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Custom error message';
+
+    COMMIT;
+END //
+
+DELIMITER ;
+```
+_Output:_
+![Screenshot from 2023-11-16 15-46-25](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/09eaa45d-9339-425b-9436-bebf195b47ce)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## *8. Using various types of Cursor*
+A cursor is a pointer to this context area. PL/SQL controls the context area through a cursor. A cursor holds the rows (one or more) returned by a SQL statement. The set of rows the cursor holds is referred to as the active set.
+
+You can name a cursor so that it could be referred to in a program to fetch and process the rows returned by the SQL statement, one at a time. There are two types of cursors −
+
+  (1)DECLARE Cursor:<br>
+ Description: A DECLARE cursor is explicitly declared and must be managed explicitly by the programmer.
+ Syntax: DECLARE cursor_name CURSOR FOR SELECT_statement;
+
+(2)FOR Cursor:<br>
+Description: A FOR cursor is implicitly declared and automatically managed by the database system. It simplifies the syntax and reduces the amount of code needed for simple cursor operations.<br>
+Syntax:FOR variable_name IN (SELECT_statement) DO
+  -- Statements to process each row END FOR;
+
+```python
+DELIMITER //
+
+-- Create a sample employees table
+CREATE TABLE IF NOT EXISTS employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(255)
+);
+
+-- Insert some sample data
+INSERT INTO employees (employee_id, employee_name) VALUES
+(1, 'John Doe'),
+(2, 'Jane Smith'),
+(3, 'Bob Johnson');
+
+-- Create a stored procedure with a DECLARE cursor
+CREATE PROCEDURE example_cursor_demo()
+BEGIN
+    DECLARE done BOOLEAN DEFAULT FALSE;
+    DECLARE emp_id INT;
+    DECLARE emp_name VARCHAR(255);
+
+    -- Declare a cursor for the employees table
+    DECLARE employee_cursor CURSOR FOR
+        SELECT employee_id, employee_name FROM employees;
+
+    -- Declare continue handler to exit loop when no more rows found
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    -- Open the cursor
+    OPEN employee_cursor;
+
+    -- Start processing rows
+    read_loop: LOOP
+        -- Fetch data into variables
+        FETCH employee_cursor INTO emp_id, emp_name;
+
+        -- Check if there are no more rows
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+
+        -- Process the current row
+        SELECT CONCAT('Employee ID: ', emp_id, ', Name: ', emp_name) AS employee_info;
+    END LOOP;
+
+    -- Close the cursor
+    CLOSE employee_cursor;
+END //
+
+DELIMITER ;
+```
+_Output:_
+![Screenshot from 2023-11-16 17-38-01](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/5bbc0f51-f9fd-4e9e-8d48-d98cee290320)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## *9. How to run Stored Procedures and Functions*
+**(1)Stores Procedures- Procedure is used to perform database actions with PL/SQL.**
+
+```python
+DELIMITER //
+
+CREATE PROCEDURE example_stored_procedure()
+BEGIN
+    SELECT 'Hello, World!' AS message;
+END //
+
+DELIMITER ;
+```
+_Output:_
+![Screenshot from 2023-11-16 17-45-10](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/4cd99f2d-6fa6-41df-85f4-3529c5779928)
+
+**(2)Stored Functions-Function is used to perform a calculation and return a result.**
+
+```python
+DELIMITER //
+
+CREATE FUNCTION example_stored_function() RETURNS VARCHAR(255)
+BEGIN
+    DECLARE result VARCHAR(255);
+    SET result = 'Hello, World!';
+    RETURN result;
+END //
+
+DELIMITER ;
+```
+_Output:_
+![Screenshot from 2023-11-16 17-47-13](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/76596690-db95-4fc8-ace2-d9e3496891dc)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## *10. Creating Packages and applying Triggers*
+
+**Creating Packages**-Creating Packages (Similar functionality using procedures and functions):<br>
+In MariaDB, you can organize related stored procedures and functions into a common schema. Here's an example that demonstrates a simple "package-like" structure
+
+```python
+-- Creating a package-like structure in MariaDB
+DELIMITER //
+
+-- Package-like schema
+CREATE SCHEMA IF NOT EXISTS my_package;
+
+-- Procedure 1
+CREATE PROCEDURE my_package.procedure1()
+BEGIN
+    -- Procedure 1 logic
+END //
+
+-- Procedure 2
+CREATE PROCEDURE my_package.procedure2()
+BEGIN
+    -- Procedure 2 logic
+END //
+
+-- Function 1
+CREATE FUNCTION my_package.function1() RETURNS INT
+BEGIN
+    -- Function 1 logic
+    RETURN 1;
+END //
+
+-- Function 2
+CREATE FUNCTION my_package.function2() RETURNS INT
+BEGIN
+    -- Function 2 logic
+    RETURN 2;
+END //
+```
+_Output:_
+![Screenshot from 2023-11-16 17-53-49](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/91662056-fbdd-463a-abb0-4e12d481952d)
+
+**Triggers**-Triggers are stored programs, which are automatically executed or fired when some events occur.
+
+```python
+CREATE TABLE IF NOT EXISTS employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(255),
+    last_updated TIMESTAMP
+);
+
+-- Insert some sample data
+INSERT INTO employees (employee_id, employee_name, last_updated) VALUES
+(1, 'John Doe', NOW()),
+(2, 'Jane Smith', NOW()),
+(3, 'Bob Johnson', NOW());
+
+-- Display the initial data
+SELECT * FROM employees;
+
+-- Create a trigger that updates the timestamp when a row is updated
+DELIMITER //
+
+CREATE TRIGGER update_timestamp
+BEFORE UPDATE ON employees
+FOR EACH ROW
+BEGIN
+    SET NEW.last_updated = NOW();
+END //
+
+DELIMITER ;
+
+-- Update a row in the 'employees' table
+UPDATE employees SET employee_name = 'Updated Name' WHERE employee_id = 1;
+```
+_Output:_
+![Screenshot from 2023-11-16 17-59-51](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/affe1da6-5b7b-4a66-85d1-41f045816307)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## *11. Creating Arrays and Nested Tables.*
+
+(1)**An array** is an ordered set of elements of a single built-in
+data type.<BR>  An array can have an associated user-defined array type, or
+it can be the result of an SQL operation that returns an array value
+without an associated user-defined array type.
+```python
+CREATE TABLE example_array_table (
+    id INT PRIMARY KEY,
+    data JSON
+);
+-- Insert data with JSON arrays
+INSERT INTO example_array_table (id, data) VALUES
+(1, '[1, 2, 3]'),
+(2, '["apple", "banana", "orange"]');
+```
+_Output:_
+![Screenshot from 2023-11-16 18-08-39](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/96ea29ce-a0c6-4b6e-8cc7-cb2ece42987d)
+
+(2)**Nested tables** are single-dimensional, unbounded
+collections of homogeneous elements.<br> First, a nested table is single-
+dimensional, meaning that each row has a single column of data like a
+one-dimension array. Second, a nested table is unbounded. It means
+that the number of elements of a nested table is predetermined. Third,
+homogeneous elements mean that all elements of a nested table have
+the same data type.
+
+```python
+CREATE TABLE main_entities (
+    main_id INT PRIMARY KEY,
+    main_name VARCHAR(255)
+);
+
+-- Create a table for the nested entities
+CREATE TABLE nested_entities (
+    nested_id INT PRIMARY KEY,
+    main_id INT,
+    nested_name VARCHAR(255),
+    FOREIGN KEY (main_id) REFERENCES main_entities(main_id)
+);
+
+-- Insert sample data into the main_entities table
+INSERT INTO main_entities (main_id, main_name) VALUES
+(1, 'Main Entity 1'),
+(2, 'Main Entity 2');
+
+-- Insert sample data into the nested_entities table
+INSERT INTO nested_entities (nested_id, main_id, nested_name) VALUES
+(1, 1, 'Nested Entity A'),
+(2, 1, 'Nested Entity B'),
+(3, 2, 'Nested Entity C');
+
+-- Query data with a join to simulate nested entities
+SELECT
+    main_entities.main_id,
+    main_entities.main_name,
+    nested_entities.nested_id,
+    nested_entities.nested_name
+FROM
+    main_entities
+LEFT JOIN
+    nested_entities ON main_entities.main_id = nested_entities.main_id;
+```
+_Output:_
+![Screenshot from 2023-11-16 18-14-21](https://github.com/HoopedPJ/rdbms_2023batch/assets/144322043/42f15f1c-be87-4a76-97b5-aec8e2d429ed)
