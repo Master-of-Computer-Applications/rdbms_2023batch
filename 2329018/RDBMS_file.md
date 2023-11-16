@@ -675,4 +675,585 @@ END CASE;
 
 
 ![samridhi@samridhi](https://github.com/samridhi0/rdbms_2023batch/assets/114128927/d78208ac-ab8e-4ab0-97b6-6c149fc1cb92)
+## <p align="left">Ques-7. Error Handling using Internal Exceptions and External Exceptions
+
+
+An exception occurs when the PL/SQL engine encounters an instruction which it cannot execute due to an error that occurs at run-time. These errors will not be captured at the time of compilation and hence these needed to handle only at the run-time.
+
+For example, if PL/SQL engine receives an instruction to divide any number by ‘0’, then the PL/SQL engine will throw it as an exception. The exception is only raised at the run-time by the PL/SQL engine.
+
+Exceptions will stop the program from executing further, so to avoid such condition, they need to be captured and handled separately. This process is called as Exception-Handling, in which the programmer handles the exception that can occur at the run time.
+Exception-Handling Syntax
+
+Exceptions are handled at the block, level, i.e., once if any exception occurs in any block then the control will come out of execution part of that block. The exception will then be handled at the exception handling part of that block. After handling the exception, it is not possible to resend control back to the execution section of that block.
+
+### Internal Exceptions:
+
+Internal exceptions are errors that are raised automatically by the database engine in response to certain conditions. These exceptions are predefined and cover a range of common error scenarios. Some common internal exceptions include:
+
+1. NO_DATA_FOUND: Raised when a SELECT INTO statement returns no rows.
+2. TOO_MANY_ROWS: Raised when a SELECT INTO statement returns more than one row.
+3. ZERO_DIVIDE: Raised when attempting to divide by zero.
+4. DUP_VAL_ON_INDEX: Raised when trying to insert a duplicate value into a unique index.
+5. OTHERS: A catch-all exception that handles any unhandled exception.
+
+*Syntax*
+     
+     BEGIN TRY
+   
+    -- Your T-SQL statements here
+   
+    
+    -- This is the main block where potential errors may occur
+
+    -- Example: Divide by zero error
+    DECLARE @Result INT;
+    SET @Result = 1 / 0; -- This will cause a divide by zero error
+
+     END TRY
+    BEGIN CATCH
+    -- This block will be executed if an error occurs in the TRY block
+
+    PRINT 'An error occurred: ' + ERROR_MESSAGE(); -- Print the error message
+    -- You can log the error, roll back transactions, or take other appropriate actions
+
+    END CATCH;
+
+Here is an example of using internal exceptions:
+
+    DECLARE
+    v_result NUMBER;
+    BEGIN
+    SELECT 10 / 0 INTO v_result FROM dual;
+    EXCEPTION
+    WHEN ZERO_DIVIDE THEN
+      DBMS_OUTPUT.PUT_LINE('Error: Division by zero');
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('An unexpected error occurred');
+    END;
+
+Here are some possible internal exceptions:
+|Exception Name|	Description|	Scenario When Exception is Thrown|
+|-----|-----|------|
+ER_SCALAR_BUILTIN_NO_ROWS_CODE	|The Scalar function did not return any value.|	This exception is thrown when a SCALAR function does not return any row (value).
+ER_BAD_FIELD_ERROR	|Column name does not exist.|	A column that does not exist in a table is referenced in a query.
+ER_TABLE_EXISTS_ERROR|	Table already exists.	|While creating a table, a table with the same name already exists.
+ER_BAD_TABLE_ERROR	|Table does not exist.	|A table that does not exist is referenced in a query.
+ER_NO_SUCH_TABLE|	Table does not exist.|	A table that does not exist is referenced in a query.
+ER_DUP_ENTRY_WITH_KEY_NAME|	Duplicate key error.| The error message contains the key name as well.	A duplicate value is entered for a column with a key constraint.
+ER_WRONG_VALUE_COUNT_ON_ROW|	Column count does not match value count.	|The number of columns in a table and the number of values specified in the query are not the same. For example, INSERT query.
+ER_PARSE_ERROR|	Issue with parsing dynamic SQL.|	There is an error in the SQL statement.
+ER_FILE_NOT_FOUND|	Cannot find file, usually in LOAD DATA statements.|	Either the file does not exist or the file path is incorrect.    
+
+### External Exceptions:
+
+External exceptions, also known as user-defined exceptions, are custom exceptions that developers can define to handle specific errors in their code. These exceptions are raised explicitly using the RAISE statement. Developers can define their own error codes and messages for better error handling.
+
+1. Declaration of User-Defined Exception:
+- To declare a user-defined exception, you use the DECLARE section of a PL/SQL block.
+- Syntax: DECLARE my_exception EXCEPTION;
+
+2. Raising User-Defined Exception:
+
+- You can raise the user-defined exception explicitly using the RAISE statement.
+- Syntax: RAISE my_exception;
+
+3. Handling User-Defined Exception:
+
+- In the EXCEPTION section of your PL/SQL block, you can specify handlers for specific exceptions, including user-defined exceptions.
+
+*Syntax:*
+
+    EXCEPTION
+    WHEN my_exception THEN
+      -- Handle the exception here
+
+
+Here's an example of using external exceptions:
+
+    DECLARE
+    my_exception EXCEPTION;
+    v_number NUMBER := 5;
+    BEGIN
+    IF v_number > 10 THEN
+      RAISE my_exception;
+    END IF;
+    EXCEPTION
+    WHEN my_exception THEN
+      DBMS_OUTPUT.PUT_LINE('Custom exception: Number is greater than 10');
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('An unexpected error occurred');
+    END;
+    
+
+## <p align="left">Ques-8. Using various types of Cursors 
+
+In SQL, a cursor is a database object that allows you to interact with individual rows returned by a query. Cursors are often used when you need to process one row at a time, rather than fetching the entire result set at once. There are several types of cursors in SQL, and their usage depends on the specific requirements of your application. The main types of cursors are:
+
+#### 1. Static Cursor: 
+- A static cursor is not sensitive to changes made by other users to the data while the cursor is open.
+- It fetches a snapshot of the data at the time the cursor is opened.
+
+*Syntax:*
+
+    DECLARE cursor_name CURSOR STATIC FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+*Example:*
+   
+    DECLARE static_cursor CURSOR STATIC FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;    
+
+#### 2. Dynamic Cursor:
+- A dynamic cursor reflects changes made by other users to the data while the cursor is open.
+- It does not fetch a snapshot but rather retrieves the current data each time a fetch is made.
+    
+*Syntax:*
+
+    DECLARE cursor_name CURSOR DYNAMIC FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+*Example:*
+
+    DECLARE dynamic_cursor CURSOR DYNAMIC FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+#### 3. Forward-Only Cursor:
+- A forward-only cursor only allows fetching rows in a forward direction (from the first to the last row).
+- It is the most lightweight and performs better in terms of resource usage.
+
+*Syntax:*
+
+    DECLARE cursor_name CURSOR FORWARD_ONLY FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+*Example:*
+   
+    DECLARE forward_only_cursor CURSOR FORWARD_ONLY FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+#### 4. Scroll Cursor:
+- A scroll cursor allows fetching rows in both forward and backward directions.
+- It provides more flexibility but may be less efficient than forward-only cursors.
+
+*Syntax:*
+
+      DECLARE cursor_name CURSOR SCROLL FOR
+      SELECT column1, column2, ...
+      FROM your_table;
+
+*Example:*
+
+    DECLARE scroll_cursor CURSOR SCROLL FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+  
+#### 5. Keyset Cursor:
+- A keyset cursor is similar to a dynamic cursor but is more optimized as it only retrieves the key values of the rows.
+- It is sensitive to changes in the data but doesn't retrieve the actual data until a fetch is made.
+
+*Syntax:*
+
+    DECLARE cursor_name CURSOR KEYSET FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+*Example:*
+
+    DECLARE keyset_cursor CURSOR KEYSET FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+
+#### 6. Insensitive Cursor:
+- An insensitive cursor creates a temporary copy of the result set, making it insensitive to changes in the underlying data.
+- It is typically used when the data should remain static throughout the cursor's lifetime.
+
+*Syntax:*
+
+    DECLARE cursor_name CURSOR INSENSITIVE FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+*Example:*
+
+    DECLARE insensitive_cursor CURSOR INSENSITIVE FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+After declaring a cursor, you can use the following template to open, fetch, and close the cursor:
+
+    OPEN cursor_name;
+    FETCH NEXT FROM cursor_name INTO @variable1, @variable2, ...;
+    -- Process the fetched data here
+    CLOSE cursor_name;
+
+Here's an example of using a cursor to fetch and print employee names:
+
+    DECLARE employee_cursor CURSOR FOR
+    SELECT first_name, last_name
+    FROM employees;
+
+    OPEN employee_cursor;
+
+    FETCH NEXT FROM employee_cursor INTO @first_name, @last_name;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+    PRINT 'Employee Name: ' + @first_name + ' ' + @last_name;
+    FETCH NEXT FROM employee_cursor INTO @first_name, @last_name;
+    END
+
+    CLOSE employee_cursor;
+
+
+## <p align="left">Ques-9. How to run Stored Procedures and Functions
+
+Stored Procedures and Functions are database objects in SQL that contain a set of precompiled SQL statements. They are designed to perform specific tasks and can be reused, making database development more efficient. Both stored procedures and functions enhance code modularity, improve security, and allow for better performance optimization.
+
+### Stored Procedures:
+
+*1. Purpose:*
+- Procedural Logic: Stored procedures contain a series of SQL statements and procedural logic, allowing for complex operations to be encapsulated in a single unit.
+
+*2. Execution:*
+-  Call Statement: Stored procedures are typically executed using a CALL or EXEC statement.
+
+*3. Parameters:*
+- Input/Output Parameters: Stored procedures can take input parameters, perform operations, and return results. They may also have output parameters.
+
+*4. Transaction Control:*
+- Transaction Management: Stored procedures can include transaction management commands (COMMIT and ROLLBACK) to control the scope of transactions.
+
+*Running Stored Procedures:*
+
+1. Creating a Stored Procedure:
+- Before you can run a stored procedure, you need to create it. Use the CREATE PROCEDURE statement to define a stored procedure.
+
+       CREATE PROCEDURE procedure_name
+       AS
+       BEGIN
+       -- SQL statements for the procedure
+       END;
+
+2. Executing a Stored Procedure:
+- Once the stored procedure is created, you can execute it using the EXEC or EXECUTE statement.
+
+       EXEC procedure_name;
+       -- or
+       EXECUTE procedure_name;
+
+*Example:*
+
+    -- Creating a stored procedure
+    CREATE PROCEDURE GetEmployeeCount
+    AS
+    BEGIN
+    -- Select the total number of employees from the Employees table
+    SELECT COUNT(*) AS EmployeeCount
+    FROM Employees;
+    END;
+    GO
+
+    -- Running the stored procedure
+    EXEC GetEmployeeCount;
+
+*Using delimiters*
+
+![screenshoot](https://github.com/samridhi0/rdbms_2023batch/assets/114128927/5061d529-0277-43eb-b19b-e392c3e9c026)
+
+
+### Functions:
+
+*1. Purpose:*
+- Return Value: Functions are designed to return a single value or a table result, making them suitable for use in expressions or queries.
+
+*2. Execution:*
+- Select Statement: Functions are typically used within SELECT statements or as part of an expression.
+
+*3. Parameters:*
+- Input Parameters: Functions may accept input parameters, but they cannot have output parameters.
+
+*4. Transaction Control:*
+- No Transaction Management: Functions cannot contain transaction management commands like COMMIT or ROLLBACK.
+
+*Running Functions:*
+
+1. Creating a Function:
+- Use the CREATE FUNCTION statement to define a function. Functions return a value and can be used in SQL queries.
+
+       CREATE FUNCTION function_name
+       RETURNS data_type
+       AS
+       BEGIN
+       -- SQL statements for the function
+       RETURN value;
+       END;
+
+2. Executing a Function:
+- Functions are typically used within queries or other SQL statements.
+
+       SELECT function_name(parameters);
+
+*Example:*
+
+    -- Creating a function
+    CREATE FUNCTION GetAverageSalary()
+    RETURNS DECIMAL(10, 2)
+    AS
+    BEGIN
+    DECLARE @AvgSalary DECIMAL(10, 2);
+    -- Calculate the average salary from the Employees table
+    SELECT @AvgSalary = AVG(Salary)
+    FROM Employees;
+    RETURN @AvgSalary;
+    END;
+    GO
+
+    -- Running the function in a SELECT statement
+    SELECT dbo.GetAverageSalary() AS AvgSalary;
+
+*Using delimiters*
+![screenshot](https://github.com/samridhi0/rdbms_2023batch/assets/114128927/72da30d1-49ac-4c94-a7c0-8d41265d0099)
+
+
+
+## <p align="left">Ques-10. Creating Packages and applying Triggers
+
+### Creating Packages in PL/SQL:
+
+A PL/SQL package is a collection of related procedures, functions, variables, and other constructs that are grouped together for modularity and reusability. Packages consist of two parts: the package specification and the package body.
+
+*1. Package Specification:*
+- Declares the public interface of the package.
+- Contains declarations of procedures, functions, variables, types, and constants that are accessible from outside the package.
+- Does not contain the implementation details.
+
+*Syntax*
+
+    CREATE OR REPLACE PACKAGE Your_Package_Name AS
+    PROCEDURE Procedure_Name;
+    FUNCTION Function_Name RETURN NUMBER;
+    -- Declare variables, types, etc.
+    END Your_Package_Name;
+    /
+
+*2. Package Body:*
+- Implements the procedures and functions declared in the package specification.
+- Contains the actual code for the functionality provided by the package.
+- May include private variables and procedures that are not accessible outside the package.
+
+*Syntax*
+
+    CREATE OR REPLACE PACKAGE BODY Your_Package_Name AS
+    PROCEDURE Procedure_Name IS
+    BEGIN
+    -- Procedure logic here
+    NULL;
+    END;
+
+    FUNCTION Function_Name RETURN NUMBER IS
+    BEGIN
+    -- Function logic here
+    RETURN 0;
+    END;
+    END Your_Package_Name;
+    /
+    
+### Applying Triggers in PL/SQL:
+
+A PL/SQL trigger is a set of instructions that are automatically executed in response to certain events on a table, such as an INSERT, UPDATE, or DELETE operation.
+
+*1. Creating a Trigger:*
+- Defines the trigger name, event (e.g., BEFORE INSERT, AFTER UPDATE), and the table on which the trigger should act.
+- Contains the PL/SQL block with the logic to be executed when the trigger is fired.
+
+*Syntax*
+
+    CREATE OR REPLACE TRIGGER Your_Trigger_Name
+    BEFORE INSERT ON Your_Table_Name
+    FOR EACH ROW
+    BEGIN
+    Your_Package_Name.Procedure_Name;
+    -- Your trigger logic here
+    END Your_Trigger_Name;
+    /
+
+In this example, the trigger is set to execute before an INSERT operation on Your_Table_Name. The trigger calls the Procedure_Name from Your_Package_Name.
+
+*2. Applying the Trigger:*
+- Once the trigger is created, it needs to be associated with a specific table.
+
+*Syntax* 
+
+    ALTER TABLE Your_Table_Name
+    ENABLE TRIGGER Your_Trigger_Name;
+
+- This associates the trigger Your_Trigger_Name with the table Your_Table_Name.
+
+*3. Testing the Trigger:*
+- You can test the trigger by performing operations on the table that the trigger is associated with.
+
+*Syntax*
+
+    INSERT INTO Your_Table_Name (column1, column2, ...)
+    VALUES (value1, value2, ...);
+
+- The trigger will execute its logic before or after the specified event on the table.
+
+
+## <p align="left">Ques-11. Creating Arrays and Nested Table
+
+### Arrays (Associative Arrays) in PL/SQL:
+
+*1. Declaration:*
+- Declare an associative array using the TYPE statement. Specify the data type of the elements and the index type.
+
+*Syntax*
+
+      DECLARE
+      TYPE my_array_type IS TABLE OF VARCHAR2(50) INDEX BY PLS_INTEGER;
+      my_array my_array_type;
+
+- In this example, my_array_type is a type definition for an associative array that stores strings, and the index is of type PLS_INTEGER.
+
+*2. Initialization:*
+- Initialize the array in the DECLARE section or later in the executable section.
+
+*Syntax*
+
+    BEGIN
+    my_array(1) := 'First';
+    my_array(2) := 'Second';
+    my_array(3) := 'Third';
+    END;
+    
+- You can also use the BULK COLLECT feature to initialize the array from a query result.
+
+*Syntax*
+
+    SELECT column_name BULK COLLECT INTO my_array FROM my_table;
+
+*3. Accessing Elements:*
+Access elements by their index.
+
+*Syntax*
+
+    DBMS_OUTPUT.PUT_LINE(my_array(2)); -- Prints 'Second'
+
+*4. Dynamic Sizing:*
+
+Associative arrays are dynamic, and you can add elements without specifying the size beforehand.
+
+*Example*
+
+    DECLARE
+    -- Declare an associative array type
+    TYPE my_array_type IS TABLE OF VARCHAR2(50) INDEX BY PLS_INTEGER;
+   
+    -- Declare an instance of the array
+    my_array my_array_type;
+    BEGIN
+    -- Initialize the array
+    my_array(1) := 'Apple';
+    my_array(2) := 'Banana';
+    my_array(3) := 'Orange';
+
+    -- Access and print elements
+    DBMS_OUTPUT.PUT_LINE('Fruit at index 2: ' || my_array(2)); -- Prints 'Banana'
+   
+    -- Add a new element dynamically
+    my_array(4) := 'Grapes';
+   
+    -- Access and print the new element
+    DBMS_OUTPUT.PUT_LINE('Fruit at index 4: ' || my_array(4)); -- Prints 'Grapes'
+    END;
+    /
+
+
+### Nested Tables in PL/SQL:
+
+*1. Declaration:*
+- Declare a nested table using the TYPE statement. Specify the data type of the elements.
+
+*Syntax*
+
+      DECLARE
+      TYPE nested_table_type IS TABLE OF VARCHAR2(50);
+      TYPE my_nested_table_type IS TABLE OF nested_table_type;
+      my_nested_table my_nested_table_type;
+
+ - my_nested_table_type is a type definition for a nested table that stores strings.
+
+*2. Initialization:*
+- Initialize the nested table similarly to a one-dimensional array.
+
+*Syntax*
+
+    BEGIN
+      my_nested_table := my_nested_table_type(
+                           nested_table_type('One', 'Two', 'Three'),
+                           nested_table_type('Four', 'Five', 'Six'),
+                           nested_table_type('Seven', 'Eight', 'Nine')
+                       );
+    END;
+
+*3. Accessing Elements:*
+Access elements using multiple indices.
+
+*Syntax*
+
+        DBMS_OUTPUT.PUT_LINE(my_nested_table(2)(3)); -- Prints 'Six'
+
+*4. Dynamic Sizing:*
+Like associative arrays, nested tables are dynamic, and you can add elements without specifying the size beforehand.
+
+*Using Nested Tables in SQL:*
+- You can also use nested tables directly in SQL operations.
+
+*Syntax*
+
+    SELECT * FROM TABLE(my_nested_table);
+
+- Manipulate nested tables using SQL functions like MULTISET and CAST.
+
+*Example*
+
+    DECLARE
+    -- Declare a nested table type
+    TYPE nested_table_type IS TABLE OF VARCHAR2(50);
+    TYPE my_nested_table_type IS TABLE OF nested_table_type;
+   
+    -- Declare an instance of the nested table
+    my_nested_table my_nested_table_type;
+    BEGIN
+    -- Initialize the nested table
+    my_nested_table := my_nested_table_type(
+                        nested_table_type('John', 'Doe'),
+                        nested_table_type('Jane', 'Smith'),
+                        nested_table_type('Bob', 'Johnson')
+                    );
+
+    -- Access and print an element
+    DBMS_OUTPUT.PUT_LINE('Last name of person at index 2: ' || my_nested_table(2)(2)); -- Prints 'Smith'
+
+    -- Add a new element dynamically
+    my_nested_table.extend;
+    my_nested_table(my_nested_table.last) := nested_table_type('Alice', 'Williams');
+
+    -- Access and print the new element
+    DBMS_OUTPUT.PUT_LINE('First name of person at index 4: ' || my_nested_table(4)(1)); -- Prints 'Alice'
+    END;
+    /
+
+### Thank you
+
+
 
