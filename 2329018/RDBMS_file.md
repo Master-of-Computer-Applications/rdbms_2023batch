@@ -373,38 +373,8 @@ ELSE
         -- code to execute if none of the conditions are true
 END CASE;
 
-![Screenshot from 2023-11-13 20-59-29](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/1b1fdabd-75d0-49ac-890b-bcb50cd569f7)
-11:03 pm
-Thank you soo much🥹
-11:15 pm
-Bakie de jldi karke send kar die
-11:15 pm
-Plz
-11:15 pm
-TODAY
-Bki sam mil ni rhe
-8:10 am
-Kive kra
-8:10 am
-😵‍💫
-9:48 am
-Ravneet ne kite nhi?
-9:48 am
-Kina hoya?
-7:39 pm
-?
-7:48 pm
-File da ta hogya
-7:53 pm
-7:56 pm
-7:57 pm
-7:58 pm
-github.com
-https://github.com/Master-of-Computer-Applications/rdbms_2023batch/pull/40
-github.com
-https://github.com/Master-of-Computer-Applications/rdbms_2023batch/pull/40
-8:02 pm
-github.com
+
+
 https://github.com/samridhi0/rdbms_2023batch/edit/patch-3/2329018/RDBMS_file.md?pr=%2FMaster-of-Computer-Applications%2Frdbms_2023batch%2Fpull%2F40
 github.com
 https://github.com/samridhi0/rdbms_2023batch/edit/patch-3/2329018/RDBMS_file.md?pr=%2FMaster-of-Computer-Applications%2Frdbms_2023batch%2Fpull%2F40
