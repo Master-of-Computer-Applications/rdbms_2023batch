@@ -374,10 +374,11 @@ The IF statement is used to execute a block of code if a specified condition is 
 
 #### *SYNTAX*
 
-IF condition THEN
-   
+    IF condition 
+    THEN
     -- code to execute if condition is true
-END IF;
+     
+    END IF;
 
 
 ### 2.IF ELSE IF STATEMENT
@@ -385,20 +386,20 @@ This statement is an extension of the IF statement and allows you to specify mul
 
 #### *SYNTAX*
 
-IF 
-condition1 
-THEN
+    IF 
+    condition1 
+    THEN
+     -- code to execute if condition1 is true
     
-    -- code to execute if condition1 is true
-ELSIF 
-condition2 
-THEN
-    
+    ELSIF 
+    condition2 
+    THEN
     -- code to execute if condition2 is true
-ELSE
-     
+    
+    ELSE
      -- code to execute if none of the conditions are true
-END IF;
+    
+    END IF;
 
 
 ### 3.CASE STATEMENT 
@@ -406,17 +407,19 @@ The CASE statement is used to perform different actions based on the value of an
 
 #### *SYNTAX*
 
-CASE
-WHEN condition1 THEN
-        
-        -- code to execute if condition1 is true
-WHEN condition2 THEN
-        
+    CASE
+    WHEN condition1 
+    THEN
+         -- code to execute if condition1 is true
+
+    WHEN condition2 
+    THEN
         -- code to execute if condition2 is true
-ELSE
-        
+     
+     ELSE
         -- code to execute if none of the conditions are true
-END CASE;
+     
+     END CASE;
 
 ![Screenshot from 2023-11-13 20-59-29](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/1b1fdabd-75d0-49ac-890b-bcb50cd569f7)
  
@@ -777,11 +780,11 @@ Functions are typically used within queries or other SQL statements.
 
 ## <p align="left">Ques-10. Creating Packages and applying Triggers
 
-#### Creating Packages in PL/SQL:
+### Creating Packages in PL/SQL:
 
 A PL/SQL package is a collection of related procedures, functions, variables, and other constructs that are grouped together for modularity and reusability. Packages consist of two parts: the package specification and the package body.
 
-1. Package Specification:
+**1. Package Specification:**
 - Declares the public interface of the package.
 - Contains declarations of procedures, functions, variables, types, and constants that are accessible from outside the package.
 - Does not contain the implementation details.
@@ -795,7 +798,7 @@ A PL/SQL package is a collection of related procedures, functions, variables, an
     END Your_Package_Name;
     /
 
-2. Package Body:
+**2. Package Body:**
 - Implements the procedures and functions declared in the package specification.
 - Contains the actual code for the functionality provided by the package.
 - May include private variables and procedures that are not accessible outside the package.
@@ -821,7 +824,7 @@ A PL/SQL package is a collection of related procedures, functions, variables, an
 
 A PL/SQL trigger is a set of instructions that are automatically executed in response to certain events on a table, such as an INSERT, UPDATE, or DELETE operation.
 
-1. Creating a Trigger:
+**1. Creating a Trigger:**
 - Defines the trigger name, event (e.g., BEFORE INSERT, AFTER UPDATE), and the table on which the trigger should act.
 - Contains the PL/SQL block with the logic to be executed when the trigger is fired.
 
@@ -838,7 +841,7 @@ A PL/SQL trigger is a set of instructions that are automatically executed in res
 
 In this example, the trigger is set to execute before an INSERT operation on Your_Table_Name. The trigger calls the Procedure_Name from Your_Package_Name.
 
-2. Applying the Trigger:
+**2. Applying the Trigger:**
 - Once the trigger is created, it needs to be associated with a specific table.
 
 **Syntax** 
@@ -848,7 +851,7 @@ In this example, the trigger is set to execute before an INSERT operation on You
 
 - This associates the trigger Your_Trigger_Name with the table Your_Table_Name.
 
-3. Testing the Trigger:
+**3. Testing the Trigger:**
 - You can test the trigger by performing operations on the table that the trigger is associated with.
 
 **Syntax**
@@ -857,3 +860,149 @@ In this example, the trigger is set to execute before an INSERT operation on You
     VALUES (value1, value2, ...);
 
 - The trigger will execute its logic before or after the specified event on the table.
+
+
+## <p align="left">Ques-11. Creating Arrays and Nested Table
+
+### Arrays (Associative Arrays) in PL/SQL:
+
+**1. Declaration:**
+- Declare an associative array using the TYPE statement. Specify the data type of the elements and the index type.
+
+**Syntax**
+
+      DECLARE
+      TYPE my_array_type IS TABLE OF VARCHAR2(50) INDEX BY PLS_INTEGER;
+      my_array my_array_type;
+
+- In this example, my_array_type is a type definition for an associative array that stores strings, and the index is of type PLS_INTEGER.
+
+**2. Initialization:**
+- Initialize the array in the DECLARE section or later in the executable section.
+
+**Syntax**
+
+    BEGIN
+    my_array(1) := 'First';
+    my_array(2) := 'Second';
+    my_array(3) := 'Third';
+    END;
+    
+- You can also use the BULK COLLECT feature to initialize the array from a query result.
+
+**Syntax**
+
+    SELECT column_name BULK COLLECT INTO my_array FROM my_table;
+
+**3. Accessing Elements:**
+Access elements by their index.
+
+**Syntax**
+
+    DBMS_OUTPUT.PUT_LINE(my_array(2)); -- Prints 'Second'
+
+**4. Dynamic Sizing:**
+
+Associative arrays are dynamic, and you can add elements without specifying the size beforehand.
+
+**Example**
+
+    DECLARE
+    -- Declare an associative array type
+    TYPE my_array_type IS TABLE OF VARCHAR2(50) INDEX BY PLS_INTEGER;
+   
+    -- Declare an instance of the array
+    my_array my_array_type;
+    BEGIN
+    -- Initialize the array
+    my_array(1) := 'Apple';
+    my_array(2) := 'Banana';
+    my_array(3) := 'Orange';
+
+    -- Access and print elements
+    DBMS_OUTPUT.PUT_LINE('Fruit at index 2: ' || my_array(2)); -- Prints 'Banana'
+   
+    -- Add a new element dynamically
+    my_array(4) := 'Grapes';
+   
+    -- Access and print the new element
+    DBMS_OUTPUT.PUT_LINE('Fruit at index 4: ' || my_array(4)); -- Prints 'Grapes'
+    END;
+    /
+
+
+### Nested Tables in PL/SQL:
+
+**1. Declaration:**
+- Declare a nested table using the TYPE statement. Specify the data type of the elements.
+
+**Syntax**
+
+      DECLARE
+      TYPE nested_table_type IS TABLE OF VARCHAR2(50);
+      TYPE my_nested_table_type IS TABLE OF nested_table_type;
+      my_nested_table my_nested_table_type;
+
+ - my_nested_table_type is a type definition for a nested table that stores strings.
+
+**2. Initialization:**
+- Initialize the nested table similarly to a one-dimensional array.
+
+**Syntax**
+
+    BEGIN
+      my_nested_table := my_nested_table_type(
+                           nested_table_type('One', 'Two', 'Three'),
+                           nested_table_type('Four', 'Five', 'Six'),
+                           nested_table_type('Seven', 'Eight', 'Nine')
+                       );
+    END;
+
+**3. Accessing Elements:**
+Access elements using multiple indices.
+
+**Syntax**
+
+        DBMS_OUTPUT.PUT_LINE(my_nested_table(2)(3)); -- Prints 'Six'
+
+**4. Dynamic Sizing:**
+Like associative arrays, nested tables are dynamic, and you can add elements without specifying the size beforehand.
+
+**Using Nested Tables in SQL:**
+- You can also use nested tables directly in SQL operations.
+
+**Syntax**
+
+    SELECT * FROM TABLE(my_nested_table);
+
+- Manipulate nested tables using SQL functions like MULTISET and CAST.
+
+**Example**
+
+    DECLARE
+    -- Declare a nested table type
+    TYPE nested_table_type IS TABLE OF VARCHAR2(50);
+    TYPE my_nested_table_type IS TABLE OF nested_table_type;
+   
+    -- Declare an instance of the nested table
+    my_nested_table my_nested_table_type;
+    BEGIN
+    -- Initialize the nested table
+    my_nested_table := my_nested_table_type(
+                        nested_table_type('John', 'Doe'),
+                        nested_table_type('Jane', 'Smith'),
+                        nested_table_type('Bob', 'Johnson')
+                    );
+
+    -- Access and print an element
+    DBMS_OUTPUT.PUT_LINE('Last name of person at index 2: ' || my_nested_table(2)(2)); -- Prints 'Smith'
+
+    -- Add a new element dynamically
+    my_nested_table.extend;
+    my_nested_table(my_nested_table.last) := nested_table_type('Alice', 'Williams');
+
+    -- Access and print the new element
+    DBMS_OUTPUT.PUT_LINE('First name of person at index 4: ' || my_nested_table(4)(1)); -- Prints 'Alice'
+    END;
+    /
+
