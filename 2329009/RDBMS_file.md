@@ -1,17 +1,18 @@
 # <p align="center">PRACTICAL FILE OF RDMBS</p>
+
 ## <p align="left"> Ques-1. Comparative study of various Database Management Systems</p>
 A Database Management System (DBMS) is a software application or system that facilitates the creation, organization, storage, retrieval, and management of data in a structured and efficient manner. It serves as an intermediary between users or applications and the underlying database, providing tools and functionalities for data storage, access, security, and data integrity. DBMS systems are essential for effectively managing and manipulating data in various domains, including business, research, and software development.
 
 There are numerous Database Management Systems (DBMS) available, each with its own features and strengths. Here are some of the well-known DBMS:
 
 ### Relational Database Management Systems (RDBMS):
-    1.MySQL
-    2.PostgreSQL
-    3.Oracle Database
-    4.Microsoft SQL Server
-    5.SQLite
-    6.Maria DB
-    7.IBM Db2
+1. MySQL
+2. PostgreSQL
+3. Oracle Database
+4. Microsoft SQL Server
+5. SQLite
+6. Maria DB
+7. IBM Db2
 
 ### MySQL:
 MySQL is an open-source relational database management system (RDBMS) used in a wide range of applications, especially web-related ones. It offers structured data storage, strong performance, and a large and active community of users and developers. It is known for its reliability and cost-effectiveness.
@@ -69,6 +70,8 @@ Microsoft SQL Server is a commercial relational database management system (RDBM
   - Adheres to ACID compliance and offers advanced security features.
   - Comes with a range of editions to suit different needs, from small businesses to large
 
+---
+
 ## <p align="left"> Ques-2. Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL) </p>
 ### DDL (Data Definition Language):
 DDL or Data Definition Language actually consists of the SQL commands that can be used to define the database schema. It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database. DDL is a set of SQL commands used to create, modify, and delete database structures but not data. These commands are normally not used by a general user, who should be accessing the database via an application.
@@ -122,6 +125,8 @@ It helps in defining the fields or columns of the tables.|It helps us to define 
 They are auto-committed (changes made are permanent).|They are not auto-committed (changes are not permanent).|They are not auto-committed (changes are not permanent). 
 They don't have further classification.|They are of two types procedural and non-procedural.|They don't have any further classification.
 Commands used: CREATE, ALTER, TRUNCATE, RENAME, DROP.| Commands used: SELECT, UPDATE, DELETE, INSERT.|Commands used: REVOKE, GRANT
+
+---
 
 ## <p align="left"> Ques-3. How to apply Constraints at various levels. </p>
 
@@ -187,6 +192,8 @@ VALUES
 ```
 ![Screenshot from 2023-10-13 00-01-38](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/373107a5-2811-45ca-94fc-2321357a13d5)
 ![Screenshot from 2023-10-13 00-34-13](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/3039663b-3ff9-40db-b967-36bd7e0b985c)
+
+---
 
 ## <p align="left"> Ques-4. View data in the required form using Operators, Functions and Joins. </p>
 Structured Query Language is a computer language that we use to interact with a relational database. 
@@ -339,6 +346,7 @@ In addition to these there are two more joins −
 ![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/fbb128e9-1273-4ab8-acb1-3abd96c2c9bc)
 
 ---
+
 ## <p align="left"> Ques-5. Creating different types of Views for tailored presentation of data. </p>
 Views in SQL are kind of virtual tables. A view also has rows and columns as they are in a real table in the database. We can create a view by selecting fields from one or more tables present in the database. A View can either have all the rows of a table or specific rows based on certain condition. In this article we will learn about creating , deleting and updating Views. 
 
@@ -377,6 +385,8 @@ DROP VIEW view_name;
 ![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/3c96844f-cc4d-4994-b66b-5959bc88ab3d)
 
 **4. Materialized View:** A view that stores the definition as well as data. It creates replicas of data by storing it physically. A materialized view in SQL is a database object that contains the results of a query, which is stored on disk as a physical table. Unlike a regular (non-materialized) view, a materialized view is precomputed and stored, which can improve query performance in certain scenarios.Materialized view replicates the retrieved data physically. This replicated data can be reused without executing the view again. This type of view is also known as "SNAPSHOTS". Materialized view reduce the processing time to regenerate the whole data. It helps remote users to replicate data locally and improve query performance. The challenging part here is to synchronize the changes in materialized views underlying tables.
+
+---
 
 ## <p align="left"> Ques-6. How to apply Conditional Controls in PL/SQL. </p>
 <p>PL/SQL (Procedural Language/Structured Query Language) is a programming language designed specifically for interacting with Oracle Database. It is a procedural language extension to SQL and provides a way to execute SQL statements seamlessly within its procedural constructs. PL/SQL is used to create stored procedures, functions, triggers, packages, and more, allowing you to write powerful and efficient database-centric applications.</p>
@@ -445,6 +455,7 @@ end CASE;
 **Example:**
 ![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/0a25423b-754b-4742-b819-2523c0f5beb8)
 
+---
 
 ## <p align="left"> Ques-7. Error Handling using Internal Exceptions and External Exceptions. </p>
 An exception is an error which disrupts the normal flow of program instructions. Exceptions are runtime errors or unexpected events that occur during the execution of a PL/SQL code block. PL/SQL provides us the exception block which raises the exception thus helping the programmer to find out the fault and resolve it. 
@@ -495,6 +506,8 @@ END;
 ```
 ![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/a15647ea-a8f7-4804-b78c-038bc29b5113)
 ![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/8830f6e9-72a0-409a-be91-c20bae3fd543)
+
+---
 
 ## <p align="left"> Ques-8. Using various types of Cursors. </p>
 <p> In SQL, a cursor is a database object that allows you to interact with individual rows returned by a query. Cursors are often used when you need to process one row at a time, rather than fetching the entire result set at once. There are several types of cursors in SQL, and their usage depends on the specific requirements of your application. </p>
@@ -560,6 +573,8 @@ END;
 ![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/e83cfd5a-6c5c-418f-ae4b-60aa722b987e)
 ![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/b5627313-8f39-4f15-abcc-f2e0662be687)
 
+---
+
 ## <p align="left"> Ques-9. How to run Stored Procedures and Functions. </p>
 <p>Stored Procedures and Functions are database objects in SQL that contain a set of precompiled SQL statements. They are designed to perform specific tasks and can be reused, making database development more efficient. Both stored procedures and functions enhance code modularity, improve security, and allow for better performance optimization.</p>
 
@@ -615,10 +630,112 @@ END;
 **Example:**
 ![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/36a95e45-ba87-468b-b9e2-73eb7af13154)
 
+---
+
 ## <p align="left"> Ques-10. Creating Packages and applying Triggers. </p>
 
+### Creating Packages in PL/SQL:
 
+A PL/SQL package is a collection of related procedures, functions, variables, and other constructs that are grouped together for modularity and reusability. Packages consist of two parts: the package specification and the package body.
 
+**1. Package Specification:**
+- Declares the public interface of the package.
+- Contains declarations of procedures, functions, variables, types, and constants that are accessible from outside the package.
+- Does not contain the implementation details.
 
+**Syntax**
+```python  
+CREATE OR REPLACE PACKAGE Your_Package_Name AS
+PROCEDURE Procedure_Name;
+FUNCTION Function_Name RETURN NUMBER;
+-- Declare variables, types, etc.
+END Your_Package_Name;
+```
 
+**2. Package Body:**
+- Implements the procedures and functions declared in the package specification.
+- Contains the actual code for the functionality provided by the package.
+- May include private variables and procedures that are not accessible outside the package.
 
+**Syntax**
+```python  
+    CREATE OR REPLACE PACKAGE BODY Your_Package_Name AS
+    PROCEDURE Procedure_Name IS
+    BEGIN
+    -- Procedure logic here
+    NULL;
+    END;
+
+    FUNCTION Function_Name RETURN NUMBER IS
+    BEGIN
+    -- Function logic here
+    RETURN 0;
+    END;
+    END Your_Package_Name;
+    /
+```
+
+### Applying Triggers in PL/SQL:
+
+A PL/SQL trigger is a set of instructions that are automatically executed in response to certain events on a table, such as an INSERT, UPDATE, or DELETE operation.
+
+**1. Creating a Trigger:**
+- Defines the trigger name, event (e.g., BEFORE INSERT, AFTER UPDATE), and the table on which the trigger should act.
+- Contains the PL/SQL block with the logic to be executed when the trigger is fired.
+
+**Syntax**
+```python  
+CREATE OR REPLACE TRIGGER Your_Trigger_Name
+BEFORE INSERT ON Your_Table_Name
+FOR EACH ROW
+BEGIN
+Your_Package_Name.Procedure_Name;
+-- Your trigger logic here
+END Your_Trigger_Name;
+/
+```
+
+In this example, the trigger is set to execute before an INSERT operation on Your_Table_Name. The trigger calls the Procedure_Name from Your_Package_Name.
+
+**2. Applying the Trigger:**
+- Once the trigger is created, it needs to be associated with a specific table.
+
+**Syntax** 
+```python 
+ALTER TABLE Your_Table_Name
+ENABLE TRIGGER Your_Trigger_Name;
+```
+
+- This associates the trigger Your_Trigger_Name with the table Your_Table_Name.
+
+**3. Testing the Trigger:**
+- You can test the trigger by performing operations on the table that the trigger is associated with.
+
+**Syntax**
+```python 
+INSERT INTO Your_Table_Name (column1, column2, ...)
+VALUES (value1, value2, ...);
+```
+**Exampel:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/b6601b12-71bd-44f7-a895-681badc752d4)
+
+---
+
+## <p align="left"> Ques-11. Creating Arrays and Nested Tables. </p>
+
+### Arrays
+<p> An array is an ordered set of elements of a single built-in data type. An array can have an associated user-defined array type, or it can be the result of an SQL operation that returns an array value without an associated user-defined array type. You can declare a column to be of an array type, allowing you to store multiple values in a single column.You can perform various operations on arrays, such as indexing, slicing, and searching. Keep in mind that while arrays can be useful, they might not always be the most efficient solution for complex data structures.</p>
+
+1. **Declaration:** Declare an associative array using the TYPE statement. Specify the data type of the elements and the index type.
+2. **Initialization:** Initialize the array in the DECLARE section or later in the executable section.
+3. **Accessing Elements:** Access elements by their index.
+
+### Nested Tables
+<p>Nested tables are single-dimensional, unbounded collections of homogeneous elements. First, a nested table is single-dimensional, meaning that each row has a single column of data like a one-dimension array. Second, a nested table is unbounded. It means that the number of elements of a nested table is predetermined. Third, homogeneous elements mean that all elements of a nested table have the same data type.</p>
+
+**Example:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/21f57fc0-0966-46f7-9c92-9249d8411952)
+
+---
+
+# <p align="center">THANKS</p>
