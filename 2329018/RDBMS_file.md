@@ -373,8 +373,6 @@ ELSE
         -- code to execute if none of the conditions are true
 END CASE;
 
-
-
 https://github.com/samridhi0/rdbms_2023batch/edit/patch-3/2329018/RDBMS_file.md?pr=%2FMaster-of-Computer-Applications%2Frdbms_2023batch%2Fpull%2F40
 github.com
 https://github.com/samridhi0/rdbms_2023batch/edit/patch-3/2329018/RDBMS_file.md?pr=%2FMaster-of-Computer-Applications%2Frdbms_2023batch%2Fpull%2F40
