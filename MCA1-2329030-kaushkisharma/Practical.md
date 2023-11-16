@@ -125,3 +125,21 @@ Create table Student
 
 ```
 ![Screenshot from 2023-10-12 15-43-52](https://github.com/kaushkis/rdbms_2023batch/assets/147362653/0a6fd2e1-895b-461a-b0dd-72f41938a6d7)
+
+#+ i) Default Constraint - The DEFAULT constraint is used to set a default value for a column.The default value will be added to all new records, if no other value is specified.
+
+_CODE:_
+```sql
+CREATE TABLE Colleges(
+   ->    college_id INT PRIMARY KEY,
+    ->   college_code VARCHAR(20),
+    ->   college_country VARCHAR(20) DEFAULT 'US'
+    -> );
+INSERT INTO Colleges (college_id, college_code)
+    -> VALUES (1, 'ARP76');
+INSERT INTO Colleges (college_id, college_code, college_country)
+    -> VALUES (2, 'JWS89', 'INDIA');
+```
+
+![DEFAULT CONSTRAINT](https://github.com/kaushkis/rdbms_2023batch/assets/147362653/2eed8229-2f12-4767-8e75-a9c943ddd8a9)
+
