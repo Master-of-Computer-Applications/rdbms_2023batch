@@ -157,13 +157,9 @@
 ![EXP_PRO](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/6e54d3fe-1b56-4d8c-9684-8aed12f61a7c)
 
 # 8. Using various types of Cursors
-### 1. Insensitive Cursor:
+### CURSOR: - A cursor in SQL is a temporary memory allocated by the database server at the time of performing Data Manipulation Language operations on a table, such as INSERT, UPDATE, and DELETE. It is used to retrieve and manipulate data stored in the SQL table one row at a time, instead of the T-SQL commands that operate on all the rows in the result set at one time. A cursor is declared by defining the SQL statement that returns a result set.
 ![CURSOR_1](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/0148c086-5dc0-4647-b6e6-ea3ec94212ea)
 ![CURSOR_2](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/a03d5ea7-edea-4c66-aba9-4024ff155192)
-
-### 2. Sensitive Cursor:
-![CUR_SEC](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/cae6fd2b-fc36-4560-b274-34224d5807e5)
-![CUR_SEC_2](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/d93b0801-429d-4b64-b503-916dc4e187ad)
 
 # 9. How to run Stored Procedures and Functions
 ### 1. STORED PROCEDURE: - You can create stored procedures in MariaDB to encapsulate conditional logic and reuse it in multiple queries or applications. Here's an example of a simple stored procedure with conditional logic:
@@ -173,5 +169,11 @@
 ![FUNC_STO](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/743292f1-cc49-434c-afbc-2a2128cc6434)
 
 # 10. Creating Packages and applying Triggers
-### 2. TRIGGER:
+### TRIGGER: - In SQL Server, triggers are database objects, actually, a special kind of stored procedure, which “reacts” to certain actions we make in the database. The main idea behind triggers is that they always perform an action in case some event happens. If we’re talking about DML triggers, these changes shall be changes in our data.
 ![trigger](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/84486ca6-e888-4aa9-b5a5-514ce61a43c0)
+# 11. Creating Arrays and Nested Tables.
+### 1. Arrays: - An array is an ordered set of elements of a single built-in data type. An array can have an associated user-defined array type, or it can be the result of an SQL operation that returns an array value without an associated user-defined array type.
+![array](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/b3b22e5c-14e6-4dea-894b-2082be1000af)
+### 2. Nested Tables: - Nested tables are single-dimensional, unbounded collections of homogeneous elements. First, a nested table is single-dimensional, meaning that each row has a single column of data like a one-dimension array. Second, a nested table is unbounded. It means that the number of elements of a nested table is predetermined. Third, homogeneous elements mean that all elements of a nested table have the same data type.
+![nest_1](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/e5c62ffa-ef65-40e8-b27b-bdab1fefdf91)
+![nest_2](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/dc8e8ff7-d149-456a-b4a5-d5247958d586)
