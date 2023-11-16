@@ -229,26 +229,26 @@ Following are the various arithmetic operators performed on the SQL data:
 The Comparison Operators in SQL compare two different data of SQL table and check whether they are the same, greater, and lesser. The SQL comparison operators are used with the WHERE clause in the SQL queries
 
 Following are the various comparison operators which are performed on the data stored in the SQL database tables:
-    - SQL Equal Operator (=)
-    - SQL Not Equal Operator (!=)
-    - SQL Greater Than Operator (>)
-    - SQL Greater Than Equals to Operator (>=)
-    - SQL Less Than Operator (<)\
-    - SQL Less Than Equals to Operator (<=)
+- SQL Equal Operator (=)
+- SQL Not Equal Operator (!=)
+- SQL Greater Than Operator (>)
+- SQL Greater Than Equals to Operator (>=)
+- SQL Less Than Operator (<)\
+- SQL Less Than Equals to Operator (<=)
 
 #### *3.SQL Logical Operators*
 
 The Logical Operators in SQL perform the Boolean operations, which give two results True and False. These operators provide True value if both operands match the logical condition.
 
 Following are the various logical operators which are performed on the data stored in the SQL database tables:
-    -SQL ALL operator
-    - SQL AND operator
-    - SQL OR operator
-    - SQL BETWEEN operator
-    - SQL IN operator
-    - SQL NOT operator
-    - SQL ANY operator
-    - SQL LIKE operator
+- SQL ALL operator
+- SQL AND operator
+- SQL OR operator
+- SQL BETWEEN operator
+- SQL IN operator
+- SQL NOT operator
+- SQL ANY operator
+- SQL LIKE operator
     
 The Set Operators in SQL combine a similar type of data from two or more SQL database tables. It mixes the result, which is extracted from two or more SQL queries, into a single result.
 
@@ -257,18 +257,18 @@ The Set Operators in SQL combine a similar type of data from two or more SQL dat
 Set operators combine more than one select statement in a single query and return a specific result set.
 
 Following are the various set operators which are performed on the similar data stored in the two SQL database tables:
-    - SQL Union Operator
-    - SQL Union ALL Operator
-    - SQL Intersect Operator
-    - SQL Minus Operator
+- SQL Union Operator
+- SQL Union ALL Operator
+- SQL Intersect Operator
+- SQL Minus Operator
     
 #### *5.SQL Bitwise Operators*
 
 The Bitwise Operators in SQL perform the bit operations on the Integer values. To understand the performance of Bitwise operators, you just knew the basics of Boolean algebra.
 
 Following are the two important logical operators which are performed on the data stored in the SQL database tables:
-    - Bitwise AND (&)
-    - Bitwise OR(|)
+- Bitwise AND (&)
+- Bitwise OR(|)
 
 #### *6.SQL Unary Operators*
 
@@ -277,30 +277,32 @@ The Unary Operators in SQL perform the unary operations on the single data of th
 These types of operators can be easily operated on the numeric data value of the SQL table.
 
 Following are the various unary operators which are performed on the numeric data stored in the SQL table:
-    - SQL Unary Positive Operator
-    - SQL Unary Negative Operator
-    - SQL Unary Bitwise NOT Operator
+- SQL Unary Positive Operator
+- SQL Unary Negative Operator
+- SQL Unary Bitwise NOT Operator
 
  ### SQL FUNCTIONS
  For doing operations on data SQL has many built-in functions, they are categorized in two categories and further sub-categorized in different seven functions under each category. The categories are: 
-   **Aggregate functions**
+ 
+**1.Aggregate functions**
     These functions are used to do operations from the values of the column and a single value is returned. 
-        - AVG()
-        - COUNT()
-        - FIRST()
-        - LAST()
-        - MAX()
-        - MIN()
-        - SUM()
-    **Scalar functions:**
+- AVG()
+- COUNT()
+- FIRST()
+- LAST()
+- MAX()
+- MIN()
+- SUM()
+    
+**2.Scalar functions:**
     These functions are based on user input, these too returns single value. 
-        - UCASE()
-        - LCASE()
-        - MID()
-        - LEN()
-        - ROUND()
-        - NOW()
-        - FORMAT()
+- UCASE()
+- LCASE()
+- MID()
+- LEN()
+- ROUND()
+- NOW()
+- FORMAT()
   
 ### SQL JOIN
 
@@ -309,10 +311,10 @@ A JOIN clause is used to combine rows from two or more tables, based on a relate
 **Different Types of SQL JOINS**
 
 Here are the different types of the JOINs in SQL:
-    - *(INNER) JOIN*: Returns records that have matching values in both tables
-    - *LEFT (OUTER) JOIN*: Returns all records from the left table, and the matched records from the right table
-    - *RIGHT (OUTER) JOIN*: Returns all records from the right table, and the matched records from the left table
-    - *FULL (OUTER) JOIN*: Returns all records when there is a match in either left or right table
+- *(INNER) JOIN*: Returns records that have matching values in both tables
+- *LEFT (OUTER) JOIN*: Returns all records from the left table, and the matched records from the right table
+- *RIGHT (OUTER) JOIN*: Returns all records from the right table, and the matched records from the left table
+- *FULL (OUTER) JOIN*: Returns all records when there is a match in either left or right table
 
     
 
@@ -367,7 +369,7 @@ A view that stores the definition as well as data. It creates replicas of data b
 
 In PL/SQL (Procedural Language/Structured Query Language), we can use conditional controls to execute different blocks of code based on certain conditions. There are several constructs for implementing conditional logic in PL/SQL, including the IF statement, CASE statement, and the IF-ELSIF-ELSE statement.
 
-### IF STATEMENT
+### 1.IF STATEMENT
 The IF statement is used to execute a block of code if a specified condition is true.
 
 #### *SYNTAX*
@@ -378,7 +380,7 @@ IF condition THEN
 END IF;
 
 
-### IF ELSE IF STATEMENT
+### 2.IF ELSE IF STATEMENT
 This statement is an extension of the IF statement and allows you to specify multiple conditions and corresponding blocks of code to execute.
 
 #### *SYNTAX*
@@ -399,7 +401,7 @@ ELSE
 END IF;
 
 
-### CASE STATEMENT 
+### 3.CASE STATEMENT 
 The CASE statement is used to perform different actions based on the value of an expression.
 
 #### *SYNTAX*
@@ -417,3 +419,441 @@ ELSE
 END CASE;
 
 ![Screenshot from 2023-11-13 20-59-29](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/1b1fdabd-75d0-49ac-890b-bcb50cd569f7)
+ 
+#### After calling 
+
+![Screenshot from 2023-11-16 15-06-22](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/f738c94b-8f21-4583-8b2f-b83cd87803bf)
+
+
+
+## <p align="left">Ques-7. Error Handling using Internal Exceptions and External Exceptions
+
+
+An exception occurs when the PL/SQL engine encounters an instruction which it cannot execute due to an error that occurs at run-time. These errors will not be captured at the time of compilation and hence these needed to handle only at the run-time.
+
+For example, if PL/SQL engine receives an instruction to divide any number by ‘0’, then the PL/SQL engine will throw it as an exception. The exception is only raised at the run-time by the PL/SQL engine.
+
+Exceptions will stop the program from executing further, so to avoid such condition, they need to be captured and handled separately. This process is called as Exception-Handling, in which the programmer handles the exception that can occur at the run time.
+Exception-Handling Syntax
+
+Exceptions are handled at the block, level, i.e., once if any exception occurs in any block then the control will come out of execution part of that block. The exception will then be handled at the exception handling part of that block. After handling the exception, it is not possible to resend control back to the execution section of that block.
+
+### Internal Exceptions:
+
+Internal exceptions are errors that are raised automatically by the database engine in response to certain conditions. These exceptions are predefined and cover a range of common error scenarios. Some common internal exceptions include:
+
+1. NO_DATA_FOUND: Raised when a SELECT INTO statement returns no rows.
+2. TOO_MANY_ROWS: Raised when a SELECT INTO statement returns more than one row.
+3. ZERO_DIVIDE: Raised when attempting to divide by zero.
+4. DUP_VAL_ON_INDEX: Raised when trying to insert a duplicate value into a unique index.
+5. OTHERS: A catch-all exception that handles any unhandled exception.
+
+The below syntax explains how to catch and handle the exception.
+     
+     BEGIN TRY
+   
+    -- Your T-SQL statements here
+   
+    
+    -- This is the main block where potential errors may occur
+
+    -- Example: Divide by zero error
+    DECLARE @Result INT;
+    SET @Result = 1 / 0; -- This will cause a divide by zero error
+
+     END TRY
+    BEGIN CATCH
+    -- This block will be executed if an error occurs in the TRY block
+
+    PRINT 'An error occurred: ' + ERROR_MESSAGE(); -- Print the error message
+    -- You can log the error, roll back transactions, or take other appropriate actions
+
+    END CATCH;
+
+Here is an example of using internal exceptions:
+
+    DECLARE
+    v_result NUMBER;
+    BEGIN
+    SELECT 10 / 0 INTO v_result FROM dual;
+    EXCEPTION
+    WHEN ZERO_DIVIDE THEN
+      DBMS_OUTPUT.PUT_LINE('Error: Division by zero');
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('An unexpected error occurred');
+    END;
+
+Here are some possible internal exceptions:
+|Exception Name|	Description|	Scenario When Exception is Thrown|
+|-----|-----|------|
+ER_SCALAR_BUILTIN_NO_ROWS_CODE	|The Scalar function did not return any value.|	This exception is thrown when a SCALAR function does not return any row (value).
+ER_BAD_FIELD_ERROR	|Column name does not exist.|	A column that does not exist in a table is referenced in a query.
+ER_TABLE_EXISTS_ERROR|	Table already exists.	|While creating a table, a table with the same name already exists.
+ER_BAD_TABLE_ERROR	|Table does not exist.	|A table that does not exist is referenced in a query.
+ER_NO_SUCH_TABLE|	Table does not exist.|	A table that does not exist is referenced in a query.
+ER_DUP_ENTRY_WITH_KEY_NAME|	Duplicate key error.| The error message contains the key name as well.	A duplicate value is entered for a column with a key constraint.
+ER_WRONG_VALUE_COUNT_ON_ROW|	Column count does not match value count.	|The number of columns in a table and the number of values specified in the query are not the same. For example, INSERT query.
+ER_PARSE_ERROR|	Issue with parsing dynamic SQL.|	There is an error in the SQL statement.
+ER_FILE_NOT_FOUND|	Cannot find file, usually in LOAD DATA statements.|	Either the file does not exist or the file path is incorrect.    
+
+### External Exceptions:
+
+External exceptions, also known as user-defined exceptions, are custom exceptions that developers can define to handle specific errors in their code. These exceptions are raised explicitly using the RAISE statement. Developers can define their own error codes and messages for better error handling.
+
+1. Declaration of User-Defined Exception:
+- To declare a user-defined exception, you use the DECLARE section of a PL/SQL block.
+- Syntax: DECLARE my_exception EXCEPTION;
+
+2. Raising User-Defined Exception:
+
+- You can raise the user-defined exception explicitly using the RAISE statement.
+- Syntax: RAISE my_exception;
+
+3. Handling User-Defined Exception:
+
+- In the EXCEPTION section of your PL/SQL block, you can specify handlers for specific exceptions, including user-defined exceptions.
+
+Syntax:
+
+    EXCEPTION
+    WHEN my_exception THEN
+      -- Handle the exception here
+
+
+Here's an example of using external exceptions:
+
+    DECLARE
+    my_exception EXCEPTION;
+    v_number NUMBER := 5;
+    BEGIN
+    IF v_number > 10 THEN
+      RAISE my_exception;
+    END IF;
+    EXCEPTION
+    WHEN my_exception THEN
+      DBMS_OUTPUT.PUT_LINE('Custom exception: Number is greater than 10');
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('An unexpected error occurred');
+    END;
+    
+
+## <p align="left">Ques-8.Using various types of Cursors 
+
+In SQL, a cursor is a database object that allows you to interact with individual rows returned by a query. Cursors are often used when you need to process one row at a time, rather than fetching the entire result set at once. There are several types of cursors in SQL, and their usage depends on the specific requirements of your application. The main types of cursors are:
+
+#### 1. Static Cursor: 
+- A static cursor is not sensitive to changes made by other users to the data while the cursor is open.
+- It fetches a snapshot of the data at the time the cursor is opened.
+
+Syntax:
+
+    DECLARE cursor_name CURSOR STATIC FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+Example:
+   
+    DECLARE static_cursor CURSOR STATIC FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;    
+
+#### 2. Dynamic Cursor:
+- A dynamic cursor reflects changes made by other users to the data while the cursor is open.
+- It does not fetch a snapshot but rather retrieves the current data each time a fetch is made.
+    
+Syntax:
+
+    DECLARE cursor_name CURSOR DYNAMIC FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+Example:
+
+    DECLARE dynamic_cursor CURSOR DYNAMIC FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+#### 3. Forward-Only Cursor:
+- A forward-only cursor only allows fetching rows in a forward direction (from the first to the last row).
+- It is the most lightweight and performs better in terms of resource usage.
+
+Syntax:
+
+    DECLARE cursor_name CURSOR FORWARD_ONLY FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+Example:
+   
+    DECLARE forward_only_cursor CURSOR FORWARD_ONLY FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+#### 4. Scroll Cursor:
+- A scroll cursor allows fetching rows in both forward and backward directions.
+- It provides more flexibility but may be less efficient than forward-only cursors.
+
+Syntax:
+
+      DECLARE cursor_name CURSOR SCROLL FOR
+      SELECT column1, column2, ...
+      FROM your_table;
+
+Example:
+
+    DECLARE scroll_cursor CURSOR SCROLL FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+  
+#### 5. Keyset Cursor:
+- A keyset cursor is similar to a dynamic cursor but is more optimized as it only retrieves the key values of the rows.
+- It is sensitive to changes in the data but doesn't retrieve the actual data until a fetch is made.
+
+Syntax:
+
+    DECLARE cursor_name CURSOR KEYSET FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+Example:
+
+    DECLARE keyset_cursor CURSOR KEYSET FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+
+#### 6. Insensitive Cursor:
+- An insensitive cursor creates a temporary copy of the result set, making it insensitive to changes in the underlying data.
+- It is typically used when the data should remain static throughout the cursor's lifetime.
+
+Syntax:
+
+    DECLARE cursor_name CURSOR INSENSITIVE FOR
+    SELECT column1, column2, ...
+    FROM your_table;
+
+Example:
+
+    DECLARE insensitive_cursor CURSOR INSENSITIVE FOR
+    SELECT employee_id, first_name, last_name, salary
+    FROM employees;
+
+After declaring a cursor, you can use the following template to open, fetch, and close the cursor:
+
+    OPEN cursor_name;
+    FETCH NEXT FROM cursor_name INTO @variable1, @variable2, ...;
+    -- Process the fetched data here
+    CLOSE cursor_name;
+
+Here's an example of using a cursor to fetch and print employee names:
+
+    DECLARE employee_cursor CURSOR FOR
+    SELECT first_name, last_name
+    FROM employees;
+
+    OPEN employee_cursor;
+
+    FETCH NEXT FROM employee_cursor INTO @first_name, @last_name;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+    PRINT 'Employee Name: ' + @first_name + ' ' + @last_name;
+    FETCH NEXT FROM employee_cursor INTO @first_name, @last_name;
+    END
+
+    CLOSE employee_cursor;
+
+
+## <p align="left">Ques-9. How to run Stored Procedures and Functions
+
+Stored Procedures and Functions are database objects in SQL that contain a set of precompiled SQL statements. They are designed to perform specific tasks and can be reused, making database development more efficient. Both stored procedures and functions enhance code modularity, improve security, and allow for better performance optimization.
+
+### Stored Procedures:
+
+**1. Purpose:**
+- Procedural Logic: Stored procedures contain a series of SQL statements and procedural logic, allowing for complex operations to be encapsulated in a single unit.
+
+**2. Execution:**
+-  Call Statement: Stored procedures are typically executed using a CALL or EXEC statement.
+
+**3. Parameters:**
+- Input/Output Parameters: Stored procedures can take input parameters, perform operations, and return results. They may also have output parameters.
+
+**4. Transaction Control:**
+- Transaction Management: Stored procedures can include transaction management commands (COMMIT and ROLLBACK) to control the scope of transactions.
+
+**Running Stored Procedures:**
+
+1. Creating a Stored Procedure:
+Before you can run a stored procedure, you need to create it. Use the CREATE PROCEDURE statement to define a stored procedure.
+
+       CREATE PROCEDURE procedure_name
+       AS
+       BEGIN
+       -- SQL statements for the procedure
+       END;
+
+2. Executing a Stored Procedure:
+Once the stored procedure is created, you can execute it using the EXEC or EXECUTE statement.
+
+       EXEC procedure_name;
+       -- or
+       EXECUTE procedure_name;
+
+**Example:**
+
+    -- Creating a stored procedure
+    CREATE PROCEDURE GetEmployeeCount
+    AS
+    BEGIN
+    -- Select the total number of employees from the Employees table
+    SELECT COUNT(*) AS EmployeeCount
+    FROM Employees;
+    END;
+    GO
+
+    -- Running the stored procedure
+    EXEC GetEmployeeCount;
+
+**Using delimiters**
+
+![Screenshot from 2023-11-16 09-15-39](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/b4c0a52d-81db-4bdd-92bb-24a39d7eeae5)
+
+### Functions:
+
+**1. Purpose:**
+- Return Value: Functions are designed to return a single value or a table result, making them suitable for use in expressions or queries.
+
+**2. Execution:**
+- Select Statement: Functions are typically used within SELECT statements or as part of an expression.
+
+**3. Parameters:**
+- Input Parameters: Functions may accept input parameters, but they cannot have output parameters.
+
+**4. Transaction Control:**
+- No Transaction Management: Functions cannot contain transaction management commands like COMMIT or ROLLBACK.
+
+**Running Functions:**
+
+1. Creating a Function:
+Use the CREATE FUNCTION statement to define a function. Functions return a value and can be used in SQL queries.
+
+       CREATE FUNCTION function_name
+       RETURNS data_type
+       AS
+       BEGIN
+       -- SQL statements for the function
+       RETURN value;
+       END;
+
+2. Executing a Function:
+Functions are typically used within queries or other SQL statements.
+
+       SELECT function_name(parameters);
+
+**Example:**
+
+    -- Creating a function
+    CREATE FUNCTION GetAverageSalary()
+    RETURNS DECIMAL(10, 2)
+    AS
+    BEGIN
+    DECLARE @AvgSalary DECIMAL(10, 2);
+    -- Calculate the average salary from the Employees table
+    SELECT @AvgSalary = AVG(Salary)
+    FROM Employees;
+    RETURN @AvgSalary;
+    END;
+    GO
+
+    -- Running the function in a SELECT statement
+    SELECT dbo.GetAverageSalary() AS AvgSalary;
+
+**Using delimiters**
+
+![Screenshot from 2023-11-16 09-21-52](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/2dcd105a-cde3-4420-aadd-13347dcdd95a)
+
+
+## <p align="left">Ques-10. Creating Packages and applying Triggers
+
+#### Creating Packages in PL/SQL:
+
+A PL/SQL package is a collection of related procedures, functions, variables, and other constructs that are grouped together for modularity and reusability. Packages consist of two parts: the package specification and the package body.
+
+1. Package Specification:
+- Declares the public interface of the package.
+- Contains declarations of procedures, functions, variables, types, and constants that are accessible from outside the package.
+- Does not contain the implementation details.
+
+**Syntax**
+
+    CREATE OR REPLACE PACKAGE Your_Package_Name AS
+    PROCEDURE Procedure_Name;
+    FUNCTION Function_Name RETURN NUMBER;
+    -- Declare variables, types, etc.
+    END Your_Package_Name;
+    /
+
+2. Package Body:
+- Implements the procedures and functions declared in the package specification.
+- Contains the actual code for the functionality provided by the package.
+- May include private variables and procedures that are not accessible outside the package.
+
+**Syntax**
+
+    CREATE OR REPLACE PACKAGE BODY Your_Package_Name AS
+    PROCEDURE Procedure_Name IS
+    BEGIN
+    -- Procedure logic here
+    NULL;
+    END;
+
+    FUNCTION Function_Name RETURN NUMBER IS
+    BEGIN
+    -- Function logic here
+    RETURN 0;
+    END;
+    END Your_Package_Name;
+    /
+    
+### Applying Triggers in PL/SQL:
+
+A PL/SQL trigger is a set of instructions that are automatically executed in response to certain events on a table, such as an INSERT, UPDATE, or DELETE operation.
+
+1. Creating a Trigger:
+- Defines the trigger name, event (e.g., BEFORE INSERT, AFTER UPDATE), and the table on which the trigger should act.
+- Contains the PL/SQL block with the logic to be executed when the trigger is fired.
+
+**Syntax**
+
+    CREATE OR REPLACE TRIGGER Your_Trigger_Name
+    BEFORE INSERT ON Your_Table_Name
+    FOR EACH ROW
+    BEGIN
+    Your_Package_Name.Procedure_Name;
+    -- Your trigger logic here
+    END Your_Trigger_Name;
+    /
+
+In this example, the trigger is set to execute before an INSERT operation on Your_Table_Name. The trigger calls the Procedure_Name from Your_Package_Name.
+
+2. Applying the Trigger:
+- Once the trigger is created, it needs to be associated with a specific table.
+
+**Syntax** 
+
+    ALTER TABLE Your_Table_Name
+    ENABLE TRIGGER Your_Trigger_Name;
+
+- This associates the trigger Your_Trigger_Name with the table Your_Table_Name.
+
+3. Testing the Trigger:
+- You can test the trigger by performing operations on the table that the trigger is associated with.
+
+**Syntax**
+
+    INSERT INTO Your_Table_Name (column1, column2, ...)
+    VALUES (value1, value2, ...);
+
+- The trigger will execute its logic before or after the specified event on the table.
