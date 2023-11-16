@@ -108,13 +108,12 @@
    #### • SUBSTRING(): Extracts a substring from a string.
    #### • UPPER(), LOWER(): Converts text to uppercase or lowercase.
    #### • LENGTH(), CHAR_LENGTH(): Returns the length of a string.
-   
-![STRING_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/f696c3fc-5d24-47b3-beda-bc83ccd10f0e)
 ### 3. MATHEMATICAL Function: - Mathematical functions perform numeric calculations.
    #### • ABS(): Returns the absolute value of a number.
    #### • ROUND(): Rounds a numeric value to a specified number of decimal places.
    #### • SQRT(): Calculates the square root of a number.
    ![MATH_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/bbcf75a8-03b9-4762-a3d0-cd14e7d17958)
+![STRING_FUN](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/f696c3fc-5d24-47b3-beda-bc83ccd10f0e)
 ## JOINS: -
 ### 1. INNER JOIN: - An INNER JOIN returns only the rows that have matching values in both tables being joined. It excludes rows with non-matching values in either table.
 
@@ -132,8 +131,6 @@
 ![IF_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/65c6ee59-b55a-40c9-b72a-34c58597e8af)
 ### 2. CASE Statement: - The CASE statement allows you to perform conditional logic within SQL queries. You can use it to return different values based on specific conditions.
 ![CAS_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/cb91fbf5-40c2-4e19-870e-071fdd2d6663)
-### 3. STORED PROCEDURE: - You can create stored procedures in MariaDB to encapsulate conditional logic and reuse it in multiple queries or applications. Here's an example of a simple stored procedure with conditional logic:
-![PRO_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/8e7fa317-2daa-4324-8704-9f8d937c1374)
 # 7. Error Handling using Internal Exceptions and External Exceptions.
 ### MariaDB supports error handling through both internal exceptions and external exceptions. Internal exceptions are typically used within stored procedures, while external exceptions are errors that can be caught in the client application that calls the database.
 ## 1. Internal Exception (in Stored Procedures): -
@@ -145,3 +142,13 @@
 ![CURSOR_1](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/0148c086-5dc0-4647-b6e6-ea3ec94212ea)
 ![CURSOR_2](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/a03d5ea7-edea-4c66-aba9-4024ff155192)
 ### 2. Sensitive Cursor:
+![CUR_SEC](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/cae6fd2b-fc36-4560-b274-34224d5807e5)
+![CUR_SEC_2](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/d93b0801-429d-4b64-b503-916dc4e187ad)
+# 9. How to run Stored Procedures and Functions
+### 1. STORED PROCEDURE: - You can create stored procedures in MariaDB to encapsulate conditional logic and reuse it in multiple queries or applications. Here's an example of a simple stored procedure with conditional logic:
+![PRO_SAT](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/8e7fa317-2daa-4324-8704-9f8d937c1374)
+### 2. STORED FUNCTION: - In MariaDB, a function is a stored program that you can pass parameters into and then return a value.
+![FUNC_STO](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/743292f1-cc49-434c-afbc-2a2128cc6434)
+# 10. Creating Packages and applying Triggers
+### 2. TRIGGER:
+![trigger](https://github.com/Ramneet1266/rdbms_2023batch/assets/144204781/84486ca6-e888-4aa9-b5a5-514ce61a43c0)
