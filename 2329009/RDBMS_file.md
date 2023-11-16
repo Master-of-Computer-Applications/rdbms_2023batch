@@ -188,4 +188,319 @@ VALUES
 ![Screenshot from 2023-10-13 00-01-38](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/373107a5-2811-45ca-94fc-2321357a13d5)
 ![Screenshot from 2023-10-13 00-34-13](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/3039663b-3ff9-40db-b967-36bd7e0b985c)
 
+## <p align="left"> Ques-4. View data in the required form using Operators, Functions and Joins. </p>
+Structured Query Language is a computer language that we use to interact with a relational database. 
+
+## SQL Operators
+In simple operator can be defined as an entity used to perform operations in a table.
+
+Operators are the foundation of any programming language. We can define operators as symbols that help us to perform specific mathematical and logical computations on operands. In other words, we can say that an operator operates the operands. SQL operators have three different categories.
+
+### Types of SQL Operators:
+1. Arithmetic Operators
+2. Comparsion Operators
+3. Logical Operators
+
+### 1. Arithmetic Operators
+We can use various arithmetic operators on the data stored in the tables. Arithmetic Operators are:
+
+| Operator  | Description                                                                                         |
+|-----------| -----------                                                                                         |
+| +         | The addition is used to perform an addition operation on the data values.                           |
+| _         | This operator is used for the subtraction of the data values.                                       | 
+| /         | This operator works with the ‘ALL’ keyword and it calculates division operations.                   |
+| *         | This operator is used for multiplying data values.This operator is used for multiplying data values.| 
+| %         | Modulus is used to get the remainder when data is divided by another.                               | 
+
+**Examples-**
+![Screenshot from 2023-11-14 21-02-03](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/a5f2731e-d1b2-4004-936b-c8a7957f206c)
+![Screenshot from 2023-11-14 21-02-29](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/5d126455-0264-4dbf-868b-1127772aee8a)
+**Query-** SELECT * FROM student WHERE first_name LIKE 'J%';
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/a02f5ef0-6bab-401e-b30d-607e2bf9168e)
+
+### 2. Comparsion Operators
+Another important operator in SQL is a comparison operator, which is used to compare one expression’s value to other expressions. SQL supports different types of comparison operator, which is described below:
+
+| Operator  | Description                                                                                                                       |
+|-----------| -----------                                                                                                                       |
+| =         | It checks if two operands values are equal or not, if the values are equal then condition becomes true.                           |
+| >         | It checks if the left operand value is greater than right operand value, if yes then condition becomes true.                      | 
+| <         | It checks if the left operand value is less than right operand value, if yes then condition becomes true.                         |
+| >=        | It checks if the left operand value is less than or equal to the right operand value, if yes then condition becomes true.         | 
+| <=        | It checks if the left operand value is less than or equal to the right operand value, if yes then condition becomes true.         | 
+| <>        | It checks if two operands values are equal or not, if values are not equal then condition becomes true.                           | 
+| !=        | It checks if two operands values are equal or not, if values are not equal then condition becomes true.                           | 
+
+**Examples-**
+![comparison op1](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/0393e9c4-e9a5-44d4-9858-d15ece75bc5b)
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/d4d52ecf-b7c8-42c6-b2c7-4557aa3f2f8d)
+
+### 3. Logical Operators
+There is the list of logical operator used in SQL:
+
+| Operator  | Description                                                   |
+|-----------| -----------                                                   |
+| AND       | TRUE if all the conditions separated by AND is TRUE.          |
+| OR        | TRUE if any of the conditions separated by OR is TRUE.        | 
+| NOT       | Displays a record if the condition(s) is NOT TRUE             |
+| LIKE      | TRUE if the operand matches a pattern                         | 
+| BETWEEN   | TRUE if the operand is within the range of comparisons        |
+| ALL       | TRUE if all of the subquery values meet the condition         | 
+| ANY       | TRUE if any of the subquery values meet the condition         | 
+ 
+**Examples-**
+![logical op1](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/88bab023-e324-4512-816e-d41f8aad0205)
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/feb95493-d0fe-4f4b-8393-2e28847cbf80)
+
+## SQL Functions
+SQL functions are predefined operations that perform a specific action or computation on the data. Here are some common types of SQL functions:
+
+### 1. Aggregate Functions:
+Aggregate functions are used to perform calculations on a set of values and return a single result. Some of the most commonly used aggregate functions in SQL include −
+
+- **COUNT():** Counts the number of rows in a result set.
+- **SUM():** Calculates the sum of values in a numeric column.
+- **AVG():** Computes the average of values in a numeric column.
+- **MIN():** Finds the minimum value in a column.
+- **MAX():** Finds the maximum value in a column.
+
+### 2. Scalar Functions:
+Scalar functions are used to perform calculations on a single value and return a single result. Some examples of scalar functions in SQL include −
+
+- **UPPER(), LOWER():** Convert text to uppercase or lowercase.
+- **CONCAT():** Concatenates two or more strings.
+- **SUBSTRING():** Extracts a substring from a string.
+- **ROUND(), CEIL(), FLOOR():** Rounds a numeric value.
+
+### 3. Date and Time Functions:
+SQL also provides a number of functions for working with date and time values. Some examples of date and time functions in SQL include −
+
+- **NOW():** Retrieve the current date and time.
+- **CURRENT_DATE, CURRENT_TIME:** Returns the current date and time.
+- **YEAR(), MONTH(), DAY():** Extract parts of a date.
+
+### 4. Mathematical Functions:
+
+- **ABS():** Returns the absolute value of a numeric expression.
+- **SQRT():** Calculates the square root of a numeric expression.
+- **POWER():** Raises a numeric expression to the power of another.
+
+**Examples:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/836660f5-412b-4931-b7b6-3bb595c43515)
+
+## SQL Joins
+The SQL Join clause is used to combine data from two or more tables in a database. When the related data is stored across multiple tables, joins help you to retrieve records combining the fields from these tables using their foreign keys.
+
+Consider the two tables (courses and student) below as follows: 
+![joins](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/71450d50-2951-489a-a731-519e2fb4a30a)
+ 
+### Types of SQL Joins
+
+SQL provides various types of Joins that are categorized based on the way data across multiple tables are joined together. They are listed as follows −
+
+### 1. Inner Join
+
+An INNER JOIN is the default join which retrieves the intersection of two tables. It compares each row of the first table with each row of the second table. If the pairs of these rows satisfy the join-predicate, they are joined together.
+
+**Syntax:**
+
+```python
+SELECT table1.column1,table1.column2,table2.column1,....
+FROM table1 
+INNER JOIN table2
+ON table1.matching_column = table2.matching_column;
+
+
+table1: First table.
+table2: Second table
+matching_column: Column common to both the tables.
+``` 
+
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/65111c75-4126-4132-9fa1-190923d60343)
+
+### 2. Outer Join
+An Outer Join retrieves all the records in two tables even if there is no counterpart row of one table in another table, unlike Inner Join. Outer join is further divided into three subtypes - Left Join, Right Join and Full Join.
+
+Following are the different types of outer Joins −
+
+- **LEFT JOIN:** returns all rows from the left table, even if there are no matches in the right table.
+- **RIGHT JOIN:** returns all rows from the right table, even if there are no matches in the left table.
+- **FULL JOIN:** returns rows when there is a match in one of the tables.
+
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/6254e318-e9f3-4e5c-a36a-bdfea1685a31)
+
+### 3. Other Joins
+In addition to these there are two more joins −
+
+- **SELF Join:** is used to join a table to itself as if the table were two tables, temporarily renaming at least one table in the SQL statement.
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/378fef38-736c-4359-bb86-5e0ef0955cfe)
+
+- **CROSS Join:** returns the Cartesian product of the sets of records from the two or more joined tables.
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/fbb128e9-1273-4ab8-acb1-3abd96c2c9bc)
+
+---
+## <p align="left"> Ques-5. Creating different types of Views for tailored presentation of data. </p>
+Views in SQL are kind of virtual tables. A view also has rows and columns as they are in a real table in the database. We can create a view by selecting fields from one or more tables present in the database. A View can either have all the rows of a table or specific rows based on certain condition. In this article we will learn about creating , deleting and updating Views. 
+
+**CREATE VIEW Syntax:** 
+```python
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition; 
+```
+**CREATE OR REPLACE VIEW Syntax:**
+```python
+CREATE OR REPLACE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition; 
+```
+**DROP VIEW Syntax:**
+```python
+DROP VIEW view_name;
+```
+### Types of Views
+**1. Simple View:** A view based on only a single table, which doesn't contain GROUP BY clause and any functions. simple view in SQL is a virtual table based on the result of a SELECT query from one table. Here's an example of creating a simple view:
+
+**Example:** 
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/f9a4ac7f-d3ca-498e-8478-854065329d68)
+
+**2. Complex View:** A view based on multiple tables, which contain GROUP BY clause and functions. A complex view in SQL involves multiple tables, joins, and potentially other SQL operations. Here's an example of creating a complex view that involves a join between two tables:
+
+**Example:** 
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/bdc20bcd-ac6e-4f89-8216-f44d336ca9a7)
+
+**3. Inline  View:** A view based on a subquery in FROM Clause, that subquery creates a temporary table and simplifies the complex query. An inline view, also known as a derived table or subquery in the FROM clause, is a construct in SQL where you use a SELECT statement to create a temporary set of data within the context of a larger query. Inline views are often used to simplify complex queries or to perform operations on a subset of data before joining it with other tables or performing further operations.
+
+**Example:** 
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/3c96844f-cc4d-4994-b66b-5959bc88ab3d)
+
+**4. Materialized View:** A view that stores the definition as well as data. It creates replicas of data by storing it physically. A materialized view in SQL is a database object that contains the results of a query, which is stored on disk as a physical table. Unlike a regular (non-materialized) view, a materialized view is precomputed and stored, which can improve query performance in certain scenarios.Materialized view replicates the retrieved data physically. This replicated data can be reused without executing the view again. This type of view is also known as "SNAPSHOTS". Materialized view reduce the processing time to regenerate the whole data. It helps remote users to replicate data locally and improve query performance. The challenging part here is to synchronize the changes in materialized views underlying tables.
+
+## <p align="left"> Ques-6. How to apply Conditional Controls in PL/SQL. </p>
+<p>PL/SQL (Procedural Language/Structured Query Language) is a programming language designed specifically for interacting with Oracle Database. It is a procedural language extension to SQL and provides a way to execute SQL statements seamlessly within its procedural constructs. PL/SQL is used to create stored procedures, functions, triggers, packages, and more, allowing you to write powerful and efficient database-centric applications.</p>
+Decision making statements are those statements which are in charge of executing a statement out of multiple given statements based on some condition. The condition will return either true or false. Based on what the condition returns, the associated statement is executed.
+
+This can be logically implemented in PL/SQL block using decision making statements. In PL/SQL, you can use conditional controls to execute different blocks of code based on specified conditions. The primary conditional control structures in PL/SQL are:
+
+### 1. IF Statement:
+The if statement, or the if...then statement can be used when there is only a single condition to be tested. If the result of the condition is TRUE then certain specified action will be performed otherwise if it is FALSE then no action is taken and the control of program will just move out of the if code block.
+
+**Syntax:** 
+```python
+if <test_condition> then
+	body of action
+end if;
+```
+**Example:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/6e24dbec-878c-42c0-8724-e65cd911687d)
+
+### 2. IF-THEN-ELSE Statement:
+The IF-THEN-ELSE statement extends the IF statement by providing an alternative block of code to execute when the condition is not true.
+Using this statement group we can specify two statements or two set of statements, dependent on a condition such that when the condition is true then one set of statements is executed and if the condition is false then the other set of statements is executed. 
+
+**Syntax:** 
+```python
+if <test_condition> then
+	statement 1/set of statements 1
+else
+	statement 2/set of statements 2
+end if;
+```
+**Example:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/4fbe436b-c234-44d9-b255-1d300b8e913b)
+
+### 3. ELSIF Clause:
+You can use the ELSIF clause in an IF statement to check multiple conditions sequentially. It is used to check multiple conditions. Sometimes it is required to test more than one condition in that case if...then...else statement cannot be used. For this purpose, ELSIF Clause is suitable in which all the conditions are tested one by one and whichever condition is found to be TRUE, that block of code is executed. And if all the conditions result in FALSE then the else part is executed.
+
+**Syntax:** 
+```python
+if <test_condition1> then
+	body of action
+elsif <test_condition2>then
+	body of action
+...
+...
+else
+	body of action
+end if;
+```
+**Example:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/ef394bd9-aa1d-46f8-b3dc-df0126834d38)
+
+### 4. CASE Statement:
+The CASE statement allows you to perform a series of conditional checks in a more structured way. If we try to describe the case statement in one line then, then we can say means "one out of many". It is a decision making statement that selects only one option out of the multiple available options.
+
+**Syntax:** 
+```python
+CASE selector
+	when value1 then Statement1;
+	when value2 then Statement2;
+	...
+	...
+	else statement;
+end CASE;
+```
+**Example:**
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/0a25423b-754b-4742-b819-2523c0f5beb8)
+
+
+## <p align="left"> Ques-7. Error Handling using Internal Exceptions and External Exceptions. </p>
+An exception is an error which disrupts the normal flow of program instructions. Exceptions are runtime errors or unexpected events that occur during the execution of a PL/SQL code block. PL/SQL provides us the exception block which raises the exception thus helping the programmer to find out the fault and resolve it. 
+
+**Syntax to write an exception:**
+```python
+WHEN exception THEN 
+    statement;
+```
+
+**Types of exceptions defined in PL/SQL:**
+1. User defined (Internal) exceptions.
+2. System defined (External) exceptions.
+
+### 1. User defined (Internal) exceptions:
+In any program, there is a possibility that a number of errors can occur that may not be considered as exceptions by oracle. In that case, an exception can be defined by the programmer while writing the code such type of exceptions are called User-defined exception.
+
+User defined exceptions are in general defined to handle special cases where our code can generate exception due to our code logic.
+
+Also, in your code logic, you can explicitly specify to genrate an exception using the RAISE keyword and then handle it using the EXCEPTION block.
+
+### 2. System defined (External) exceptions:
+In order to handle common exceptions that occur while running PL/SQL code, there are two types of exception handlers in oracle:
+1. Named Exception Handler
+2. Numbered Exception Handler
+
+**Named Exception Handling:** Such exceptions are the predefined names given by oracle for those exceptions that occur most commonly.
+
+**Numbered Exception Handling:** In oracle, some of the pre-defined exceptions are numbered in the form of four integers preceded by a hyphen symbol. To handle such exceptions we should assign a name to them before using them.
+This can be done by using the Pragma exception technique in which a numbered exception handler is bound to a name. 
+
+**Example:**
+```python
+DELIMITER //
+ CREATE PROCEDURE ADD_DETAIL (IN course_id VARCHAR(25), IN course_name VARCHAR(27))
+BEGIN
+DECLARE NOT_NULL1 INT DEFAULT 0;
+BEGIN
+DECLARE EXIT HANDLER FOR 1048 SET NOT_NULL1 = 1;
+INSERT INTO courses (course_id, course_name) VALUES (course_id, course_name);
+SELECT 'SUCCESSFUL INSERT';
+ END; 
+IF NOT_NULL1 = 1 THEN
+SELECT 'UNSUCCESSFUL INSERT DUE TO NULL VALUE';
+END IF;
+END;
+//
+```
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/a15647ea-a8f7-4804-b78c-038bc29b5113)
+![image](https://github.com/harmeet-811/rdbms_2023batch/assets/144206256/8830f6e9-72a0-409a-be91-c20bae3fd543)
+
+## <p align="left"> Ques-8. Using various types of Cursors. </p>
+
+
+
+
+
+
 
