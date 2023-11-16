@@ -339,7 +339,6 @@ FROM employees: Specifies the primary table as employees.
 JOIN departments ON employees.department_id = departments.department_id: Performs an INNER JOIN with the departments table based on the department_id column to link the two tables.
 
 *Result:*
-
 The query will return a result set with columns: full_name, department_name,salary, salary_indicator.
 
 ## <p align="left">Ques-5. Creating different types of Views for tailored presentation of data</p>
