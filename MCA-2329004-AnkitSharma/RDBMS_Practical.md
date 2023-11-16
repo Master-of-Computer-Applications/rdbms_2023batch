@@ -125,6 +125,7 @@ SQLite is a self-sufficient, serverless, and no-configuration-required database 
 (ii)Absence of advanced features-SQLite lacks some of the sophisticated features found in other database management systems, such as stored procedures, triggers, or user-defined functions.
 
 (iii)Restricted scalability-Owing to its serverless structure, SQLite is not tailored for extensive applications or distributed settings. Its performance may diminish when handling substantial datasets or elevated levels of concurrent access.
+
 ---------------------------------------------------------------------------------------------------------------------------------
 
 ## *2. Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL).*
@@ -198,7 +199,7 @@ Create table class values (Id int PRIMARY KEY, FirstName varchar(255), LastName 
 _Output:_
 ![Screenshot from 2023-10-12 15-11-56](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/bbea3ec7-ae67-4471-80f3-633373eb4e1b)
 
-**(3)Foreign key Constraint**<br>
+**(4)Foreign key Constraint**<br>
 The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.<br>
 A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.<br>
 The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
@@ -216,7 +217,7 @@ FOREIGN KEY(ID) REFERENCES class(ID)
 _Output:_
 ![Screenshot from 2023-10-12 15-36-38](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/f41a212f-4efb-4e78-a53a-8e99ab47121e)
 
-**(3)Check Constraint**<br>
+**(5)Check Constraint**<br>
 The CHECK constraint is used to limit the value range that can be placed in a column.<br>
 If you define a CHECK constraint on a column it will allow only certain values for this column.<br>
 If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row;
@@ -228,7 +229,7 @@ Create table class values (Id int NOT NULL, FirstName varchar(255), LastName Var
 _Output:_
 ![Screenshot from 2023-10-12 16-04-39](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/b3ecf80a-717c-486d-8edb-78e33f8929fd)
 
-**(4)Default Constraint**<br>
+**(6)Default Constraint**<br>
 The DEFAULT constraint is used to set a default value for a column.<br>
 The default value will be added to all new records, if no other value is specified.
 
@@ -245,7 +246,7 @@ _Output:_
 ![Screenshot from 2023-11-02 12-06-30](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/82d32779-a466-4582-80f8-422bb08513f3)
 
 
-## (7) CREATE INDEX Statement- 
+**(7)CREATE INDEX Statement**<br>
 The CREATE INDEX statement is used to create indexes in tables.
 
 Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
@@ -602,12 +603,327 @@ Conditional control statements are those which allow you to control the executio
 2) IF-THEN-ELSE Statement
 3) IF-THEN-ELSEIF Statement
 
-**1) IF-THEN Statement:-**<br>
+**1) IF-THEN Statement:-**<br>  
+In MariaDB, conditional control statements within SQL queries are different from PL/SQL's procedural IF-THEN control. MariaDB does not have a direct equivalent for PL/SQL's IF-THEN control statements within regular SQL queries. However, within stored procedures or functions, you can achieve conditional logic using CASE statements or IF statements. Here's an example using a stored procedure.
+
+```python
+DELIMITER //
+
+CREATE PROCEDURE CheckNumber(num INT)
+BEGIN
+    CASE
+        WHEN num > 0 THEN
+            SELECT 'Number is positive';
+        ELSE
+            SELECT 'Number is non-positive';
+    END CASE;
+END //
+
+DELIMITER ;
+
+```
+_Output:_
+
+![Screenshot from 2023-11-16 16-47-46](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/a4f1e4ce-201b-4250-a2c4-d9a352622692)
+
+**2) IF-THEN-ELSE Statement:-**<br>  
+A sequence of IF-THEN statements can be followed by an optional sequence of ELSE statements, which execute when the condition is FALSE.
+
+
+```python
+DELIMITER //
+
+CREATE PROCEDURE CheckNumber(num INT)
+BEGIN
+    IF num > 0 THEN
+        SELECT 'Number is positive';
+    ELSE
+        SELECT 'Number is non-positive';
+    END IF;
+END //
+
+DELIMITER ;
+
+```
+_Output:_
+
+![Screenshot from 2023-11-16 16-51-37](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/2384500c-f80f-46cf-8c51-fbdd9ae13855)
+
+**3) IF-THEN-ELSEIF Statement:-**<br> 
+The IF-THEN-ELSIF statement allows you to choose between several alternatives. An IF-THEN statement can be followed by an optional ELSIF...ELSE statement. The ELSIF clause lets you add additional conditions.<br>
+
+When using IF-THEN-ELSIF statements there are a few points to keep in mind:-<br>
+1)  It's ELSIF, not ELSEIF.<br>
+2)  An IF-THEN statement can have zero or one ELSE's and it must come after any ELSIF's.<br>
+3) An IF-THEN statement can have zero to many ELSIF's and they must come before the ELSE.<br>
+4) Once an ELSIF succeeds, none of the remaining ELSIF's or ELSE's will be tested.
+
+
+```python
+DELIMITER //
+
+CREATE PROCEDURE CheckNumber(num INT)
+BEGIN
+    IF num > 0 THEN
+        SELECT 'Number is positive';
+    ELSE
+        IF num = 0 THEN
+            SELECT 'Number is zero';
+        ELSE
+            SELECT 'Number is negative';
+        END IF;
+    END IF;
+END //
+
+DELIMITER ;
+
+```
+_Output:_
+
+![Screenshot from 2023-11-16 17-07-30](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/6b699cd5-ade7-4120-bc7a-ba62135ff79c)
+
+------------------------------------------------------------------------------------------------------------------------
+## *7. Error Handling using Internal Exceptions and External Exceptions*
+
+An exception is an error which disrupts the normal flow of program instructions. PL/SQL provides us the exception block which raises the exception thus helping the programmer to find out the fault and resolve it.
+
+There are two types of exceptions defined in PL/SQL
+
+  (1)User defined exception.<br>
+  (2)System defined exceptions.
+
+
+```python
+DELIMITER //
+
+CREATE PROCEDURE example_error_handling()
+BEGIN
+    DECLARE custom_error CONDITION FOR SQLSTATE '45000';
+
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- Custom error handling logic goes here
+        ROLLBACK;
+        SELECT 'An error occurred';
+    END;
+
+    START TRANSACTION;
+
+    -- Your SQL statements here
+
+    -- Simulating an error
+    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Custom error message';
+
+    COMMIT;
+END //
+
+DELIMITER ;
+```
+_Output:_
+
+![Screenshot from 2023-11-16 19-33-20](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/da62dc51-8238-4993-bfb2-396ad49e27e0)
+
 ------------------------------------------------------------------------------------------------------------------------
 ## *8. Using various types of Cursors.*<br>
-Cursor is a Temporary Memory or Temporary Work Station. It is Allocated by Database Server at the Time of Performing DML(Data Manipulation Language) operations on the Table by the User. Cursors are used to store Database Tables.<br> 
+A cursor is a pointer to this context area. PL/SQL controls the context area through a cursor. A cursor holds the rows (one or more) returned by a SQL statement. The set of rows the cursor holds is referred to as the active set.
 
-There are 2 types of Cursors: Implicit Cursors, and Explicit Cursors. These are explained as following below.<br>
+You can name a cursor so that it could be referred to in a program to fetch and process the rows returned by the SQL statement, one at a time. There are two types of cursors −
 
-  *1) Implicit Cursors:* Implicit Cursors are also known as Default Cursors of SQL SERVER. These Cursors are allocated by SQL SERVER when the user performs DML operations.<br>
-  *2) Explicit Cursors:* Explicit Cursors are Created by Users whenever the user requires them. Explicit Cursors are used for Fetching data from Table in Row-By-Row Manner.
+  (1)DECLARE Cursor:<br>
+ Description: A DECLARE cursor is explicitly declared and must be managed explicitly by the programmer.
+ Syntax: DECLARE cursor_name CURSOR FOR SELECT_statement;
+
+(2)FOR Cursor:<br>
+Description: A FOR cursor is implicitly declared and automatically managed by the database system. It simplifies the syntax and reduces the amount of code needed for simple cursor operations.<br>
+Syntax:FOR variable_name IN (SELECT_statement) DO
+  -- Statements to process each row END FOR;
+
+```python
+
+DELIMITER //
+
+-- Create a sample employees table
+CREATE TABLE IF NOT EXISTS employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(255)
+);
+
+-- Insert some sample data
+INSERT INTO employees (employee_id, employee_name) VALUES
+(1, 'John Doe'),
+(2, 'Jane Smith'),
+(3, 'Bob Johnson');
+
+-- Create a stored procedure with a DECLARE cursor
+CREATE PROCEDURE example_cursor_demo()
+BEGIN
+    DECLARE done BOOLEAN DEFAULT FALSE;
+    DECLARE emp_id INT;
+    DECLARE emp_name VARCHAR(255);
+
+    -- Declare a cursor for the employees table
+    DECLARE employee_cursor CURSOR FOR
+        SELECT employee_id, employee_name FROM employees;
+
+    -- Declare continue handler to exit loop when no more rows found
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    -- Open the cursor
+    OPEN employee_cursor;
+
+    -- Start processing rows
+    read_loop: LOOP
+        -- Fetch data into variables
+        FETCH employee_cursor INTO emp_id, emp_name;
+
+        -- Check if there are no more rows
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+
+        -- Process the current row
+        SELECT CONCAT('Employee ID: ', emp_id, ', Name: ', emp_name) AS employee_info;
+    END LOOP;
+
+    -- Close the cursor
+    CLOSE employee_cursor;
+END //
+
+DELIMITER ;
+```
+_Output:_
+
+![Screenshot from 2023-11-16 19-39-11](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/ccd731a4-6aac-4a34-8168-f26ba6b75f0e)
+
+------------------------------------------------------------------------------------------------------------------------
+## *9. How to run Stored Procedures and Functions.*<br>
+**Stored Procedures:-**<br>
+Stored procedures and functions are similar in syntax and purpose, but they have different behaviors. Stored procedures execute a series of SQL statements, while functions return a single value. Let's create examples for both stored procedures and functions in MariaDB.
+
+```python
+DELIMITER //
+ CREATE PROCEDURE MY_C()
+
+     BEGIN
+     IF 2 = 2 THEN
+     SELECT 'TRUE';
+     ELSE
+     SELECT 'FALSE';
+     END IF;
+     END;
+     //
+```
+_Output:_
+
+![Screenshot from 2023-11-16 17-37-55](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/a4500b46-bdf8-48ed-9d30-8416e107bc94)
+
+**Stored function:-**<br>
+The CalculateCircleArea function calculates the area of a circle based on the provided radius. It uses the PI() function available in MariaDB to get the value of π and returns the calculated area.Both stored procedures and functions can be useful for encapsulating logic within the database and allowing reusability of code. Stored procedures can perform multiple operations and may not return a value explicitly, while functions return a single value and are primarily used within SQL statements.
+
+
+```python
+DELIMITER //
+
+CREATE FUNCTION CalculateCircleArea(radius FLOAT) RETURNS FLOAT
+BEGIN
+    DECLARE area FLOAT;
+    SET area = PI() * radius * radius;
+    RETURN area;
+END //
+
+DELIMITER ;
+```
+_Output:_
+
+![Screenshot from 2023-11-16 17-24-32](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/496bd6cb-9a7d-44c8-a666-e2b6a43f2979)
+
+------------------------------------------------------------------------------------------------------------------------
+## *10. Creating Packages and applying Triggers.*<br>
+A trigger is a stored procedure in a database that automatically invokes whenever a special event in the database occurs. For example, a trigger can be invoked when a row is inserted into a specified table or when specific table columns are updated in simple words a trigger is a collection of SQL statements with particular names that are stored in system memory. It belongs to a specific class of stored procedures that are automatically invoked in response to database server events. Every trigger has a table attached to it.
+
+Because a trigger cannot be called directly, unlike a stored procedure, it is referred to as a special procedure. A trigger is automatically called whenever a data modification event against a table takes place, which is the main distinction between a trigger and a procedure. On the other hand, a stored procedure must be called directly.
+
+```python
+ DELIMITER //
+ CREATE TRIGGER before_insert_tri
+     BEFORE INSERT ON example_table2
+    FOR EACH ROW
+    BEGIN
+     SET NEW.data = CONCAT('Modified: ', NEW.data);
+     END //
+```
+_Output:_
+
+![Screenshot from 2023-11-16 17-55-03](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/23b64cbb-1668-4003-af5e-21b720041301)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## *11. Creating Arrays and Nested Tables.*<br>
+**1) Arrays:-**<br>  
+An array is an ordered set of elements of a single built-in data type. An array can have an associated user-defined array type, or it can be the result of an SQL operation that returns an array value without an associated user-defined array type.
+
+```python
+CREATE TABLE my_array (
+     array_index INT PRIMARY KEY,
+     array_value VARCHAR(255));
+ INSERT INTO my_array (array_index, array_value) VALUES
+     (1, 'Value1'),
+     (2, 'Value2'),
+     (3, 'Value3');
+
+```
+_Output:_
+
+![Screenshot from 2023-11-16 18-05-07](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/a9b71c33-a2c7-43c9-a145-e7b1927319a2)
+
+**2) Nested Tables:-**<br>  
+Nested tables are single-dimensional, unbounded
+collections of homogeneous elements.<br> First, a nested table is single-
+dimensional, meaning that each row has a single column of data like a
+one-dimension array. Second, a nested table is unbounded. It means
+that the number of elements of a nested table is predetermined. Third,
+homogeneous elements mean that all elements of a nested table have
+the same data type.
+
+
+```python
+CREATE TABLE main_entities (
+    main_id INT PRIMARY KEY,
+    main_name VARCHAR(255)
+);
+
+-- Create a table for the nested entities
+CREATE TABLE nested_entities (
+    nested_id INT PRIMARY KEY,
+    main_id INT,
+    nested_name VARCHAR(255),
+    FOREIGN KEY (main_id) REFERENCES main_entities(main_id)
+);
+
+-- Insert sample data into the main_entities table
+INSERT INTO main_entities (main_id, main_name) VALUES
+(1, 'Main Entity 1'),
+(2, 'Main Entity 2');
+
+-- Insert sample data into the nested_entities table
+INSERT INTO nested_entities (nested_id, main_id, nested_name) VALUES
+(1, 1, 'Nested Entity A'),
+(2, 1, 'Nested Entity B'),
+(3, 2, 'Nested Entity C');
+
+-- Query data with a join to simulate nested entities
+SELECT
+    main_entities.main_id,
+    main_entities.main_name,
+    nested_entities.nested_id,
+    nested_entities.nested_name
+FROM
+    main_entities
+LEFT JOIN
+    nested_entities ON main_entities.main_id = nested_entities.main_id;
+```
+_Output:_
+
+![Screenshot from 2023-11-16 19-46-29](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/6afd7c37-063a-4036-81bf-f030568dbaad)
+![Screenshot from 2023-11-16 19-46-44](https://github.com/AnkitSharma862/rdbms_2023batch/assets/146960077/ca27b384-08f5-4ab4-b6f0-5dc13232dfe5)
+
+------------------------------------------------------------------------------------------------------------------------
