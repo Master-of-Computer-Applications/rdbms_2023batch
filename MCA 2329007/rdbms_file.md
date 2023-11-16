@@ -148,7 +148,7 @@ Defines a condition that must be satisfied for data to be valid in a column. For
 
 To apply constraints on a table named "student," you would typically use SQL statements. Here's an example of how you can create a "student" table with various constraints. Certainly, you can apply a foreign key constraint in the "student" table to establish a relationship with another table, such as a "courses" table. This relationship can represent the courses that each student is enrolled in. Here's an example of how to add a foreign key constraint to the "student" table:
 
- python
+
 CREATE TABLE courses (
     course_id INT PRIMARY KEY,
     course_name VARCHAR(100)
@@ -173,7 +173,7 @@ CREATE TABLE student (
 ![Screenshot from 2023-10-13 21-49-27](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/f2621d3b-20b0-41d2-bb98-68d4a5f7ae8a)
 To add data to the tables, you can use the SQL INSERT INTO statement as well.
 
- python
+ 
 -- Inserting sample data into the "courses" table
 INSERT INTO courses (course_id, course_name)
 VALUES
@@ -193,7 +193,7 @@ VALUES
 
 ![Screenshot from 2023-10-13 22-05-44](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/ad803f68-ce32-4286-aaf4-98f0122506fa)
 
-## <p align="left">Ques-4.View data in the required form using Operators, Functions and Joins.</p>
+## <p align="left">Ques-4. View data in the required form using Operators, Functions and Joins.</p>
 
 ### SQL Operators
 The SQL reserved words and characters are called operators, which are used with a WHERE clause in a SQL query. In SQL, an operator can either be a unary or binary operator. The unary operator uses only one operand for performing the unary operation, whereas the binary operator uses two operands for performing the binary operation.
@@ -214,7 +214,8 @@ SQL operators are categorized in the following categories:
 
 - SQL Unary Operators
 
-#### *1.SQL Arithmetic Operators*
+#### *1. SQL Arithmetic Operators*
+
 The Arithmetic Operators perform the mathematical operation on the numerical data of the SQL tables. These operators perform addition, subtraction, multiplication, and division operations on the numerical operands.
 
 Following are the various arithmetic operators performed on the SQL data:
@@ -224,7 +225,7 @@ Following are the various arithmetic operators performed on the SQL data:
    - SQL Division Operator (-)
    - SQL Modulus Operator (+)
     
-#### *2.SQL Comparison Operators*
+#### *2. SQL Comparison Operators*
 
 The Comparison Operators in SQL compare two different data of SQL table and check whether they are the same, greater, and lesser. The SQL comparison operators are used with the WHERE clause in the SQL queries
 
@@ -236,7 +237,7 @@ Following are the various comparison operators which are performed on the data s
 - SQL Less Than Operator (<)\
 - SQL Less Than Equals to Operator (<=)
 
-#### *3.SQL Logical Operators*
+#### *3. SQL Logical Operators*
 
 The Logical Operators in SQL perform the Boolean operations, which give two results True and False. These operators provide True value if both operands match the logical condition.
 
@@ -252,7 +253,7 @@ Following are the various logical operators which are performed on the data stor
     
 The Set Operators in SQL combine a similar type of data from two or more SQL database tables. It mixes the result, which is extracted from two or more SQL queries, into a single result.
 
-#### *4.SQL Set Operators*
+#### *4. SQL Set Operators*
 
 Set operators combine more than one select statement in a single query and return a specific result set.
 
@@ -262,7 +263,7 @@ Following are the various set operators which are performed on the similar data 
 - SQL Intersect Operator
 - SQL Minus Operator
     
-#### *5.SQL Bitwise Operators*
+#### *5. SQL Bitwise Operators*
 
 The Bitwise Operators in SQL perform the bit operations on the Integer values. To understand the performance of Bitwise operators, you just knew the basics of Boolean algebra.
 
@@ -270,7 +271,7 @@ Following are the two important logical operators which are performed on the dat
 - Bitwise AND (&)
 - Bitwise OR(|)
 
-#### *6.SQL Unary Operators*
+#### *6. SQL Unary Operators*
 
 The Unary Operators in SQL perform the unary operations on the single data of the SQL table, i.e., these operators operate only on one operand.
 
@@ -284,7 +285,7 @@ Following are the various unary operators which are performed on the numeric dat
  ### SQL FUNCTIONS
  For doing operations on data SQL has many built-in functions, they are categorized in two categories and further sub-categorized in different seven functions under each category. The categories are: 
  
-**1.Aggregate functions**
+**1. Aggregate functions**
     These functions are used to do operations from the values of the column and a single value is returned. 
 - AVG()
 - COUNT()
@@ -294,7 +295,7 @@ Following are the various unary operators which are performed on the numeric dat
 - MIN()
 - SUM()
     
-**2.Scalar functions:**
+**2. Scalar functions:**
     These functions are based on user input, these too returns single value. 
 - UCASE()
 - LCASE()
@@ -315,8 +316,6 @@ Here are the different types of the JOINs in SQL:
 - *LEFT (OUTER) JOIN*: Returns all records from the left table, and the matched records from the right table
 - *RIGHT (OUTER) JOIN*: Returns all records from the right table, and the matched records from the left table
 - *FULL (OUTER) JOIN*: Returns all records when there is a match in either left or right table
-
-    
 
 Let's say you have two tables: employees and departments. The goal is to retrieve information about employees and their corresponding departments.
 
@@ -343,7 +342,7 @@ JOIN departments ON employees.department_id = departments.department_id: Perform
 
 The query will return a result set with columns: full_name, department_name,salary, salary_indicator.
 
-## <p align="left">Ques-5.Creating different types of Views for tailored presentation of data</p>
+## <p align="left">Ques-5. Creating different types of Views for tailored presentation of data</p>
 
 Views are a special version of tables in SQL. They provide a virtual table environment for various complex operations. You can select data from multiple tables, or you can select specific data based on certain criteria in views. It does not hold the actual data; it holds only the definition of the view in the data dictionary.
 The view is a query stored in the data dictionary, on which the user can query just like they do on tables. It does not use the physical memory, only the query is stored in the data dictionary. It is computed dynamically, whenever the user performs any query on it. Changes made at any point in view are reflected in the actual base table.
@@ -365,11 +364,11 @@ A view that stores the definition as well as data. It creates replicas of data b
 ![Screenshot from 2023-11-13 19-27-44](https://github.com/Gurleen0411/rdbms_2023batch/assets/144206226/968cd387-837b-41cc-8fd0-9289b5a2bef3)
 
 
-## <p align="left">Ques-6.How to apply Conditional Controls in PL/SQL</p>
+## <p align="left">Ques-6. How to apply Conditional Controls in PL/SQL</p>
 
 In PL/SQL (Procedural Language/Structured Query Language), we can use conditional controls to execute different blocks of code based on certain conditions. There are several constructs for implementing conditional logic in PL/SQL, including the IF statement, CASE statement, and the IF-ELSIF-ELSE statement.
 
-### 1.IF STATEMENT
+### 1. IF STATEMENT
 The IF statement is used to execute a block of code if a specified condition is true.
 
 #### *SYNTAX*
@@ -381,7 +380,7 @@ The IF statement is used to execute a block of code if a specified condition is 
     END IF;
 
 
-### 2.IF ELSE IF STATEMENT
+### 2. IF ELSE IF STATEMENT
 This statement is an extension of the IF statement and allows you to specify multiple conditions and corresponding blocks of code to execute.
 
 #### *SYNTAX*
@@ -402,7 +401,7 @@ This statement is an extension of the IF statement and allows you to specify mul
     END IF;
 
 
-### 3.CASE STATEMENT 
+### 3. CASE STATEMENT 
 The CASE statement is used to perform different actions based on the value of an expression.
 
 #### *SYNTAX*
@@ -451,7 +450,7 @@ Internal exceptions are errors that are raised automatically by the database eng
 4. DUP_VAL_ON_INDEX: Raised when trying to insert a duplicate value into a unique index.
 5. OTHERS: A catch-all exception that handles any unhandled exception.
 
-The below syntax explains how to catch and handle the exception.
+**Syntax**
      
      BEGIN TRY
    
@@ -516,7 +515,7 @@ External exceptions, also known as user-defined exceptions, are custom exception
 
 - In the EXCEPTION section of your PL/SQL block, you can specify handlers for specific exceptions, including user-defined exceptions.
 
-Syntax:
+**Syntax:**
 
     EXCEPTION
     WHEN my_exception THEN
@@ -540,7 +539,7 @@ Here's an example of using external exceptions:
     END;
     
 
-## <p align="left">Ques-8.Using various types of Cursors 
+## <p align="left">Ques-8. Using various types of Cursors 
 
 In SQL, a cursor is a database object that allows you to interact with individual rows returned by a query. Cursors are often used when you need to process one row at a time, rather than fetching the entire result set at once. There are several types of cursors in SQL, and their usage depends on the specific requirements of your application. The main types of cursors are:
 
@@ -548,13 +547,13 @@ In SQL, a cursor is a database object that allows you to interact with individua
 - A static cursor is not sensitive to changes made by other users to the data while the cursor is open.
 - It fetches a snapshot of the data at the time the cursor is opened.
 
-Syntax:
+**Syntax:**
 
     DECLARE cursor_name CURSOR STATIC FOR
     SELECT column1, column2, ...
     FROM your_table;
 
-Example:
+**Example:**
    
     DECLARE static_cursor CURSOR STATIC FOR
     SELECT employee_id, first_name, last_name, salary
@@ -564,13 +563,13 @@ Example:
 - A dynamic cursor reflects changes made by other users to the data while the cursor is open.
 - It does not fetch a snapshot but rather retrieves the current data each time a fetch is made.
     
-Syntax:
+**Syntax:**
 
     DECLARE cursor_name CURSOR DYNAMIC FOR
     SELECT column1, column2, ...
     FROM your_table;
 
-Example:
+**Example:**
 
     DECLARE dynamic_cursor CURSOR DYNAMIC FOR
     SELECT employee_id, first_name, last_name, salary
@@ -580,13 +579,13 @@ Example:
 - A forward-only cursor only allows fetching rows in a forward direction (from the first to the last row).
 - It is the most lightweight and performs better in terms of resource usage.
 
-Syntax:
+**Syntax:**
 
     DECLARE cursor_name CURSOR FORWARD_ONLY FOR
     SELECT column1, column2, ...
     FROM your_table;
 
-Example:
+**Example:**
    
     DECLARE forward_only_cursor CURSOR FORWARD_ONLY FOR
     SELECT employee_id, first_name, last_name, salary
@@ -596,13 +595,13 @@ Example:
 - A scroll cursor allows fetching rows in both forward and backward directions.
 - It provides more flexibility but may be less efficient than forward-only cursors.
 
-Syntax:
+**Syntax:**
 
       DECLARE cursor_name CURSOR SCROLL FOR
       SELECT column1, column2, ...
       FROM your_table;
 
-Example:
+**Example:**
 
     DECLARE scroll_cursor CURSOR SCROLL FOR
     SELECT employee_id, first_name, last_name, salary
@@ -613,13 +612,13 @@ Example:
 - A keyset cursor is similar to a dynamic cursor but is more optimized as it only retrieves the key values of the rows.
 - It is sensitive to changes in the data but doesn't retrieve the actual data until a fetch is made.
 
-Syntax:
+**Syntax:**
 
     DECLARE cursor_name CURSOR KEYSET FOR
     SELECT column1, column2, ...
     FROM your_table;
 
-Example:
+**Example:**
 
     DECLARE keyset_cursor CURSOR KEYSET FOR
     SELECT employee_id, first_name, last_name, salary
@@ -630,13 +629,13 @@ Example:
 - An insensitive cursor creates a temporary copy of the result set, making it insensitive to changes in the underlying data.
 - It is typically used when the data should remain static throughout the cursor's lifetime.
 
-Syntax:
+**Syntax:**
 
     DECLARE cursor_name CURSOR INSENSITIVE FOR
     SELECT column1, column2, ...
     FROM your_table;
 
-Example:
+**Example:**
 
     DECLARE insensitive_cursor CURSOR INSENSITIVE FOR
     SELECT employee_id, first_name, last_name, salary
@@ -689,7 +688,7 @@ Stored Procedures and Functions are database objects in SQL that contain a set o
 **Running Stored Procedures:**
 
 1. Creating a Stored Procedure:
-Before you can run a stored procedure, you need to create it. Use the CREATE PROCEDURE statement to define a stored procedure.
+- Before you can run a stored procedure, you need to create it. Use the CREATE PROCEDURE statement to define a stored procedure.
 
        CREATE PROCEDURE procedure_name
        AS
@@ -698,7 +697,7 @@ Before you can run a stored procedure, you need to create it. Use the CREATE PRO
        END;
 
 2. Executing a Stored Procedure:
-Once the stored procedure is created, you can execute it using the EXEC or EXECUTE statement.
+- Once the stored procedure is created, you can execute it using the EXEC or EXECUTE statement.
 
        EXEC procedure_name;
        -- or
@@ -740,7 +739,7 @@ Once the stored procedure is created, you can execute it using the EXEC or EXECU
 **Running Functions:**
 
 1. Creating a Function:
-Use the CREATE FUNCTION statement to define a function. Functions return a value and can be used in SQL queries.
+- Use the CREATE FUNCTION statement to define a function. Functions return a value and can be used in SQL queries.
 
        CREATE FUNCTION function_name
        RETURNS data_type
@@ -751,7 +750,7 @@ Use the CREATE FUNCTION statement to define a function. Functions return a value
        END;
 
 2. Executing a Function:
-Functions are typically used within queries or other SQL statements.
+- Functions are typically used within queries or other SQL statements.
 
        SELECT function_name(parameters);
 
