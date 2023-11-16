@@ -4,7 +4,7 @@
 ### <p align="center">Practical File</p>
 ### <p align="center">Of</p>
 ### <p align="center"> Relational Database Management System</p>
-### <p align="center">Course Code: "PGCA 207"</p>
+### <p align="center">Course Code: "PGCA 2203"</p>
 ### <p align="left">Submitted to :<br> Mr.Satinderpal Singh</h3>
 ### <p align="right">Submitted by:<br>Ankit Sharma<br>(MCA 1st sem.)<br>CRN:-2329004
 
