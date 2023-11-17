@@ -376,11 +376,7 @@ END CASE;
 https://github.com/samridhi0/rdbms_2023batch/edit/patch-3/2329018/RDBMS_file.md?pr=%2FMaster-of-Computer-Applications%2Frdbms_2023batch%2Fpull%2F40
 github.com
 https://github.com/samridhi0/rdbms_2023batch/edit/patch-3/2329018/RDBMS_file.md?pr=%2FMaster-of-Computer-Applications%2Frdbms_2023batch%2Fpull%2F40
-8:08 pm
-
-
-
-    first_name VARCHAR(50) NOT NULL,
+        first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     date_of_birth DATE,
     email VARCHAR(100) UNIQUE,
