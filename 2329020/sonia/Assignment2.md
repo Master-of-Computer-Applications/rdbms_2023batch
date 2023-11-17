@@ -1,3 +1,4 @@
+# <p align="center">Assignment 2 of RDBMS</p>
 ## <b>Normalization</b>
 #### A large database defined as a single relation may result in data duplication. This repetition of data may result in:
 
