@@ -338,7 +338,7 @@ ii) **IF-THEN-ELSE IF**
 
 
 
-### 6) STORED PROCEDURE - A stored procedure is a set of Structured Query Language (SQL) statements with an assigned name, which are stored in a relational database management system (RDBMS) as a group, so it can be reused and shared by multiple programs.
+### 7)  STORED PROCEDURE - A stored procedure is a set of Structured Query Language (SQL) statements with an assigned name, which are stored in a relational database management system (RDBMS) as a group, so it can be reused and shared by multiple programs.
 
 
 
@@ -356,10 +356,79 @@ ii) **IF-THEN-ELSE IF**
 
 
  
- ### 7) TRIGGERS -  An SQL trigger is a database object that is associated with a table and automatically executes a set of SQL statements when a specific event occurs on that table. 
+ ### 8) TRIGGERS -  An SQL trigger is a database object that is associated with a table and automatically executes a set of SQL statements when a specific event occurs on that table. 
 
  ![TRIGGER](https://github.com/kaushkis/rdbms_2023batch/assets/147362653/6dea14fc-a9f3-48f1-a193-939b04dd5be9)
 
+ 
+
+ ### PACKAGES -  Packages are schema objects that groups logically related PL/SQL types, variables, and subprograms.
+
+A package will have two mandatory parts −
+
+    Package specification
+    Package body or definition
+
+    Package Specification
+
+The specification is the interface to the package. It just DECLARES the types, variables, constants, exceptions, cursors, and subprograms that can be referenced from outside the package. In other words, it contains all information about the content of the package, but excludes the code for the subprograms.All objects placed in the specification are called public objects. Any subprogram not in the package specification but coded in the package body is called a private object.
+
+The following code snippet shows a package specification having a single procedure. You can have many global variables defined and multiple procedures or functions inside a package.
+
+CREATE PACKAGE cust_sal AS 
+   PROCEDURE find_sal(c_id customers.id%type); 
+END cust_sal; 
+/
+
+Package Body
+
+The package body has the codes for various methods declared in the package specification and other private declarations, which are hidden from the code outside the package.
+
+The CREATE PACKAGE BODY Statement is used for creating the package body. The following code snippet shows the package body declaration for the cust_sal package created above. I assumed that we already have CUSTOMERS table created in our database 
+
+CREATE OR REPLACE PACKAGE BODY cust_sal AS  
+   
+   PROCEDURE find_sal(c_id customers.id%TYPE) IS 
+   c_sal customers.salary%TYPE; 
+   BEGIN 
+      SELECT salary INTO c_sal 
+      FROM customers 
+      WHERE id = c_id; 
+      dbms_output.put_line('Salary: '|| c_sal); 
+   END find_sal; 
+END cust_sal; 
+/
+
+Using the Package Elements
+
+The package elements (variables, procedures or functions) are accessed with the following syntax −
+
+package_name.element_name;
+
+Consider, we already have created the above package in our database schema, the following program uses the find_sal method of the cust_sal package −
+
+DECLARE 
+   code customers.id%type := &cc_id; 
+BEGIN 
+   cust_sal.find_sal(code); 
+END; 
+/
 
 
+
+
+ ### 9) NESTED TABLES - In order to create a nested table, the two source tables must contain a defined relationship so that the items in one table can be related to the other table. In SQL Server Data Tools, you can define this relationship in the data source view.
+
+ 
+
+![nest table (1)](https://github.com/kaushkis/rdbms_2023batch/assets/147362653/bfe8cf23-865a-40a3-bf36-d80b7f18b31e)
+
+
+![NEST TABLE (3)](https://github.com/kaushkis/rdbms_2023batch/assets/147362653/c55f469f-41b5-4097-87d9-765a783465a9)
+
+
+### ARRAYS - An array database management system or array DBMS provides database services specifically for arrays (also called raster data), that is: homogeneous collections of data items (often called pixels, voxels, etc.), sitting on a regular grid of one, two, or more dimensions.
+
+
+![final arrayys](https://github.com/kaushkis/rdbms_2023batch/assets/147362653/33aa095c-20fc-4969-a966-8a53bb6b17df)
 
