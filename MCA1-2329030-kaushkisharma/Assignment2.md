@@ -61,4 +61,12 @@ There should be no transitive dependency in 3NF.| It means that no non-prime att
 3NF can be achieved without losing the dependency that is already there.| The functional dependency may get lost while achieving BCNF form.
 
 
-# <p align="left"> DIFFERENCE BETWEEN 3NF AND BCNF</p>
+# <p align="left"> DIFFERENCE BETWEEN 4NF AND 5NF</p>
+4NF | 5NF
+|---|---|
+A relation in 4NF must also be in BCNF(Boyce Codd Normal Form).	|A relation in 5NF must also be in 4NF(Fourth Normal Form).
+A relation in 4NF must not have any multi-valued dependency.|A relation in 5NF must not have any join dependency.
+A relation in 4NF may or may not be in 5NF.|A relation in 5NF is always in 4NF
+Fourth Normal Form is less stronger in comparison to Fifth Normal form.|Fifth Normal form is more stronger than Fourth Normal Form.
+If a relation is in Fourth Normal Form then it will have more redundancy. | f a relation is in Fifth Normal Form then it will less redundancy.
+If a relation is in Fourth Normal Form then it may be decomposed further into sub-relations.|If a relation is in Fifth Normal Form then it cannot be decomposed further into sub-relations without any modification in meaning or facts.
